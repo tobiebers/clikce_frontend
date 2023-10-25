@@ -9,7 +9,7 @@ export default function HeroSection() {
           <h2 className={styles['custom-h2']}>Erfolg in Sozialen</h2>
           <h2 className={styles['custom-h2']}>Medien - Wir machen</h2>
           <h2 className={styles['custom-h2']}>es möglich!</h2>
-          <p className={styles['custom-h2']}>
+          <p className={styles['custom-p2']}>
             Strategie, Analyse und Umsetzung:<br />
             Entdecken Sie, wie unser umfassendes Social Media Management<br />
             Ihre Socialmediapräsenz nach vorne bringt!
