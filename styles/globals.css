@@ -18,5 +18,17 @@
   background-color: white; /* Diese Zeile hinzufügen */
 }
 
+body {
+  background-image: url('/backgroundImage.png');
+/* Pfad zu Ihrem Hintergrundbild */
+  background-size: cover; /* Dies sorgt dafür, dass das Bild den gesamten sichtbaren Bereich abdeckt */
+  background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
+  background-attachment: fixed; /* Das Hintergrundbild bewegt sich nicht beim Scrollen */
+  height: 100%; /* Setzen Sie die Höhe auf 100% */
+  margin: 0; /* Entfernt den Standardabstand */
+  font-family: Arial, Helvetica, sans-serif; /* Optional: Setzt eine Standardschriftart */
+}
+
+
 
 
