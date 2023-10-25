@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function socialmediaAccounts() {
+export default function SocialmediaAccounts() {
 
   return (
     <div>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-export default function HeroSection() {
+export default function FunctionInfo() {
 
   return (
     <div>
-        HomePage1
+
+
     </div>
   );
 }
