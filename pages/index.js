@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import carousel from "@/components/landingPage/carousel";
-import heroSection from "@/components/landingPage/heroSection";
+import Carousel from "@/components/landingPage/carousel";
+import HeroSection from "@/components/landingPage/heroSection";
+import FunctionInfo from "@/components/landingPage/functionInfo";
+import SocialmediaAccounts from "@/components/landingPage/socialmediaAccounts";
+
+
 export default function Home() {
 
   return (
     <div>
-        <carousel/>
-        <heroSection/>
+        <Carousel/>
+        <HeroSection/>
+        <FunctionInfo/>
+        <SocialmediaAccounts/>
     </div>
   );
 }

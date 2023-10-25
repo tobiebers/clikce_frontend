@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function heroSection() {
+export default function HeroSection() {
 
   return (
     <div>

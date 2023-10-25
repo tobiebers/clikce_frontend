@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function carousel() {
+export default function Carousel() {
 
   return (
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
