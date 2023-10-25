@@ -1,5 +1,4 @@
 .img-size {
-  width: 400px;
-  height: 400px;
-  object-fit: cover; /* Dies sorgt dafür, dass das Bild die Größe behält und nicht verzerrt wird */
+    max-width: 100%;
+    height: auto;
 }
