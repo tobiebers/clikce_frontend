@@ -1,0 +1,52 @@
+/* heroSection.module.css */
+.heroSectionbackground {
+  width: 1110px;
+  height: 300px;
+  background-color: #D6EBEA;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; /* Änderung von "center" zu "flex-start" für vertikale Ausrichtung */
+  flex-wrap: wrap; /* Hinzufügen von flex-wrap, um Elemente in eine neue Zeile umzubrechen */
+}
+
+.content {
+  text-align: left;
+  line-height: 1.2;
+  margin: 0 20px;
+}
+
+.custom-h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.custom-p2 {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column; /* Vertikale Ausrichtung */
+  justify-content: center; /* Vertikal in der Mitte ausrichten */
+  align-items: flex-end; /* Horizontal ganz rechts ausrichten */
+}
+
+.button1 {
+    color: #060817; /* Schriftfarbe */
+    font-weight: normal; /* Schriftstil */
+    padding: 10px; /* Innenabstand der Schrift */
+    width: 200px; /* Breite des Buttons */
+    height: 40px; /* Höhe des Buttons */
+    background: #FFB3B8; /* Hintergrundfarbe */
+    margin-top: 20px;
+    border-radius: 7px; /* Abgerundete Ecken mit 7px Radius */
+}
