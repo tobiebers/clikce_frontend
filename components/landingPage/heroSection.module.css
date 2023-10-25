@@ -38,6 +38,15 @@
   flex-direction: column; /* Vertikale Ausrichtung */
   justify-content: center; /* Vertikal in der Mitte ausrichten */
   align-items: flex-end; /* Horizontal ganz rechts ausrichten */
-  flex-grow: 1; /* Den Container auf volle Höhe ausdehnen */
-  padding: 20px; /* Hier kannst du den Abstand anpassen */
+}
+
+.button1 {
+    color: #060817; /* Schriftfarbe */
+    font-weight: normal; /* Schriftstil */
+    padding: 10px; /* Innenabstand der Schrift */
+    width: 200px; /* Breite des Buttons */
+    height: 40px; /* Höhe des Buttons */
+    background: #FFB3B8; /* Hintergrundfarbe */
+    margin-top: 20px;
+    border-radius: 7px; /* Abgerundete Ecken mit 7px Radius */
 }

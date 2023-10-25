@@ -14,6 +14,7 @@ export default function HeroSection() {
             Entdecken Sie, wie unser umfassendes Social Media Management<br />
             Ihre Socialmediapräsenz nach vorne bringt!
           </p>
+          <button className={styles['button1']}>Register</button>
         </div>
         <div className={styles.imageContainer}>
           <img src="/heroSection.png" width="270" height="270" />
