@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import heroSection from "@/components/landingPage/heroSection";
+import carousel from "@/components/landingPage/carousel";
+
 export default function Home() {
 
   return (
     <div>
-        <heroSection/>
+        <carousel/>
     </div>
   );
 }
