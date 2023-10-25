@@ -4,7 +4,7 @@ export default function Home() {
 
   return (
     <div>
-        HomePage1212
+        HomePage1
     </div>
   );
 }
