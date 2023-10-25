@@ -8,15 +8,15 @@ export default function HeroSection() {
         <Row className="background-color m-5">
           <Col className="col-centered" md={6}>
             <div>
-              <h2>Erfolg in Sozialen</h2>
+              <h2 className="custom-line-height mt-3">Erfolg in Sozialen</h2>
               <h2>Medien - Wir machen</h2>
-              <h2>es möglich!</h2>
-              <p>
-                Strategie, Analyse und Umsetzung:<br />
+              <h2 className="custom-line-height">es möglich!</h2>
+              <p className="mt-4">
+                Strategie, Analyse und Umsetzung:<br/>
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />
                 Ihre Socialmediapräsenz nach vorne bringt!
               </p>
-              <button className="button-hero">Register</button>
+              <button className="button-hero semi-transparent-text">Register</button>
             </div>
           </Col>
           <Col className="col-centered" md={6}>

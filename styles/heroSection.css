@@ -13,20 +13,25 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
 .background-color {
   background-color: #D6EBEA;
   opacity: 0.7; /* Hier wird die Transparenz auf 70% (0.7) gesetzt */
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .button-hero {
   background-color: #FFB3B8;
-  color: #000000;
   border-radius: 10px;
   text-align: center;
   padding: 10px 20px; /* Anpassen Sie das Padding nach Bedarf, um den Button-Textabstand zu ändern */
   display: inline-block; /* Damit der Button nur so breit ist wie der Textinhalt */
   text-decoration: none; /* Entfernt Standard-Textunterstreichung bei Links */
-  font-weight: bold; /* Optional: Fettgedruckte Schrift, falls gewünscht */
+  border: none;
 }
 
 /* Optional: Hinzufügen eines Hover-Effekts, wenn der Mauszeiger über dem Button ist */
 .button-hero:hover {
   background-color: #FF8891; /* Ändern Sie die Farbe nach Bedarf */
+}
+
+.custom-line-height {
+    line-height: 0.1;  /* Der Wert 1.5 ist ein Beispiel, Sie können ihn nach Bedarf anpassen */
 }
