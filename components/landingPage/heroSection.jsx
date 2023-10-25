@@ -5,8 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function HeroSection() {
   return (
       <Container>
-        <Row>
-          <Col className="col-centered heroSectionbackground" md={6}>
+        <Row className="background-color m-5">
+          <Col className="col-centered" md={6}>
             <div>
               <h2>Erfolg in Sozialen</h2>
               <h2>Medien - Wir machen</h2>
@@ -16,7 +16,7 @@ export default function HeroSection() {
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />
                 Ihre Socialmediapräsenz nach vorne bringt!
               </p>
-              <button>Register</button>
+              <button className="button-hero">Register</button>
             </div>
           </Col>
           <Col className="col-centered" md={6}>
