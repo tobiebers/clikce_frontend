@@ -1,0 +1,22 @@
+/* heroSection.module.css */
+.heroSectionbackground {
+  width: 1110px;
+  height: 200px;
+  background-color: #D6EBEA;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between; /* Änderung zu space-between */
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stelle auf "column" ein, um die Abteilungen übereinander anzuordnen */
+  margin: 0 20px; /* Abstand zwischen den Abteilungen anpassen */
+}
