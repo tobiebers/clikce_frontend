@@ -4,9 +4,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function HeroSection() {
   return (
-      <Container className="heroSectionbackground">
+      <Container>
         <Row>
-          <Col className="col-centered" md={6}>
+          <Col className="col-centered heroSectionbackground" md={6}>
             <div>
               <h2>Erfolg in Sozialen</h2>
               <h2>Medien - Wir machen</h2>
