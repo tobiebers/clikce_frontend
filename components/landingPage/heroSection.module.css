@@ -41,12 +41,15 @@
 }
 
 .button1 {
-    color: #060817; /* Schriftfarbe */
-    font-weight: normal; /* Schriftstil */
-    padding: 10px; /* Innenabstand der Schrift */
-    width: 200px; /* Breite des Buttons */
-    height: 40px; /* Höhe des Buttons */
-    background: #FFB3B8; /* Hintergrundfarbe */
-    margin-top: 20px;
-    border-radius: 7px; /* Abgerundete Ecken mit 7px Radius */
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: #060817; /* Schriftfarbe */
+  --bs-btn-bg: #FFB3B8; /* Hintergrundfarbe */
+  --bs-btn-border-color: #FFB3B8; /* Randfarbe */
+  --bs-btn-hover-color: #060817; /* Schriftfarbe bei Hover */
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
 }
