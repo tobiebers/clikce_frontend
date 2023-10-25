@@ -4,6 +4,7 @@ import Layout from "@/components/staticComponents/Layout";
 import '/styles/navigation.css'
 
 
+
 export default function App({ Component, pageProps }) {
 
 
