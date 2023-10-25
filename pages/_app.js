@@ -5,6 +5,7 @@ import '/styles/navigation.css'
 import '/styles/FunctionInfo.css'
 import 'styles/globals.css'
 import 'styles/socialmediaAccounts.css'
+import 'styles/heroSection.css'
 
 
 
