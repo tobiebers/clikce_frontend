@@ -4,7 +4,7 @@ export default function HeroSection() {
 
   return (
     <div>
-        HomePage1
+        Hero Section
     </div>
   );
 }
