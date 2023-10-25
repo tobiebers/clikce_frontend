@@ -15,13 +15,11 @@ export default function HeroSection() {
             Ihre Socialmediapräsenz nach vorne bringt!
           </p>
         </div>
-        <div className={styles.content}>
-          <h2 className={styles['custom-h2']}>Abteilung 2</h2>
-          <p className={styles['custom-h2']}>
-            Dies ist der Inhalt der zweiten Abteilung.
-          </p>
+        <div className={styles.imageContainer}>
+          <img src="/heroSection.png" width="270" height="270" />
         </div>
       </div>
     </div>
   );
 }
+

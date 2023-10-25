@@ -33,3 +33,11 @@
   margin-top: 20px;
 }
 
+.imageContainer {
+  display: flex;
+  flex-direction: column; /* Vertikale Ausrichtung */
+  justify-content: center; /* Vertikal in der Mitte ausrichten */
+  align-items: flex-end; /* Horizontal ganz rechts ausrichten */
+  flex-grow: 1; /* Den Container auf volle Höhe ausdehnen */
+  padding: 20px; /* Hier kannst du den Abstand anpassen */
+}
