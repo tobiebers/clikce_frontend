@@ -1,0 +1,7 @@
+/* styles.css */
+
+/* Stil für die Bilder innerhalb einer speziellen Klasse, z. B. .social-icon */
+.social-icon img {
+  width: 30px; /* Breite auf 30 Pixel setzen */
+  height: 30px; /* Höhe auf 30 Pixel setzen */
+}
