@@ -1,22 +1,28 @@
 /* heroSection.module.css */
 .heroSectionbackground {
   width: 1110px;
-  height: 200px;
+  height: 300px;
   background-color: #D6EBEA;
   border-radius: 20px;
   display: flex;
-  justify-content: space-between; /* Änderung zu space-between */
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Änderung von "center" zu "flex-start" für vertikale Ausrichtung */
+  flex-wrap: wrap; /* Hinzufügen von flex-wrap, um Elemente in eine neue Zeile umzubrechen */
 }
 
 .content {
-  text-align: center;
-  display: flex;
-  flex-direction: column; /* Stelle auf "column" ein, um die Abteilungen übereinander anzuordnen */
-  margin: 0 20px; /* Abstand zwischen den Abteilungen anpassen */
+  text-align: left;
+  line-height: 1.2;
+  margin: 0 20px;
+}
+
+/* Neue Klasse, um den Textstil zu ändern */
+.custom-h2 {
+  margin: 0;
 }
