@@ -5,3 +5,23 @@
   width: 30px; /* Breite auf 30 Pixel setzen */
   height: 30px; /* Höhe auf 30 Pixel setzen */
 }
+/* styles.css */
+
+.sma-button {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.7); /* Der Text wird halbtransparent */
+  border: 2px solid black;
+  padding: 10px 20px; /* Anpassen der Polsterung nach Bedarf */
+  border-radius: 8px; /* Runde Ecken hinzufügen, falls gewünscht */
+  text-decoration: none; /* Verhindert, dass der Link unterstrichen wird */
+  cursor: pointer; /* Zeigercursor beim Überfahren */
+  transition: background 0.3s, color 0.3s; /* Sanfte Übergänge für Hintergrund und Textfarbe */
+}
+
+.sma-button:hover {
+  background: black;
+  color: white;
+}
+.semi-transparent-text {
+    color: rgba(0, 0, 0, 0.7); /* Der Text wird halbtransparent */
+}
