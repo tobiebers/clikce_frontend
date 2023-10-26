@@ -5,7 +5,7 @@ import FunctionInfo from "@/components/landingPage/functionInfo";
 import SocialmediaAccounts from "@/components/landingPage/socialmediaAccounts";
 import CarouselComponent from "@/components/landingPage/carouselComponent";
 import Placeholder from "@/components/staticComponents/Placeholder";
-
+import AuforderungAnmelden from "@/components/landingPage/auforderungAnmelden"
 
 export default function Home() {
 
@@ -18,6 +18,8 @@ export default function Home() {
         <FunctionInfo/>
         <Placeholder/>
         <CarouselComponent/>
+        <Placeholder/>
+        <AuforderungAnmelden/>
         <Placeholder/>
     </div>
   );
