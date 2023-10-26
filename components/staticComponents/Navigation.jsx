@@ -13,21 +13,30 @@ export default function Navigation() {
   }, [isOpen]);
 
   return (
-    <div className="navbar success theme-text">
-      <div
-        className={`menu-toggle ${isOpen ? 'open' : ''}`}
-        id="mobile-menu"
+    <div className="navbar navbar-expand-lg navbar-light bg-light background-color1">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
+        <div className="d-flex align-items-center">
+          <img src="logo.png" alt="Logo" width={80} height={80} />
+        </div>
+        <div className="text-center">
+          <span className="mx-4">Contact</span>
+          <span className="mx-4">Funktionen</span>
+          <span className="mx-4">Pläne</span>
+        </div>
+        <div className="mt-2">
+          <button className="btn btn-primary mx-4 button-navigation-login semi-transparent-text">Login</button>
+          <button className="btn btn-secondary ml-2 button-navigation semi-transparent-text">Registrieren</button>
+        </div>
+      </div>
+      <button
+        className={`navbar-toggler ${isOpen ? 'open' : ''}`}
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
+        <span className="navbar-toggler-icon"></span>
+      </button>
       <ul className="nav-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/designSite">Design</a></li>
-
       </ul>
     </div>
-  )
+  );
 }
