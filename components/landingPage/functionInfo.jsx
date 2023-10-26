@@ -38,7 +38,7 @@ export default function FunctionInfo() {
         <Col md={6}>
           <h2>Post Kreieren</h2>
           <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
-          <Button className="btn3 button-small" href="#">Erfahre mehr</Button>
+          <Button className="btn1 button-small" href="#">Erfahre mehr</Button>
         </Col>
       </Row>
 
