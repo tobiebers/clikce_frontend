@@ -12,8 +12,8 @@ export default function FunctionInfo() {
           <img src="/Bild1.png" alt="Analytics" className="img-size img-fluid" />
         </Col>
         <Col md={6}>
-          <h1>Analytics</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore eti</p>
+          <h2>Analytics</h2>
+          <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore eti</p>
           <Button variant="primary" href="#">Erfahre mehr</Button>
         </Col>
       </Row>
@@ -21,8 +21,8 @@ export default function FunctionInfo() {
       {/* Zweite Sektion */}
       <Row className="mb-4">
         <Col md={6}>
-          <h1>Post Planen</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+          <h2>Post Planen</h2>
+          <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
           <Button variant="primary" href="#">Erfahre mehr</Button>
         </Col>
         <Col md={6}>
@@ -36,8 +36,8 @@ export default function FunctionInfo() {
           <img src="/Bild1.png" alt="Post Kreieren" className="img-size img-fluid" />
         </Col>
         <Col md={6}>
-          <h1>Post Kreieren</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+          <h2>Post Kreieren</h2>
+          <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
           <Button variant="primary" href="#">Erfahre mehr</Button>
         </Col>
       </Row>
