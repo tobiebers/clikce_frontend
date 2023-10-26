@@ -8,9 +8,9 @@ export default function HeroSection() {
         <Row className="background-color m-5">
           <Col className="col-centered" md={6}>
             <div>
-              <h2 className="custom-line-height mt-3">Erfolg in Sozialen</h2>
-              <h2>Medien - Wir machen</h2>
-              <h2 className="custom-line-height">es möglich!</h2>
+              <h1 className="custom-line-height mt-3 bold-text">Erfolg in Sozialen</h1>
+              <h1 className="bold-text">Medien - Wir machen</h1>
+              <h1 className="custom-line-height bold-text">es möglich!</h1>
               <p className="mt-4">
                 Strategie, Analyse und Umsetzung:<br/>
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />

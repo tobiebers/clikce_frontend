@@ -35,3 +35,7 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
 .custom-line-height {
     line-height: 0.1;  /* Der Wert 1.5 ist ein Beispiel, Sie können ihn nach Bedarf anpassen */
 }
+
+.bold-text {
+  font-weight: bold;
+}
