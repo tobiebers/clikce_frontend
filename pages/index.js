@@ -15,6 +15,7 @@ export default function Home() {
         <HeroSection/>
         <Placeholder/>
         <SocialmediaAccounts/>
+        <Placeholder/>
         <CarouselComponent/>
         <Placeholder/>
         <FunctionInfo/>

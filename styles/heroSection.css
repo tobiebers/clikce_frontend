@@ -10,7 +10,7 @@
 display: flex;   justify-content: center;   align-items: center;   height: 100%; /* Optional, falls Sie auch vertikal zentrieren möchten */
 }
 
-.background-color {
+.background-color-heroSection {
   background-color: #D6EBEA;
   opacity: 0.7; /* Hier wird die Transparenz auf 70% (0.7) gesetzt */
   border-radius: 20px;
@@ -21,5 +21,20 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
     line-height: 0.1;  /* Der Wert 1.5 ist ein Beispiel, Sie können ihn nach Bedarf anpassen */
 }
 
+.img-size-hero {
+    max-width: 55%;
+    height: auto;
+}
 
+.img-size-aufordrungAnmelden {
+    max-width: 57%;
+    height: auto;
+}
+
+
+.pr-3 {
+  padding-right: 5rem; /* Nur rechte Polsterung festlegen */
+  padding-top: 0; /* Obere Polsterung auf 0 setzen */
+  padding-bottom: 0; /* Untere Polsterung auf 0 setzen */
+}
 
