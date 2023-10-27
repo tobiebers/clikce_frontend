@@ -1,42 +1,38 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import { useRouter } from 'next/router';
 
-export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const menu = document.querySelector(".nav-list");
-    if (isOpen) {
-      menu.classList.add('active');
-    } else {
-      menu.classList.remove('active');
-    }
-  }, [isOpen]);
+function Navigation() {
+  const router = useRouter();
+
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
 
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light background-color-secondary">
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        <div className="d-flex align-items-center">
-          <img src="logo.png" alt="Logo" width={80} height={80} />
-        </div>
-        <div className="text-center">
-          <span className="mx-4">Contact</span>
-          <span className="mx-4">Funktionen</span>
-          <span className="mx-4">Pläne</span>
-        </div>
-        <div className="mt-2">
-          <button className="btn1">Login</button>
-          <button className="btn2">Registrieren</button>
-        </div>
-      </div>
-      <button
-        className={`navbar-toggler ${isOpen ? 'open' : ''}`}
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <ul className="nav-list">
-      </ul>
-    </div>
+    <Navbar bg="light" expand="lg" className="justify-content-between">
+      <Navbar.Brand href="#" onClick={() => handleNavigation('/')}>
+        <img src="/logo.png" alt="Logo" className="navbar-logo" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="order-lg-2"/>
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+        <Nav className="mx-lg-auto">
+          <Nav.Link className="mx-5" onClick={() => handleNavigation('/page1')}>Funktionen</Nav.Link>
+          <Nav.Link className="mx-5" onClick={() => handleNavigation('/page2')}>Preise</Nav.Link>
+          <Nav.Link className="mx-5" onClick={() => handleNavigation('/page3')}>Kontakt</Nav.Link>
+        </Nav>
+        <Nav className="ml-auto flex-nowrap d-lg-none">
+          <Button variant="outline-primary" onClick={() => handleNavigation('/login')}>Login</Button>
+          <Button variant="outline-secondary" onClick={() => handleNavigation('/register')}>Register</Button>
+        </Nav>
+      </Navbar.Collapse>
+      <Nav className="ml-auto flex-nowrap d-none d-lg-flex">
+        <Button className="btn1 button-medium" onClick={() => handleNavigation('/login')}>Login</Button>
+        <Button className="btn2 button-medium" onClick={() => handleNavigation('/register')}>Register</Button>
+      </Nav>
+    </Navbar>
   );
 }
+
+export default Navigation;
