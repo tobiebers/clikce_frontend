@@ -16,9 +16,9 @@ export default function HeroSection() {
               <button className="btn4 button-small">Register</button>
             </div>
           </Col>
-          <Col className="col-centered" md={6}>
-            <div>
-              <img src="/Login-pana.png" width="250" height="250" />
+          <Col className="col-centered text-end" md={6}>
+            <div className="pr-3">
+              <img className="img-size-aufordrungAnmelden"  src="/Login-pana.png"/>
             </div>
           </Col>
         </Row>

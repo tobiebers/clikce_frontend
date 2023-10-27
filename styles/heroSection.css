@@ -26,3 +26,15 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
     height: auto;
 }
 
+.img-size-aufordrungAnmelden {
+    max-width: 57%;
+    height: auto;
+}
+
+
+.pr-3 {
+  padding-right: 5rem; /* Nur rechte Polsterung festlegen */
+  padding-top: 0; /* Obere Polsterung auf 0 setzen */
+  padding-bottom: 0; /* Untere Polsterung auf 0 setzen */
+}
+
