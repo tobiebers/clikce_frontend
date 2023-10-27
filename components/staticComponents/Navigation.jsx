@@ -13,7 +13,7 @@ export default function Navigation() {
   }, [isOpen]);
 
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light background-color1">
+    <div className="navbar navbar-expand-lg navbar-light bg-light background-color-secondary">
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <img src="logo.png" alt="Logo" width={80} height={80} />
@@ -24,8 +24,8 @@ export default function Navigation() {
           <span className="mx-4">Pläne</span>
         </div>
         <div className="mt-2">
-          <button className="btn btn-primary mx-4 button-navigation-login semi-transparent-text">Login</button>
-          <button className="btn btn-secondary ml-2 button-navigation semi-transparent-text">Registrieren</button>
+          <button className="btn3">Login</button>
+          <button className="btn1">Registrieren</button>
         </div>
       </div>
       <button
