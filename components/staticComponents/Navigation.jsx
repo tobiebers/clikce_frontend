@@ -10,7 +10,7 @@ function Navigation() {
   };
 
   return (
-    <Navbar bg="light" expand="lg" className="justify-content-between">
+    <Navbar bg="light" expand="lg" className="justify-content-between background-color-secondary">
       <Navbar.Brand href="#" onClick={() => handleNavigation('/')}>
         <img src="/logo.png" alt="Logo" className="navbar-logo" />
       </Navbar.Brand>
