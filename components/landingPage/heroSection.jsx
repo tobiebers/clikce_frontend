@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function HeroSection() {
   return (
       <Container>
-        <Row className="background-color m-2">
+        <Row className="background-color-heroSection m-2">
           <Col className="col-centered" md={6}>
             <div>
               <h1 className="custom-line-height mt-3 fw-bold">Erfolg in Sozialen</h1>
