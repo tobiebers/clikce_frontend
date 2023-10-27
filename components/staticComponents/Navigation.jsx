@@ -24,8 +24,8 @@ export default function Navigation() {
           <span className="mx-4">Pläne</span>
         </div>
         <div className="mt-2">
-          <button className="btn3">Login</button>
-          <button className="btn1">Registrieren</button>
+          <button className="btn1">Login</button>
+          <button className="btn2">Registrieren</button>
         </div>
       </div>
       <button
