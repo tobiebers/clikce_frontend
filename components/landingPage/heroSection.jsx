@@ -16,7 +16,7 @@ export default function HeroSection() {
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />
                 Ihre Socialmediapräsenz nach vorne bringt!
               </p>
-              <button className="btn2 button-medium">Register</button>
+              <button className="btn2 button-small">Register</button>
             </div>
           </Col>
           <Col className="col-centered" md={6}>
