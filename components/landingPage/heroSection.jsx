@@ -10,8 +10,8 @@ export default function HeroSection() {
             <div>
               <h1 className="custom-line-height mt-3 fw-bold">Erfolg in Sozialen</h1>
               <h1 className="fw-bold">Medien - Wir machen</h1>
-              <h1 className="custom-line-height fw-bold">es möglich!</h1>
-              <p className="mt-4 text-m">
+              <h1 className="custom-line-height fw-bold mb-3">es möglich!</h1>
+              <p className="mt-5 text-m">
                 Strategie, Analyse und Umsetzung:<br/>
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />
                 Ihre Socialmediapräsenz nach vorne bringt!
@@ -19,9 +19,9 @@ export default function HeroSection() {
               <button className="btn2 button-small">Register</button>
             </div>
           </Col>
-          <Col className="col-centered" md={6}>
+          <Col className="col-centered text-end" md={6}>
             <div>
-              <img src="/heroSection.png" width="250" height="250" />
+              <img className="img-size-hero" src="/heroSection.png"/>
             </div>
           </Col>
         </Row>

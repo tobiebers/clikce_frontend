@@ -21,5 +21,8 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
     line-height: 0.1;  /* Der Wert 1.5 ist ein Beispiel, Sie können ihn nach Bedarf anpassen */
 }
 
-
+.img-size-hero {
+    max-width: 55%;
+    height: auto;
+}
 
