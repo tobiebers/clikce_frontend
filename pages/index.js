@@ -15,10 +15,10 @@ export default function Home() {
         <HeroSection/>
         <Placeholder/>
         <SocialmediaAccounts/>
+        <CarouselComponent/>
         <Placeholder/>
         <FunctionInfo/>
         <Placeholder/>
-        <CarouselComponent/>
         <Placeholder/>
         <AuforderungAnmelden/>
         <Placeholder/>
