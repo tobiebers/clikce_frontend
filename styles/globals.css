@@ -126,6 +126,13 @@ body {
 
 
 
+/*------------background color ---------*/
+.background-color-secondary {
+  background-color: #D6EBEA;
+  opacity: 0.7; /* Hier wird die Transparenz auf 70% (0.7) gesetzt */
+}
+
+
 
 
 
