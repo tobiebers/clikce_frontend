@@ -14,7 +14,7 @@ export default function FunctionInfo() {
         <Col md={6}>
           <h2>Analytics</h2>
           <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore eti</p>
-          <Button className="btn1 button-small" href="#">Erfahre mehr</Button>
+          <Button className="btn1 button-medium" href="#">Erfahre mehr</Button>
         </Col>
       </Row>
 
@@ -22,8 +22,8 @@ export default function FunctionInfo() {
       <Row className="mb-4">
         <Col md={6}>
           <h2>Post Planen</h2>
-          <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
-          <Button className="btn1 button-small" href="#">Erfahre mehr</Button>
+          <p className="text-l">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+          <Button className="btn1 button-medium" href="#">Erfahre mehr</Button>
         </Col>
         <Col md={6}>
           <img src="/Bild1.png" alt="Post Planen" className="img-size img-fluid" />
@@ -37,8 +37,8 @@ export default function FunctionInfo() {
         </Col>
         <Col md={6}>
           <h2>Post Kreieren</h2>
-          <p className="text-s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
-          <Button className="btn1 button-small" href="#">Erfahre mehr</Button>
+          <p className="text-m">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+          <Button className="btn1 button-medium" href="#">Erfahre mehr</Button>
         </Col>
       </Row>
 

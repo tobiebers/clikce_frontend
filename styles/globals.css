@@ -33,14 +33,14 @@ body {
 
 /* ------------------Schriftgrößen-------------------- */
 .text-s {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .text-m {
-    font-size: 12px;
+    font-size: 16px;
 }
 .text-l {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* ------------------Buttons-------------------- */
@@ -110,18 +110,18 @@ body {
 
 /* ------------------Button sizes-------------------- */
 .button-small {
-    padding: 5px 9px;
-    font-size: 9px;
+    padding: 12px 16px;
+    font-size: 13px;
 }
 
 .button-medium {
-    padding: 7px 11px;
-    font-size: 11px;
+    padding: 14px 18px;
+    font-size: 15px;
 }
 
 .button-large {
-    padding: 9px 13px;
-    font-size: 13px;
+    padding: 16px 20px;
+    font-size: 20px;
 }
 
 
