@@ -33,7 +33,7 @@ export default function SocialmediaAccounts() {
           </div>
         </Col>
       </Row>
-      <Button className="sma-button mt-4">Erfahre mehr</Button>
+      <Button className="btn3 button-medium mt-4">Erfahre mehr</Button>
     </Container>
   );
 }
