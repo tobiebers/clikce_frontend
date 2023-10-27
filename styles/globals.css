@@ -105,6 +105,28 @@ body {
     background-color: #000000; /* Alternative Farbe für den Hover-Effekt */
     border: 2px solid #FF8891;
 }
+.btn4 {
+    background: #000; /* Hintergrundfarbe auf Schwarz setzen */
+    border: 2px solid #000; /* Randfarbe ebenfalls auf Schwarz setzen */
+    color: #fff; /* Textfarbe auf Weiß setzen */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn4:hover {
+    background-color: #FF8891; /* Alternative Farbe für den Hover-Effekt */
+    border: 2px solid #FF8891;
+}
+
+
+
 
 
 
@@ -130,6 +152,18 @@ body {
 .background-color-secondary {
   background-color: #D6EBEA;
   opacity: 0.7; /* Hier wird die Transparenz auf 70% (0.7) gesetzt */
+}
+
+.background-color-white {
+    background-color: #FFFFFF
+}
+
+
+
+
+/*---------Radien------------*/
+.rounded-45 {
+    border-radius: 45px;
 }
 
 
