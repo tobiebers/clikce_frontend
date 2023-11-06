@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import logIn from "@/components/loginPage/logIn.jsx";
+import Login from "@/components/loginPage/logIn";
 export default function Home() {
 
   return (
     <div>
-    <logIn/>
+    <Login/>
     </div>
   );
 }

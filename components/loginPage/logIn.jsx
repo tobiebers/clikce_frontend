@@ -1,30 +1,21 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-
-export default function HeroSection() {
+export default function Login() {
   return (
-      <Container>
-        <Row className="background-color-heroSection m-2 mt-5">
-          <Col className="col-centered" md={6}>
-            <div>
-              <h1 className="custom-line-height mt-3 fw-bold">Erfolg in Sozialen</h1>
-              <h1 className="fw-bold">Medien - Wir machen</h1>
-              <h1 className="custom-line-height fw-bold mb-3">es möglich!</h1>
-              <p className="mt-5 text-m">
-                Strategie, Analyse und Umsetzung:<br/>
-                Entdecken Sie, wie unser umfassendes Social Media Management<br />
-                Ihre Socialmediapräsenz nach vorne bringt!
-              </p>
-              <button className="btn2 button-small">Register</button>
-            </div>
-          </Col>
-          <Col className="col-centered text-end" md={6}>
-            <div>
-              <img className="img-size-hero" src="/heroSection.png"/>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    <Container>
+      <Row style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
+        <Col md={5}>
+          {/* Hier kannst du den Inhalt für das 2/3 Rechteck hinzufügen */}
+        </Col>
+        <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
+          {/* Hier kannst du den Inhalt für das 1/3 Rechteck hinzufügen */}
+        </Col>
+      </Row>
+    </Container>
   );
 }
+
+
+
+
