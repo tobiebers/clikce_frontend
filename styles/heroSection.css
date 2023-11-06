@@ -51,11 +51,14 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
 }
 
 .img-size-googleandfacebook {
- max-width: 40%;
- height: auto;
+  max-width: 25%;
+  height: auto;
+  margin: 0 60px; /* Hier wird der Abstand für die Bilder festgelegt */
 }
 
 .img-size-googleandfacebook-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+
