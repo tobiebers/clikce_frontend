@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Login() {
+export default function Register() {
   return (
     <Container>
       <Row style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
