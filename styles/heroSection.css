@@ -35,7 +35,7 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
     max-width: 35%;
     height: auto;
     display: block;
-    margin: 40px auto 0;
+    margin: 35px auto 0;
 }
 
 .img-size-aufordrungAnmelden {
@@ -50,4 +50,12 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
   padding-bottom: 0; /* Untere Polsterung auf 0 setzen */
 }
 
+.img-size-googleandfacebook {
+ max-width: 40%;
+ height: auto;
+}
 
+.img-size-googleandfacebook-container {
+  display: flex;
+  justify-content: center;
+}
