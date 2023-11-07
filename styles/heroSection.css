@@ -50,15 +50,5 @@ display: flex;   justify-content: center;   align-items: center;   height: 100%;
   padding-bottom: 0; /* Untere Polsterung auf 0 setzen */
 }
 
-.img-size-googleandfacebook {
-  max-width: 25%;
-  height: auto;
-  margin: 0 50px; /* Hier wird der Abstand für die Bilder festgelegt */
-}
-
-.img-size-googleandfacebook-container {
-  display: flex;
-  justify-content: space-between;
-}
 
 

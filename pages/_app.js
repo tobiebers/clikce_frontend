@@ -6,8 +6,8 @@ import '/styles/FunctionInfo.css'
 import 'styles/globals.css'
 import 'styles/socialmediaAccounts.css'
 import 'styles/heroSection.css'
-
-
+import 'styles/Register.css'
+import 'styles/login.css'
 
 
 export default function App({ Component, pageProps }) {
