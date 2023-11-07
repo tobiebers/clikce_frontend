@@ -11,8 +11,8 @@ export default function Login() {
             <div className="img-size-googleandfacebook-container">
               <img className="img-size-googleandfacebook" src="facebook.png" alt="Facebook" />
               <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
-              <img src="or.png" />
             </div>
+            <img className="img-size-or mx-auto" src="or.png" />
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
@@ -24,6 +24,8 @@ export default function Login() {
     </Container>
   );
 }
+
+
 
 
 

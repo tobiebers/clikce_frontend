@@ -1,0 +1,17 @@
+.img-size-googleandfacebook {
+  max-width: 25%;
+  height: auto;
+  margin: 0 45px; /* Hier wird der Abstand für die Bilder festgelegt */
+}
+
+.img-size-googleandfacebook-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-size-or {
+    max-width: 80%;
+    align-self: center;
+    margin-top: 10px;
+    display: flex;
+}
