@@ -13,6 +13,7 @@ export default function Login() {
               <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
             </div>
             <img className="img-size-or mx-auto" src="or.png" />
+          <div className="text-m mt-3 transparent-text">e-mail</div>
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
