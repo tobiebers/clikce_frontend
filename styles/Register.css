@@ -8,3 +8,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+.img-size-or {
+    max-width: 80%;
+    align-self: center;
+    margin-top: 10px;
+    display: flex;
+}

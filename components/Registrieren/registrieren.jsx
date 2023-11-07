@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Login() {
+export default function Registrieren() {
   return (
     <Container>
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
@@ -12,6 +12,7 @@ export default function Login() {
               <img className="img-size-googleandfacebook" src="facebook.png" alt="Facebook" />
               <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
             </div>
+            <img className="img-size-or mx-auto" src="or.png" />
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
@@ -23,6 +24,8 @@ export default function Login() {
     </Container>
   );
 }
+
+
 
 
 
