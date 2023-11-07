@@ -11,6 +11,7 @@ export default function Login() {
             <div className="img-size-googleandfacebook-container">
               <img className="img-size-googleandfacebook" src="facebook.png" alt="Facebook" />
               <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
+              <img src="or.png" />
             </div>
           </div>
         </Col>
