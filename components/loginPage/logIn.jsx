@@ -13,7 +13,7 @@ export default function Login() {
               <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
             </div>
             <img className="img-size-or mx-auto" src="or.png" />
-            <div className="text-center ml-auto" style={{ marginLeft: '20px' }}>
+            <div className="ml-auto" style={{ marginLeft: '45px' }}>
               <div className="text-m mt-3 transparent-text">e-mail</div>
               <input type="text" className="white-input text-input" style={{ width: '100%' }} />
               <div className="text-m mt-3 transparent-text">password</div>
@@ -24,10 +24,10 @@ export default function Login() {
                   label="Remember me"
                   className="mr-2"
                 />
-                <div className="text-m transparent-text">Forgot password?</div>
+                <div className="text-m transparent-text" style={{ marginLeft: '45px' }}>Forgot password?</div>
               </Form.Group>
               <button className="btn3 button-small">Register</button>
-              <div className="text-m transparent-text">Don’t have account yet?  New Account</div>
+              <div className="text-m transparent-text" style={{ marginLeft: '45px' }}>Don’t have an account yet? New Account</div>
             </div>
           </div>
         </Col>
