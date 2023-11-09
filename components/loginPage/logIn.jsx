@@ -12,16 +12,17 @@ export default function Login() {
             <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
           </div>
           <img className="img-size-or mx-auto" src="or.png" />
-          <div className="text-center ml-auto mr-auto" style={{ width: '80%' }}>
+          <div className="text-container ml-auto mr-auto" style={{ width: '80%' }}>
             <div className="text-m mt-3 transparent-text">e-mail</div>
             <input type="text" className="white-input text-input" style={{ width: '100%' }} />
             <div className="text-m mt-3 transparent-text">password</div>
             <input type="text" className="white-input text-input" style={{ width: '100%' }} />
             <Form.Group controlId="rememberCheckbox" className="d-flex align-items-center mt-3">
               <Form.Check
-                type="checkbox"
-                label="Remember me"
-                className="mr-2"
+              type="checkbox"
+              label={<span className="checkbox-custom-label">Remember me</span>}
+              className="checkbox-custom-input"
+              style={{ backgroundColor: 'transparent' }}
               />
               <div className="text-m transparent-text ml-2">Forgot password?</div>
             </Form.Group>
