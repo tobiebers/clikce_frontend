@@ -26,6 +26,7 @@
   border: none; /* Entfernt den Rand */
   border-radius: 10px; /* Fügt abgerundete Ecken hinzu */
   padding: 5px;
+  height: 20px;
 }
 
 .text-input{

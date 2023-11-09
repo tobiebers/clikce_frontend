@@ -15,7 +15,9 @@ export default function Login() {
             <img className="img-size-or mx-auto" src="or.png" />
             <div className="text-center ml-auto" style={{ marginLeft: '20px' }}>
               <div className="text-m mt-3 transparent-text">e-mail</div>
-              <input type="text" className="white-input text-input" style={{ width: '100%', height: '20px' }} />
+              <input type="text" className="white-input text-input" style={{ width: '100%'}} />
+              <div className="text-m mt-3 transparent-text">password</div>
+              <input type="text" className="white-input text-input" style={{ width: '100%'}} />
             </div>
           </div>
         </Col>
