@@ -15,3 +15,56 @@
     margin-top: 10px;
     display: flex;
 }
+
+.text-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text-style {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 43px; /* Hier die Änderung für den Abstand nach rechts */
+}
+
+.text-container {
+  margin-top: 20px;
+  margin-bottom: 10px; /* Hier die Änderung für den Abstand zwischen den Textfeldern */
+  text-align: center;
+}
+
+.text-style {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+
+}
+
+.white-input {
+  width: 80%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.small-text {
+  font-size: 11px;
+  color: #555; /* Farbe nach Bedarf anpassen */
+}
+.terms-of-use {
+  color: #FFB3B8; /* Beispiel für die Farbe für "terms of use" anpassen */
+}
+
+.privacy-policy {
+  color: #FFB3B8; /* Beispiel für die Farbe für "privacy policy" anpassen */
+}
+
+
+
+
+
+
+
