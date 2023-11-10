@@ -5,7 +5,7 @@ export default function Registrieren() {
   return (
     <Container>
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5} className="d-flex flex-column align-items-center justify-content-center">
+        <Col md={5} className="d-flex flex-column align-items-start justify-content-center">
           <div>
             <img className="img-size-logologin" src="logo.png" />
             <div className="img-size-googleandfacebook-container">
