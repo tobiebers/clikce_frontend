@@ -24,7 +24,7 @@ export default function Login() {
               </div>
               <div className="ml-auto password-forget-text">Passwort vergessen?</div>
             </Form.Group>
-            <button className="mt-3 btn5 button-small">Registrieren</button>
+            <button className="mt-3 btn5 button-small">Login</button>
             <div className="">Du hast noch keinen Account? Neues Konto</div>
           </div>
         </Col>
