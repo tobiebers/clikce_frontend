@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <Container>
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5} className="">
+        <Col md={5} className="" style={{ textAlign: 'center' }}>
           <img className="img-size-logologin mx-auto" src="logo.png" />
           <div className="img-size-googleandfacebook-container">
             <img className="img-size-googleandfacebook" src="facebook.png" alt="Facebook" />
@@ -13,20 +13,19 @@ export default function Login() {
           </div>
           <img className="img-size-or mx-auto" src="or.png" />
           <div className="" style={{ width: '80%' }}>
-            <div className="transparent-text">e-mail</div>
+            <div className="transparent-text">E-Mail</div>
             <input type="text" className="white-input" style={{ width: '100%' }} />
-            <div className="transparent-text">password</div>
+            <div className="transparent-text">Passwort</div>
             <input type="text" className="white-input" style={{ width: '100%' }} />
-            <Form.Group controlId="rememberCheckbox" className="">
-              <Form.Check
-                type="checkbox"
-                label={<span className=""></span>}
-                className=""
-              />
-              <div className="">Forgot password?</div>
+            <Form.Group controlId="rememberCheckbox" className="d-flex align-items-center checkbox-custom-label">
+              <div className="checkbox-custom-input"> {/* Hier wird die benutzerdefinierte Checkbox-Stilisierung angewendet */}
+                <input type="checkbox" className="white-input" id="rememberCheckbox" />
+                <label for="rememberCheckbox">Remember me?</label>
+              </div>
+              <div className="ml-auto password-forget-text">Passwort vergessen?</div>
             </Form.Group>
-            <button className="btn3 button-small">Register</button>
-            <div className="">Don’t have an account yet? New Account</div>
+            <button className="mt-3 btn5 button-small">Registrieren</button>
+            <div className="">Du hast noch keinen Account? Neues Konto</div>
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
