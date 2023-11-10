@@ -14,9 +14,9 @@ export default function Login() {
           <img className="img-size-or mx-auto" src="or.png" />
           <div className="" style={{ width: '80%' }}>
             <div className="transparent-text">E-Mail</div>
-            <input type="text" className="white-input" style={{ width: '100%' }} />
+            <input type="text" className="white-input input-text" style={{ width: '100%' }} />
             <div className="transparent-text">Passwort</div>
-            <input type="text" className="white-input" style={{ width: '100%' }} />
+            <input type="text" className="white-input input-text" style={{ width: '100%' }} />
             <Form.Group controlId="rememberCheckbox" className="d-flex align-items-center checkbox-custom-label">
               <div className="checkbox-custom-input"> {/* Hier wird die benutzerdefinierte Checkbox-Stilisierung angewendet */}
                 <input type="checkbox" className="white-input" id="rememberCheckbox" />
@@ -25,7 +25,9 @@ export default function Login() {
               <div className="ml-auto password-forget-text">Passwort vergessen?</div>
             </Form.Group>
             <button className="mt-3 btn5 button-small">Login</button>
-            <div className="">Du hast noch keinen Account? Neues Konto</div>
+            <div className="new-account-text">
+            Du hast noch keinen Account? <span className="highlighted">New Account</span>
+            </div>
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
