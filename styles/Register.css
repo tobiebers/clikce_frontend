@@ -10,10 +10,10 @@
 }
 
 .img-size-or {
-    max-width: 80%;
-    align-self: center;
-    margin-top: 10px;
-    display: flex;
+  max-width: 80%;
+  align-self: center;
+  margin-top: 10px;
+  display: flex;
 }
 
 .text-container {
@@ -36,8 +36,9 @@
 }
 
 .white-input {
-  width: 80%;
+  width: calc(90% - 10px); /* Hier angepasst, um den Margin-Wert zu berücksichtigen */
   padding: 5px;
+  margin: 5px;
   border: none;
   border-radius: 5px;
   background-color: #fff;
@@ -46,6 +47,7 @@
 .smaller-text {
   font-size: 11px; /* oder die gewünschte Schriftgröße */
 }
+
 .terms-of-use {
   color: #FFB3B8; /* Ändere die Farbe nach Bedarf */
 }
@@ -55,13 +57,5 @@
 }
 
 .small-text {
-  font-size: 11px; /* gewünschte Schrift größe */
+  font-size: 11px; /* gewünschte Schriftgröße */
 }
-
-
-
-
-
-
-
-

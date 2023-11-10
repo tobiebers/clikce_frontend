@@ -47,11 +47,10 @@ export default function Registrieren() {
                 <span className="privacy-policy">privacy policy</span>.
               </label>
             </div>
-            <button className="mt-3 btn5 button-small">Create Account</button>
-            {/* Create Account Button nach rechts mit neuer Farbe und Rahmenfarbe */}
+            <button className="mt-3 btn6 button-small">Create Account</button>
 
             {/* Already have an account? Log in Text */}
-            <p className="small-text text-center mt-3">
+            <p className="small-text text-center mt-1">
               Already have an account?{' '}
               <span className="login-text" style={{ color: '#FFB3B8' }}>
                 Log In
