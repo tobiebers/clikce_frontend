@@ -48,13 +48,23 @@ export default function Registrieren() {
               </label>
             </div>
 
-            {/* Create Account Button nach rechts */}
-            <Button variant="primary" size="sm" className="mt-3 align-self-end">
+            {/* Create Account Button nach rechts mit neuer Farbe und Rahmenfarbe */}
+            <Button
+              variant="primary"
+              size="sm"
+              className="mt-3 align-self-end"
+              style={{ backgroundColor: '#4B8E94', borderColor: '#4B8E94' }}
+            >
               Create Account
             </Button>
 
             {/* Already have an account? Log in Text */}
-            <p className="small-text text-center mt-3">Already have an account? Log in</p>
+            <p className="small-text text-center mt-3">
+              Already have an account?{' '}
+              <span className="login-text" style={{ color: '#FFB3B8' }}>
+                Log In
+              </span>
+            </p>
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
