@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function Registrieren() {
   return (
     <Container>
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5}>
+        <Col md={5} className="d-flex flex-column align-items-center justify-content-center">
           <div>
             <img className="img-size-logologin" src="logo.png" />
             <div className="img-size-googleandfacebook-container">
@@ -38,10 +38,32 @@ export default function Registrieren() {
               <input type="password" className="white-input" />
             </div>
 
-            {/* Zusätzlicher Text in zwei Zeilen mit unterschiedlichen Farben */}
-            <p className="small-text text-center">
-              By creating an account you agree to the<br />
-              <span className="terms-of-use">terms of use</span> and our <span className="privacy-policy">privacy policy</span>.
+            {/* Checkbox unter den Textfeldern */}
+            <div className="checkbox-container text-center" style={{ marginTop: '0px' }}>
+              <input type="checkbox" id="termsCheckbox" />
+              <label htmlFor="termsCheckbox" className="checkbox-label smaller-text">
+                By creating an account you agree to the<br />
+                <span className="terms-of-use">terms of use</span> and our&nbsp;
+                <span className="privacy-policy">privacy policy</span>.
+              </label>
+            </div>
+
+            {/* Create Account Button nach rechts mit neuer Farbe und Rahmenfarbe */}
+            <Button
+              variant="primary"
+              size="sm"
+              className="mt-3 align-self-end"
+              style={{ backgroundColor: '#4B8E94', borderColor: '#4B8E94' }}
+            >
+              Create Account
+            </Button>
+
+            {/* Already have an account? Log in Text */}
+            <p className="small-text text-center mt-3">
+              Already have an account?{' '}
+              <span className="login-text" style={{ color: '#FFB3B8' }}>
+                Log In
+              </span>
             </p>
           </div>
         </Col>

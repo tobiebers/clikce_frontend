@@ -8,6 +8,7 @@ import 'styles/socialmediaAccounts.css'
 import 'styles/heroSection.css'
 import 'styles/Register.css'
 import 'styles/login.css'
+import 'styles/kontakt.css'
 
 
 export default function App({ Component, pageProps }) {
