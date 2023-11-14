@@ -11,7 +11,7 @@ export default function Pricing() {
         </Col>
       </Row>
 
-      <Row className="mt-4">
+      <Row className="mt-7">
         <Col>
           <Card style={{ height: '340px' }}>
             <Card.Body className="d-flex flex-column align-items-center">
@@ -24,7 +24,7 @@ export default function Pricing() {
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
                 Start Free Trial
               </Button>
-              <Card.Text className="small-text1 mt-2">
+              <Card.Text className="small-text mt-2">
                 <u>Learn more</u>
               </Card.Text>
             </Card.Body>
@@ -43,7 +43,7 @@ export default function Pricing() {
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
                 Start Free Trial
               </Button>
-              <Card.Text className="small-text1 mt-2">
+              <Card.Text className="small-text mt-2">
                 <u>Learn more</u>
               </Card.Text>
             </Card.Body>
@@ -62,7 +62,7 @@ export default function Pricing() {
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
                 Start Free Trial
               </Button>
-              <Card.Text className="small-text1 mt-2">
+              <Card.Text className="small-text mt-2">
                 <u>Learn more</u>
               </Card.Text>
             </Card.Body>
@@ -81,7 +81,7 @@ export default function Pricing() {
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
                 Start Free Trial
               </Button>
-              <Card.Text className="small-text1 mt-2">
+              <Card.Text className="small-text mt-2">
                 <u>Learn more</u>
               </Card.Text>
             </Card.Body>
