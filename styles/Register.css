@@ -29,11 +29,6 @@
   padding-left: 43px; /* Hier die Änderung für den Abstand nach rechts */
 }
 
-.text-container {
-  margin-top: 10px;
-  margin-bottom: 0px; /* Hier die Änderung für den Abstand zwischen den Textfeldern */
-  text-align: center;
-}
 
 .white-input {
   width: calc(90% - 10px); /* Hier angepasst, um den Margin-Wert zu berücksichtigen */

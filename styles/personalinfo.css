@@ -1,0 +1,48 @@
+.registration-form {
+  max-width: 400px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.form-field textarea {
+  height: 80px; /* Passen Sie diese Höhe an, um mehr oder weniger Text anzuzeigen */
+}
+
+.form-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #4B8E94;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-button:hover {
+  background-color: #3a6970;
+}
