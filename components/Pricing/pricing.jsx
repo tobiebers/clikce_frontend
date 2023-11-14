@@ -13,10 +13,10 @@ export default function Pricing() {
 
       <Row className="mt-7">
         <Col>
-          <Card style={{ height: '340px' }}>
+          <Card style={{ height: '340px'}}>
             <Card.Body className="d-flex flex-column align-items-center">
               <p>PROTECTED DATA</p>
-              <h5 className="mt-6 font-weight-bold">FREE USER</h5>
+              <h5 className="mt-6 font-weight-bold" style={{ fontSize: '1.5em' }}>FREE USER</h5>
               <h6 className="mt-4">€0/month</h6>
               <Card.Text className="small-text text-center mt-5">
                 Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
@@ -35,7 +35,7 @@ export default function Pricing() {
           <Card style={{ height: '340px' }}>
             <Card.Body className="d-flex flex-column align-items-center">
               <p>PROTECTED DATA</p>
-              <h5 className="mt-6 font-weight-bold">INFLUENCER</h5>
+              <h5 className="mt-6 font-weight-bold" style={{ fontSize: '1.5em' }}>INFLUENCER</h5>
               <h6 className="mt-4">€20/month</h6>
               <Card.Text className="small-text text-center mt-5">
                 Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
@@ -54,7 +54,7 @@ export default function Pricing() {
           <Card style={{ height: '340px' }}>
             <Card.Body className="d-flex flex-column align-items-center">
               <p>PROTECTED DATA</p>
-              <h5 className="mt-6 font-weight-bold">MANAGER</h5>
+              <h5 className="mt-6 font-weight-bold" style={{ fontSize: '1.5em' }}>MANAGER</h5>
               <h6 className="mt-4">€40/month</h6>
               <Card.Text className="small-text text-center mt-5">
                 Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
@@ -73,7 +73,7 @@ export default function Pricing() {
           <Card style={{ height: '340px' }}>
             <Card.Body className="d-flex flex-column align-items-center">
               <p>PROTECTED DATA</p>
-              <h5 className="mt-6 font-weight-bold">E COMMERCE</h5>
+              <h5 className="mt-6 font-weight-bold" style={{ fontSize: '1.5em' }}>E COMMERCE</h5>
               <h6 className="mt-4">€60/month</h6>
               <Card.Text className="small-text text-center mt-5">
                 Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
