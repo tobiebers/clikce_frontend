@@ -9,8 +9,6 @@ import 'styles/heroSection.css'
 import 'styles/Register.css'
 import 'styles/login.css'
 import 'styles/kontakt.css'
-import 'styles/carousel.css'
-import '@/styles/personalinfo.css'
 
 
 export default function App({ Component, pageProps }) {
