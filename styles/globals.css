@@ -42,7 +42,12 @@ body {
 .text-l {
     font-size: 22px;
 }
-
+.text-xl {
+    font-size: 48px;
+}
+.text-lx {
+    font-size: 40px;
+}
 /* ------------------Buttons-------------------- */
 
 /* CSS-Datei */
