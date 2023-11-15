@@ -2,40 +2,29 @@ import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
 export default function einstellungProfil() {
-  return (
-    <Container>
-      <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5} className="" style={{ textAlign: 'center' }}>
-          <img className="img-size-logologin mx-auto" src="logo.png" />
-          <div className="img-size-googleandfacebook-container">
-            <img className="img-size-googleandfacebook" src="facebook.png" alt="Facebook" />
-            <img className="img-size-googleandfacebook" src="google.png" alt="Google" />
-          </div>
-          <img className="img-size-or mx-auto" src="or.png" />
-          <div className="" style={{ width: '80%' }}>
-            <div className="transparent-text">E-Mail</div>
-            <input type="text" className="white-input input-text" style={{ width: '100%' }} />
-            <div className="transparent-text">Passwort</div>
-            <input type="text" className="white-input input-text" style={{ width: '100%' }} />
-            <Form.Group controlId="rememberCheckbox" className="d-flex align-items-center checkbox-custom-label">
-              <div className="checkbox-custom-input"> {/* Hier wird die benutzerdefinierte Checkbox-Stilisierung angewendet */}
-                <input type="checkbox" className="white-input" id="rememberCheckbox" />
-                <label for="rememberCheckbox">Remember me?</label>
-              </div>
-              <div className="ml-auto password-forget-text">Passwort vergessen?</div>
-            </Form.Group>
-            <button className="mt-3 btn5 button-small">Login</button>
-            <div className="new-account-text">
-            Du hast noch keinen Account? <span className="highlighted">New Account</span>
+      return (
+      <Container>
+        <Row className="background-color-heroSection m-2 mt-5">
+          <Col className="col-centered" md={6}>
+            <div>
+              <h1 className="custom-line-height mt-3 fw-bold">Erfolg in Sozialen</h1>
+              <h1 className="fw-bold">Medien - Wir machen</h1>
+              <h1 className="custom-line-height fw-bold mb-3">es möglich!</h1>
+              <p className="mt-5 text-m">
+                Strategie, Analyse und Umsetzung:<br/>
+                Entdecken Sie, wie unser umfassendes Social Media Management<br />
+                Ihre Socialmediapräsenz nach vorne bringt!
+              </p>
+              <button className="btn2 button-small">Register</button>
             </div>
-          </div>
-        </Col>
-        <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
-          <div>
-            <img className="img-size-logIn" src="LogInimage.png" alt="Bildbeschreibung" />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+          <Col className="col-centered text-end" md={6}>
+            <div>
+              <img className="img-size-hero" src="/heroSection.png"/>
+            </div>
+          </Col>
+        </Row>
+      </Container>
   );
 }
+

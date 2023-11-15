@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import einstellungProfil from 'components/einstellungProfil/einstellungProfil';
+import einstellungProfil from "@/components/einstellungProfil/einstellungProfil";
 export default function Home() {
 
   return (
