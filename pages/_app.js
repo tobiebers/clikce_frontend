@@ -9,6 +9,7 @@ import 'styles/heroSection.css'
 import 'styles/Register.css'
 import 'styles/login.css'
 import 'styles/kontakt.css'
+import 'sytles/einstellungProfil.css'
 
 
 export default function App({ Component, pageProps }) {
