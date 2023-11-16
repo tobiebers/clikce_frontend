@@ -1,0 +1,27 @@
+.persönlicheDaten-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.abstand-links {
+  margin-left: 220px;
+}
+
+.abstand-oben {
+    margin-top: 52px;
+}
+
+.abstand-dazwischen {
+    margin-top: 9px
+}
+
+
+.white-inputZiele {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  height: 120px;
+  margin-left: 40px;
+  resize: none;
+}
