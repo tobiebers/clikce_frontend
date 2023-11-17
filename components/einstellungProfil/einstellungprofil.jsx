@@ -42,8 +42,8 @@ export default function Einstellungprofil() {
         <Col md={5} className="" style={{ textAlign: 'center' }}>
           <div>
             <p className="transparent-text persönlicheDaten-text abstand-links">Persönliche Daten</p>
-            <p className="transparent-text abstand-links">Firstname:</p>
-            <p className="transparent-text abstand-links">Lastname:</p>
+            <p className="transparent-text abstand-links">Vorname:</p>
+            <p className="transparent-text abstand-links">Nachname:</p>
             <p className="transparent-text abstand-links">Branche:</p>
             <p className="transparent-text abstand-links">Sprache:</p>
             <p className="transparent-text abstand-links">Passwort:</p>
@@ -63,7 +63,7 @@ export default function Einstellungprofil() {
               <Form.Group className="abstand-dazwischen2" controlId="formTopic1">
                 <Form.Select className="white-input-dropdown dropdown-text" name="topic1" value={formData.topic} onChange={handleChange}>
                   <option value="">Wähle eine Branche</option>
-                  <option value="Influencer">Technical Support</option>
+                  <option value="Influencer">Influencer</option>
                   <option value="customerService">Customer Service</option>
                   <option value="partnershipInquiries">Partnership Inquiries</option>
                   <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
@@ -77,10 +77,10 @@ export default function Einstellungprofil() {
             <Form ref={formRef2} onSubmit={handleSubmit}>
             <Form.Group className="abstand-dazwischen2" controlId="formTopic2">
               <Form.Select className="white-input-dropdown dropdown-text" name="topic2" value={formData.topic} onChange={handleChange}>
-                <option value="">Select a topic</option>
-                <option value="technicalSupport">Technical Support</option>
-                <option value="customerService">Customer Service</option>
-                <option value="partnershipInquiries">Partnership Inquiries</option>
+                <option value="">Wähle eine Sprache</option>
+                <option value="technicalSupport">Deutsch</option>
+                <option value="customerService">Englisch</option>
+                <option value="partnershipInquiries">Italienisch</option>
                 <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
                 <option value="bug report">Bug Report</option>
                 <option value="other">Other</option>
