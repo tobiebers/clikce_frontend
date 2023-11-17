@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Dropdown } from 'react-bootstrap';
 
 export default function Einstellungprofil() {
   const branchenOptions = ['Option 1', 'Option 2', 'Option 3'];
   const spracheOptions = ['Deutsch', 'Englisch', 'Französisch'];
+
+  const [selectedBranche, setSelectedBranche] = useState('');
+  const [selectedSprache, setSelectedSprache] = useState('');
+
+  const handleBrancheChange = (selectedValue) => {
+    setSelectedBranche(selectedValue);
+  };
+
+  const handleSpracheChange = (selectedValue) => {
+    setSelectedSprache(selectedValue);
+  };
 
   return (
     <Container>
@@ -35,10 +46,13 @@ export default function Einstellungprofil() {
                   id="dropdown-branchen"
                   className="white-input input-text white-dropdown"
                 >
+                  {selectedBranche || 'Branche auswählen'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   {branchenOptions.map((option, index) => (
-                    <Dropdown.Item key={index}>{option}</Dropdown.Item>
+                    <Dropdown.Item key={index} onClick={() => handleBrancheChange(option)}>
+                      {option}
+                    </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
@@ -48,12 +62,15 @@ export default function Einstellungprofil() {
                 <Dropdown.Toggle
                   variant="success"
                   id="dropdown-sprache"
-                  className="white-input input-text"
+                  className="white-input input-text white-dropdown"
                 >
+                  {selectedSprache || 'Sprache auswählen'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   {spracheOptions.map((option, index) => (
-                    <Dropdown.Item key={index}>{option}</Dropdown.Item>
+                    <Dropdown.Item key={index} onClick={() => handleSpracheChange(option)}>
+                      {option}
+                    </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
@@ -66,13 +83,13 @@ export default function Einstellungprofil() {
               className="white-inputZiele input-text abstand-dazwischen"
               style={{ width: 'calc(100% - 77px)' }}
             />
-        <div className="input-container abstand-dazwischen">
-            <textarea
-              type="Beschreibung"
-              className="white-inputZiele input-text abstand-dazwischen"
-              style={{ width: 'calc(100% - 77px)' }}
-            />
-          </div>
+            <div className="input-container abstand-dazwischen">
+              <textarea
+                type="Beschreibung"
+                className="white-inputZiele input-text abstand-dazwischen"
+                style={{ width: 'calc(100% - 77px)' }}
+              />
+            </div>
           </div>
         </Col>
       </Row>

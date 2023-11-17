@@ -35,12 +35,6 @@
   color: #000 !important; /* Ändern Sie die Textfarbe auf die gewünschte Farbe */
 }
 
-/* Stil für Dropdown-Toogle beim Klicken */
-.white-dropdown .btn-secondary {
-  background-color: white !important;
-  color: #000 !important; /* Ändern Sie die Textfarbe auf die gewünschte Farbe */
-}
-
 /* Stil für Dropdown-Menü */
 .white-dropdown .dropdown-menu {
   background-color: white !important;
@@ -52,10 +46,8 @@
   color: #333 !important; /* Setzen Sie die Textfarbe für Dropdown-Elemente */
 }
 
-/* Stil für Dropdown-Elemente beim Hovern */
+/* Stil für Dropdown-Menü-Elemente beim Hovern */
 .white-dropdown .dropdown-item:hover {
-  background-color: #ccc !important; /* Ändern Sie die Hintergrundfarbe beim Hover nach Bedarf */
-  color: #000 !important; /* Ändern Sie die Textfarbe beim Hover nach Bedarf */
+  background-color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
-
-
