@@ -30,13 +30,14 @@
 }
 
 
-.white-input {
-  width: calc(90% - 10px); /* Hier angepasst, um den Margin-Wert zu berücksichtigen */
-  padding: 5px;
+.w-input {
+  width: calc(85% - 10px); /* Hier angepasst, um den Margin-Wert zu berücksichtigen */
+  padding: 0px 5px;
   margin: 5px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #fff;
+
 }
 
 .smaller-text {
@@ -53,4 +54,25 @@
 
 .small-text {
   font-size: 11px; /* gewünschte Schriftgröße */
+}
+/* Flex Container für Checkbox und Button */
+.checkbox-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+/* Stil für den Button */
+.button-small {
+  width: 30%; /* oder die gewünschte Breite */
+  margin-left: 0px;
+  /* Weitere Button-Stilisierungen */
+}
+
+/* Falls nötig, passen Sie die Checkbox-Stilisierung an */
+.checkbox-label {
+  width: 40%; /* oder die gewünschte Breite */
+  /* Weitere Checkbox-Stilisierungen */
 }
