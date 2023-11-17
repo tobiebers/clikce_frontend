@@ -15,6 +15,9 @@
     margin-top: 9px
 }
 
+.abstand-zuZiele {
+  margin-top: 115px
+}
 
 .white-inputZiele {
   background-color: white;
@@ -25,3 +28,34 @@
   margin-left: 40px;
   resize: none;
 }
+
+/* Stil für Dropdown-Toogle beim Klicken */
+.white-dropdown .dropdown-toggle.btn-secondary {
+  background-color: white !important;
+  color: #000 !important; /* Ändern Sie die Textfarbe auf die gewünschte Farbe */
+}
+
+/* Stil für Dropdown-Toogle beim Klicken */
+.white-dropdown .btn-secondary {
+  background-color: white !important;
+  color: #000 !important; /* Ändern Sie die Textfarbe auf die gewünschte Farbe */
+}
+
+/* Stil für Dropdown-Menü */
+.white-dropdown .dropdown-menu {
+  background-color: white !important;
+  width: 300px !important; /* Ändern Sie die Breite des Dropdown-Menüs nach Bedarf */
+}
+
+/* Stil für Dropdown-Elemente */
+.white-dropdown .dropdown-item {
+  color: #333 !important; /* Setzen Sie die Textfarbe für Dropdown-Elemente */
+}
+
+/* Stil für Dropdown-Elemente beim Hovern */
+.white-dropdown .dropdown-item:hover {
+  background-color: #ccc !important; /* Ändern Sie die Hintergrundfarbe beim Hover nach Bedarf */
+  color: #000 !important; /* Ändern Sie die Textfarbe beim Hover nach Bedarf */
+}
+
+

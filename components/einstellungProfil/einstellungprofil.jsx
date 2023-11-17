@@ -17,7 +17,7 @@ export default function Einstellungprofil() {
             <p className="transparent-text abstand-links">Sprache:</p>
             <p className="transparent-text abstand-links">Passwort:</p>
             <p className="transparent-text abstand-links">Ziele:</p>
-            <p className="transparent-text abstand-links">Kurze Beschreibung:</p>
+            <p className="transparent-text abstand-links abstand-zuZiele">Kurze Beschreibung:</p>
           </div>
         </Col>
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
@@ -33,7 +33,7 @@ export default function Einstellungprofil() {
                 <Dropdown.Toggle
                   variant="success"
                   id="dropdown-branchen"
-                  className="white-input input-text"
+                  className="white-input input-text white-dropdown"
                 >
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -61,10 +61,18 @@ export default function Einstellungprofil() {
             <div className="input-container abstand-dazwischen">
               <input type="text" className="white-input input-text abstand-dazwischen"/>
             </div>
-              <textarea type="ziele" className="white-inputZiele input-text abstand-dazwischen"/>
-            <div className="input-container abstand-dazwischen">
-              <textarea type="Beschreibung" className="white-input input-text"/>
-            </div>
+            <textarea
+              type="Beschreibung"
+              className="white-inputZiele input-text abstand-dazwischen"
+              style={{ width: 'calc(100% - 77px)' }}
+            />
+        <div className="input-container abstand-dazwischen">
+            <textarea
+              type="Beschreibung"
+              className="white-inputZiele input-text abstand-dazwischen"
+              style={{ width: 'calc(100% - 77px)' }}
+            />
+          </div>
           </div>
         </Col>
       </Row>
