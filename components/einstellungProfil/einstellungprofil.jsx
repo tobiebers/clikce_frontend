@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Container, Row, Col, Form, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 export default function Einstellungprofil() {
   const formRef1 = useRef();
@@ -86,11 +86,10 @@ export default function Einstellungprofil() {
                 <option value="other">Other</option>
               </Form.Select>
             </Form.Group>
-            {/* Add the rest of your form components here */}
           </Form>
 
             <div className="input-container abstand-dazwischen">
-              <input type="text" className="white-input input-text abstand-dazwischen"/>
+              <input type="password" className="white-input input-text abstand-dazwischen"/>
             </div>
             <textarea
               type="Beschreibung"
@@ -102,6 +101,9 @@ export default function Einstellungprofil() {
                 className="white-inputZiele input-text abstand-dazwischen"
               />
             </div>
+            <Button className="btn5" type="submit">
+              Speichern
+            </Button>
           </div>
         </Col>
       </Row>
