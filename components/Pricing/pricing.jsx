@@ -6,8 +6,8 @@ export default function Pricing() {
     <Container>
       <Row className="mt-5">
         <Col className="text-center">
-          <h2>Ready to get started?</h2>
-          <p>14 days unlimited free trial. No contract or credit card required.</p>
+          <h2>Bereit loszulegen?</h2>
+          <p>14 Tage unbegrenzter kostenloser Test. Keine Vertragsanbindung oder Kreditkarte erforderlich.</p>
         </Col>
       </Row>
 
@@ -17,17 +17,17 @@ export default function Pricing() {
             <Card.Body className="d-flex flex-column align-items-center">
               <h5 className="fw-bold" style={{ fontSize: '1.5em' }}>FREE USER</h5>
                <div className="col-md-6 d-flex align-items-baseline">
-                <h2 className="mb-0 mt-5 text-xl">€0</h2>
-                <p className="mb-0 ms-2">/month</p>
+                <h2 className="mb-0 mt-4 text-xl">€0</h2>
+                <p className="mb-0 ms-1">/monatlich</p>
               </div>
               <Card.Text className="small-text text-center mt-5">
-                Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
+                Modernisierung der Preisgestaltung für Unternehmenssicherheit  <br /> mit Forcepoint Advantage
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
-                Start Free Trial
+                Kostenlose Testversion
               </Button>
               <Card.Text className="small-text mt-2">
-                <u>Learn more</u>
+                <u>Erfahre mehr</u>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -38,17 +38,17 @@ export default function Pricing() {
             <Card.Body className="d-flex flex-column align-items-center">
               <h5 className="fw-bold" style={{ fontSize: '1.5em' }}>INFLUENCER</h5>
                <div className="col-md-6 d-flex align-items-baseline">
-                <h2 className="mb-0 mt-5 text-xl">€20</h2>
-                <p className="mb-0 ms-2">/month</p>
+                <h2 className="mb-0 mt-4 text-xl">€20</h2>
+                <p className="mb-0 ms-1">/monatlich</p>
               </div>
               <Card.Text className="small-text text-center mt-5">
-                Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
+                Modernisierung der Preisgestaltung für Unternehmenssicherheit <br /> mit Forcepoint Advantage
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
-                Start Free Trial
+               Kostenlose Testversion
               </Button>
               <Card.Text className="small-text mt-2">
-                <u>Learn more</u>
+                <u>Erfahre mehr</u>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -59,17 +59,17 @@ export default function Pricing() {
             <Card.Body className="d-flex flex-column align-items-center">
               <h5 className="fw-bold" style={{ fontSize: '1.5em' }}>MANAGER</h5>
                <div className="col-md-6 d-flex align-items-baseline">
-                <h2 className="mb-0 mt-5 text-xl">€40</h2>
-                <p className="mb-0 ms-2">/month</p>
+                <h2 className="mb-0 mt-4 text-xl">€40</h2>
+                <p className="mb-0 ms-1">/monatlich</p>
               </div>
               <Card.Text className="small-text text-center mt-5">
-                Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
+                Modernisierung der Preisgestaltung für Unternehmenssicherheit <br /> mit Forcepoint Advantage
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
-                Start Free Trial
+                Kostenlose Testversion
               </Button>
               <Card.Text className="small-text mt-2">
-                <u>Learn more</u>
+                <u>Erfahre mehr</u>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -80,17 +80,17 @@ export default function Pricing() {
             <Card.Body className="d-flex flex-column align-items-center">
               <h5 className="fw-bold" style={{ fontSize: '1.5em' }}>E COMMERCE</h5>
               <div className="col-md-6 d-flex align-items-baseline">
-                <h2 className="mb-0 mt-5 text-xl">€60</h2>
-                <p className="mb-0 ms-2">/month</p>
+                <h2 className="mb-0 mt-4 text-xl">€60</h2>
+                <p className="mb-0 ms-1">/monatlich</p>
               </div>
               <Card.Text className="small-text text-center mt-5">
-                Modernizing Enterprise Security Pricing <br /> with Forcepoint Advantage
+                Modernisierung der Preisgestaltung für Unternehmenssicherheit <br /> mit Forcepoint Advantage
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
-                Start Free Trial
+                Kostenlose Testversion
               </Button>
               <Card.Text className="small-text mt-2">
-                <u>Learn more</u>
+                <u>Erfahre mehr</u>
               </Card.Text>
             </Card.Body>
           </Card>
