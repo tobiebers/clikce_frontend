@@ -54,10 +54,10 @@ export default function Einstellungprofil() {
         <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
           <div>
             <div className="input-container abstand-oben">
-              <input type="text" className="white-input input-text"/>
+              <input type="text" className="white-inputeinstellungProfil input-text"/>
             </div>
             <div className="input-container abstand-dazwischen">
-              <input type="text" className="white-input input-text"/>
+              <input type="text" className="white-inputeinstellungProfil input-text"/>
             </div>
             <Form ref={formRef1} onSubmit={handleSubmit}>
               <Form.Group className="abstand-dazwischen2" controlId="formTopic1">
@@ -89,7 +89,7 @@ export default function Einstellungprofil() {
           </Form>
 
             <div className="input-container abstand-dazwischen">
-              <input type="password" className="white-input input-text abstand-dazwischen"/>
+              <input type="password" className="white-inputeinstellungProfil input-text abstand-dazwischen"/>
             </div>
             <textarea
               type="Beschreibung"
