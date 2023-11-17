@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Form, Dropdown } from 'react-bootstrap';
 
 export default function Einstellungprofil() {
+  const formRef1 = useRef();
+  const formRef2 = useRef();
+
   const branchenOptions = ['Option 1', 'Option 2', 'Option 3'];
   const spracheOptions = ['Deutsch', 'Englisch', 'Französisch'];
 
   const [selectedBranche, setSelectedBranche] = useState('');
   const [selectedSprache, setSelectedSprache] = useState('');
+  const [formData, setFormData] = useState({
+    topic1: '', // Add other form fields as needed
+    topic2: '',
+  });
 
   const handleBrancheChange = (selectedValue) => {
     setSelectedBranche(selectedValue);
@@ -14,6 +21,19 @@ export default function Einstellungprofil() {
 
   const handleSpracheChange = (selectedValue) => {
     setSelectedSprache(selectedValue);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Your form handling logic here
   };
 
   return (
@@ -39,55 +59,47 @@ export default function Einstellungprofil() {
             <div className="input-container abstand-dazwischen">
               <input type="text" className="white-input input-text"/>
             </div>
-            <div className="input-container abstand-dazwischen">
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="success"
-                  id="dropdown-branchen"
-                  className="white-input input-text white-dropdown"
-                >
-                  {selectedBranche || 'Branche auswählen'}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {branchenOptions.map((option, index) => (
-                    <Dropdown.Item key={index} onClick={() => handleBrancheChange(option)}>
-                      {option}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="input-container abstand-dazwischen">
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="success"
-                  id="dropdown-sprache"
-                  className="white-input input-text white-dropdown"
-                >
-                  {selectedSprache || 'Sprache auswählen'}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {spracheOptions.map((option, index) => (
-                    <Dropdown.Item key={index} onClick={() => handleSpracheChange(option)}>
-                      {option}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
+            <Form ref={formRef1} onSubmit={handleSubmit}>
+              <Form.Group className="abstand-dazwischen2" controlId="formTopic1">
+                <Form.Select className="white-input-dropdown dropdown-text" name="topic1" value={formData.topic} onChange={handleChange}>
+                  <option value="">Wähle eine Branche</option>
+                  <option value="Influencer">Technical Support</option>
+                  <option value="customerService">Customer Service</option>
+                  <option value="partnershipInquiries">Partnership Inquiries</option>
+                  <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
+                  <option value="bug report">Bug Report</option>
+                  <option value="other">Other</option>
+                </Form.Select>
+              </Form.Group>
+              {/* Add the rest of your form components here */}
+            </Form>
+
+            <Form ref={formRef2} onSubmit={handleSubmit}>
+            <Form.Group className="abstand-dazwischen2" controlId="formTopic2">
+              <Form.Select className="white-input-dropdown dropdown-text" name="topic2" value={formData.topic} onChange={handleChange}>
+                <option value="">Select a topic</option>
+                <option value="technicalSupport">Technical Support</option>
+                <option value="customerService">Customer Service</option>
+                <option value="partnershipInquiries">Partnership Inquiries</option>
+                <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
+                <option value="bug report">Bug Report</option>
+                <option value="other">Other</option>
+              </Form.Select>
+            </Form.Group>
+            {/* Add the rest of your form components here */}
+          </Form>
+
             <div className="input-container abstand-dazwischen">
               <input type="text" className="white-input input-text abstand-dazwischen"/>
             </div>
             <textarea
               type="Beschreibung"
-              className="white-inputZiele input-text abstand-dazwischen"
-              style={{ width: 'calc(100% - 77px)' }}
+              className="white-inputZiele input-text abstand-dazwischen2"
             />
             <div className="input-container abstand-dazwischen">
               <textarea
                 type="Beschreibung"
                 className="white-inputZiele input-text abstand-dazwischen"
-                style={{ width: 'calc(100% - 77px)' }}
               />
             </div>
           </div>
