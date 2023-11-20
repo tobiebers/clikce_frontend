@@ -32,6 +32,9 @@ body {
 
 
 /* ------------------Schriftgrößen-------------------- */
+.text-xs {
+    font-size: 10px;
+}
 .text-s {
     font-size: 14px;
 }
