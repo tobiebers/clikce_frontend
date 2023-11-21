@@ -5,6 +5,7 @@ import SocialmediaAccounts from "@/components/landingPage/socialmediaAccounts";
 import Placeholder from "@/components/staticComponents/Placeholder";
 import AuforderungAnmelden from "@/components/landingPage/accessAccount"
 import CarouselComponent from "@/components/landingPage/MyCarouselComponent";
+
 export default function Home() {
 
   return (
