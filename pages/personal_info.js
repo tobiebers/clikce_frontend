@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PersonalInfo from "@/components/personal_info/personal_info";
+import PersonalInfo from "@/components/Personal_info/personal_info";
 
 export default function personal_Info() {
 
