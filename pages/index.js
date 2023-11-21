@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import HeroSection from "@/components/landingPage/heroSection";
-import FunctionInfo from "@/components/landingPage/functionInfo";
-import SocialmediaAccounts from "@/components/landingPage/socialmediaAccounts";
+import HeroSection from "@/components/LandingPage/heroSection";
+import FunctionInfo from "@/components/LandingPage/functionInfo";
+import SocialmediaAccounts from "@/components/LandingPage/socialmediaAccounts";
 import Placeholder from "@/components/staticComponents/Placeholder";
-import AuforderungAnmelden from "@/components/landingPage/accessAccount"
-import CarouselComponent from "@/components/landingPage/MyCarouselComponent";
+import AuforderungAnmelden from "@/components/LandingPage/accessAccount"
+import CarouselComponent from "@/components/LandingPage/myCarouselComponent";
 
 export default function Home() {
 

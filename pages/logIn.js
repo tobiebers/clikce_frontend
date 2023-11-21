@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Login from "@/components/loginPage/login";
+import Login from "@/components/LoginPage/login";
 export default function logIn() {
 
   return (
