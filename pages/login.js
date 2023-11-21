@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Login from "@/components/loginPage/login";
-export default function logIn() {
+export default function login() {
 
   return (
     <div>
