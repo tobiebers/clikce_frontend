@@ -3,28 +3,28 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { SERVER_URL } from '../../config.js';
 
 export default function SettingProfil() {
-  const [vorname, setVorname] = useState('');
-  const [nachname, setNachname] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
   const [branche, setBranche] = useState('');
-  const [sprache, setSprache] = useState('');
+  const [language, setLanguage] = useState('');
   const [password, setPassword] = useState('');
-  const [ziele, setZiele] = useState('');
-  const [beschreibung, setBeschreibung] = useState('');
+  const [goals, setGoals] = useState('');
+  const [description, setDescription] = useState('');
 
-    const handleEinstellungprofil = async () => {
-    const response = await fetch(`${SERVER_URL}/einstellungProfil`, {
+    const handleSettingprofil = async () => {
+    const response = await fetch(`${SERVER_URL}/settingProfil`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
       body: JSON.stringify({
-        vorname: vorname,
-        nachname: nachname,
+        firstname: firstname,
+        lastname: lastname,
         branche: branche,
-        sprache: sprache,
+        language: language,
         password: password,
-        ziele: ziele,
-        beschreibung: beschreibung,
+        goals: goals,
+        description: description,
 
       }),
     });
@@ -38,11 +38,6 @@ export default function SettingProfil() {
   const formRef1 = useRef();
   const formRef2 = useRef();
 
-  const branchenOptions = ['Option 1', 'Option 2', 'Option 3'];
-  const spracheOptions = ['Deutsch', 'Englisch', 'Französisch'];
-
-  const [selectedBranche, setSelectedBranche] = useState('');
-  const [selectedSprache, setSelectedSprache] = useState('');
   const [formData, setFormData] = useState({
     topic1: '', // Add other form fields as needed
     topic2: '',
@@ -90,16 +85,16 @@ export default function SettingProfil() {
               <input
                   type="text"
                   className="white-inputeinstellungProfil input-text"
-                  value={vorname}
-                  onChange={(e) => setVorname(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
               />
             </div>
             <div className="input-container abstand-dazwischen">
               <input
                   type="text"
                   className="white-inputeinstellungProfil input-text"
-                  value={nachname}
-                  onChange={(e) => setNachname(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
               />
             </div>
             <Form ref={formRef1} onSubmit={handleSubmit}>
@@ -118,8 +113,8 @@ export default function SettingProfil() {
             </Form>
 
             <Form ref={formRef2} onSubmit={handleSubmit}>
-            <Form.Group className="abstand-dazwischen2" controlId="formTopic2" value={sprache}
-                  onChange={(e) => setSprache(e.target.value)}>
+            <Form.Group className="abstand-dazwischen2" controlId="formTopic2" value={language}
+                  onChange={(e) => setLanguage(e.target.value)}>
               <Form.Select className="white-input-dropdown dropdown-text" name="topic2" value={formData.topic} onChange={handleChange}>
                 <option value="">Wähle eine Sprache</option>
                 <option value="technicalSupport">Deutsch</option>
@@ -143,18 +138,18 @@ export default function SettingProfil() {
             <textarea
               type="Beschreibung"
               className="white-inputZiele input-text abstand-dazwischen2"
-              value={ziele}
-                  onChange={(e) => setZiele(e.target.value)}
+              value={goals}
+                  onChange={(e) => setGoals(e.target.value)}
             />
             <div className="input-container abstand-dazwischen">
               <textarea
                 type="Beschreibung"
                 className="white-inputZiele input-text abstand-dazwischen"
-                value={beschreibung}
-                  onChange={(e) => setBeschreibung(e.target.value)}
+                value={description}
+                  onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-            <Button className="btn5" type="submit" onClick={handleEinstellungprofil}>
+            <Button className="btn5" type="submit" onClick={handleSettingprofil}>
               Speichern
             </Button>
           </div>
