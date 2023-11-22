@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { SERVER_URL } from '../../config.js';
 
-export default function Einstellungprofil() {
+export default function SettingProfil() {
   const [vorname, setVorname] = useState('');
   const [nachname, setNachname] = useState('');
   const [branche, setBranche] = useState('');
