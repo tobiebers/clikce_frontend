@@ -11,6 +11,7 @@ export default function SettingProfil() {
   const [goals, setGoals] = useState('');
   const [description, setDescription] = useState('');
 
+
     const handleSettingprofil = async () => {
     const response = await fetch(`${SERVER_URL}/settingProfil`, {
     method: 'POST',
@@ -80,81 +81,78 @@ export default function SettingProfil() {
           </div>
         </Col>
         <Col md={7} className="farbe-rechts">
-          <div>
-            <div className="input-container abstand-oben">
-              <input
+          <Form onSubmit={handleSubmit}>
+            <div>
+              <div className="input-container abstand-oben">
+                <input
                   type="text"
                   className="white-inputeinstellungProfil input-text"
                   value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
-              />
-            </div>
-            <div className="input-container abstand-dazwischen">
-              <input
+                />
+              </div>
+              <div className="input-container abstand-dazwischen">
+                <input
                   type="text"
                   className="white-inputeinstellungProfil input-text"
                   value={lastname}
                   onChange={(e) => setLastname(e.target.value)}
-              />
-            </div>
-            <Form ref={formRef1} onSubmit={handleSubmit}>
-              <Form.Group className="abstand-dazwischen2" controlId="formTopic1" value={branche}
-                  onChange={(e) => setBranche(e.target.value)}>
-                <Form.Select className="white-input-dropdown dropdown-text" name="topic1" value={formData.topic} onChange={handleChange}>
-                  <option value="">Wähle eine Branche</option>
+                />
+              </div>
+              <Form.Group className="abstand-dazwischen2" controlId="formTopic1">
+                <Form.Select
+                  className="white-input-dropdown dropdown-text"
+                  name="topic1"
+                  value={branche}
+                  onChange={(e) => setBranche(e.target.value)}
+                >
+                  <option value="Business">Wähle eine Branche</option>
                   <option value="Influencer">Influencer</option>
                   <option value="customerService">Customer Service</option>
-                  <option value="partnershipInquiries">Partnership Inquiries</option>
-                  <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
-                  <option value="bug report">Bug Report</option>
-                  <option value="other">Other</option>
                 </Form.Select>
               </Form.Group>
-            </Form>
-
-            <Form ref={formRef2} onSubmit={handleSubmit}>
-            <Form.Group className="abstand-dazwischen2" controlId="formTopic2" value={language}
-                  onChange={(e) => setLanguage(e.target.value)}>
-              <Form.Select className="white-input-dropdown dropdown-text" name="topic2" value={formData.topic} onChange={handleChange}>
-                <option value="">Wähle eine Sprache</option>
-                <option value="technicalSupport">Deutsch</option>
-                <option value="customerService">Englisch</option>
-                <option value="partnershipInquiries">Italienisch</option>
-                <option value="feedbackAndSuggestions">Feedback and Suggestions</option>
-                <option value="bug report">Bug Report</option>
-                <option value="other">Other</option>
-              </Form.Select>
-            </Form.Group>
-          </Form>
-
-            <div className="input-container abstand-dazwischen">
-              <input
+              <Form.Group className="abstand-dazwischen2" controlId="formTopic2">
+                <Form.Select
+                  className="white-input-dropdown dropdown-text"
+                  name="topic2"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                >
+                  <option value="">Wähle eine Sprache</option>
+                  <option value="Deutsch">Deutsch</option>
+                  <option value="Englisch">Englisch</option>
+                </Form.Select>
+              </Form.Group>
+              <div className="input-container abstand-dazwischen">
+                <input
                   type="password"
                   className="white-inputeinstellungProfil input-text abstand-dazwischen"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <textarea
-              type="Beschreibung"
-              className="white-inputZiele input-text abstand-dazwischen2"
-              value={goals}
-                  onChange={(e) => setGoals(e.target.value)}
-            />
-            <div className="input-container abstand-dazwischen">
+                />
+              </div>
               <textarea
                 type="Beschreibung"
-                className="white-inputZiele input-text abstand-dazwischen"
-                value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                className="white-inputZiele input-text abstand-dazwischen2"
+                value={goals}
+                onChange={(e) => setGoals(e.target.value)}
               />
+              <div className="input-container abstand-dazwischen">
+                <textarea
+                  type="Beschreibung"
+                  className="white-inputZiele input-text abstand-dazwischen"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+              <Button className="btn5" type="submit" onClick={handleSettingprofil}>
+                Speichern
+              </Button>
             </div>
-            <Button className="btn5" type="submit" onClick={handleSettingprofil}>
-              Speichern
-            </Button>
-          </div>
+          </Form>
         </Col>
       </Row>
     </Container>
   );
 }
+
