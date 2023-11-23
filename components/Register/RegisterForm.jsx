@@ -102,7 +102,7 @@ export default function RegisterForm() {
         </Form.Group>
 
         <div className="text-center">
-          <Button type="submit" className="btn6 button-small mt-3">
+          <Button type="submit" className="btn5 button-small mt-3">
             Account erstellen
           </Button>
         </div>
