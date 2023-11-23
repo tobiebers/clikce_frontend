@@ -66,8 +66,8 @@ export default function SettingProfil() {
 
   return (
     <Container>
-      <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5} className="" style={{ textAlign: 'center' }}>
+      <Row noGutters className="farbe-links">
+        <Col md={5}>
           <div>
             <p className="transparent-text persönlicheDaten-text abstand-links">Persönliche Daten</p>
             <p className="transparent-text abstand-links">Vorname:</p>
@@ -79,7 +79,7 @@ export default function SettingProfil() {
             <p className="transparent-text abstand-links abstand-zuZiele">Kurze Beschreibung:</p>
           </div>
         </Col>
-        <Col md={7} style={{ backgroundColor: '#4B8E94' }}>
+        <Col md={7} className="farbe-rechts">
           <div>
             <div className="input-container abstand-oben">
               <input

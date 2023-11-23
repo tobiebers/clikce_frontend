@@ -67,3 +67,13 @@
   margin-left: 40px; /* Gleicher Abstand wie das "or"-Bild zum linken Rand */
 }
 
+
+.farbe-links {
+  height: 600px;
+  background-color: #D6EBEA;
+  align: center
+}
+
+.farbe-rechts {
+  background-color: #4B8E94
+}
