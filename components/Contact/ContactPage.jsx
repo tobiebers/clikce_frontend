@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
-import { SERVER_URL } from '../../config.js'; // Importieren Sie SERVER_URL aus Ihrer Konfigurationsdatei
+import { SERVER_URL } from '../../config.js';
 
 export default function ContactPage() {
-  const [vorname, setVorname] = useState('');
-  const [nachname, setNachname] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [handynummer, setHandynummer] = useState('');
-  const [adresse, setAdresse] = useState('');
-  const [land, setLand] = useState('');
-  const [passwort, setPasswort] = useState('');
-  const [meldung, setMeldung] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [address, setAddress] = useState('');
+  const [country, setCountry] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     if (!email.includes('@')) {
-      setMeldung('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      setMessage('Please enter a valid email address.');
       return;
     }
 
@@ -26,110 +26,109 @@ export default function ContactPage() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        vorname: vorname,
-        nachname: nachname,
-        email: email,
-        handynummer: handynummer,
-        adresse: adresse,
-        land: land,
-        passwort: passwort,
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        address,
+        country,
+        password,
       }),
     });
 
     const data = await response.json();
     if (response.ok) {
-      setMeldung('Daten erfolgreich an das Backend gesendet. Antwort: ' + JSON.stringify(data));
+      setMessage('Data successfully sent to backend. Response: ' + JSON.stringify(data));
     } else {
-      setMeldung('Fehler beim Senden der Daten an das Backend: ' + JSON.stringify(data));
+      setMessage('Error sending data to backend: ' + JSON.stringify(data));
     }
   };
 
-  return (
-    <Container>
-      <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
-        <Col md={5} style={{ textAlign: 'center' }}>
-          <div style={{ width: '80%' }}>
-            <Form onSubmit={handleFormSubmit}>
-              <Form.Group controlId="vorname">
-                <Form.Label>Vorname:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Vorname"
-                  value={vorname}
-                  onChange={(e) => setVorname(e.target.value)}
-                />
-              </Form.Group>
+return (
+  <Container>
+    <Row className="rowCustom">
+      <Col md={5} className="colForm">
+        <div className="formWrapper">
+          <Form onSubmit={handleFormSubmit}>
+            <Form.Group controlId="firstName">
+              <Form.Label>First Name:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="nachname">
-                <Form.Label>Nachname:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Nachname"
-                  value={nachname}
-                  onChange={(e) => setNachname(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="lastName">
+              <Form.Label>Last Name:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="email">
-                <Form.Label>Email:</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="handynummer">
-                <Form.Label>Handynummer:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Handynummer"
-                  value={handynummer}
-                  onChange={(e) => setHandynummer(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="phoneNumber">
+              <Form.Label>Phone Number:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="adresse">
-                <Form.Label>Adresse:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Adresse"
-                  value={adresse}
-                  onChange={(e) => setAdresse(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="address">
+              <Form.Label>Address:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="land">
-                <Form.Label>Land:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Land"
-                  value={land}
-                  onChange={(e) => setLand(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="country">
+              <Form.Label>Country:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group controlId="passwort">
-                <Form.Label>Passwort:</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Passwort"
-                  value={passwort}
-                  onChange={(e) => setPasswort(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
-              <Button variant="primary" type="submit">
-                Senden
-              </Button>
-            </Form>
-          </div>
-        </Col>
-        <Col md={7} style={{ backgroundImage: `url('Kontakt Form.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          {/* Hier können Sie das Bild als Hintergrund einfügen */}
-        </Col>
-      </Row>
-    </Container>
+            <Button variant="primary" type="submit">
+              Send
+            </Button>
+          </Form>
+        </div>
+      </Col>
+      <Col md={7} className="imgCustom">
+      </Col>
+    </Row>
+  </Container>
   );
 }

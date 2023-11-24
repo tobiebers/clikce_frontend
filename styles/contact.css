@@ -5,8 +5,14 @@
 .rowCustom {
   height: 600px;
   background-color: #D6EBEA;
-  margin: 0;
-  padding: 0;
+}
+
+.colForm {
+  text-align: center;
+}
+
+.formWrapper {
+  width: 80%;
 }
 
 .colCustom {
@@ -14,7 +20,9 @@
 }
 
 .imgCustom {
-  width: 100%;
-  height: auto;
-  padding: 0px;
+  background-image: url('/ContactForm.png');
+  background-size: cover;
+  background-position: center;
 }
+
+
