@@ -8,7 +8,7 @@ import 'styles/socialmediaAccounts.css'
 import 'styles/heroSection.css'
 
 import 'styles/login.css'
-import 'styles/kontakt.css'
+import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
 
 

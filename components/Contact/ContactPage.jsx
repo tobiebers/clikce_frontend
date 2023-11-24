@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { SERVER_URL } from '../../config.js'; // Importieren Sie SERVER_URL aus Ihrer Konfigurationsdatei
 
-export default function Kontakt() {
+export default function ContactPage() {
   const [vorname, setVorname] = useState('');
   const [nachname, setNachname] = useState('');
   const [email, setEmail] = useState('');
