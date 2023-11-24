@@ -83,3 +83,8 @@
 .new-account-text .highlighted {
   color: #FFB3B8; /* Textfarbe für "New Account" ändern */
 }
+
+.login-rechtsfarbe {
+    height: 600px;
+    background-color: #D6EBEA
+}

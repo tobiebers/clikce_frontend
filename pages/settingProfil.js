@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SettingProfil from "@/components/settingProfil/settingProfil";
+import SettingProfil from "@/components/setting-profil/SettingProfil";
 
 export default function settingProfil() {
 
