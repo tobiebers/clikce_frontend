@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import HeroSection from "@/components/LandingPage/heroSection";
-import FunctionInfo from "@/components/LandingPage/functionInfo";
-import SocialmediaAccounts from "@/components/LandingPage/socialmediaAccounts";
+import HeroSection from "@/components/LandingPage/HeroSection";
+import FunctionInfo from "@/components/LandingPage/FunctionInfo";
+import SocialMediaAccounts from "@/components/LandingPage/SocialMediaAccounts";
 import Placeholder from "@/components/staticComponents/Placeholder";
-import AuforderungAnmelden from "@/components/LandingPage/accessAccount"
+import AuforderungAnmelden from "@/components/LandingPage/AccessAccount"
 import CarouselComponent from "@/components/LandingPage/myCarouselComponent";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
 
         <HeroSection/>
         <Placeholder/>
-        <SocialmediaAccounts/>
+        <SocialMediaAccounts/>
         <Placeholder/>
         <CarouselComponent/>
         <Placeholder/>

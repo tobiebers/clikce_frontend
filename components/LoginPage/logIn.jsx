@@ -27,7 +27,7 @@ export default function Login() {
   };
 
   return (
-    <Container>
+
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
         <Col md={5} style={{ textAlign: 'center' }}>
           <img className="img-size-or mx-auto" src="or.png" />
@@ -66,6 +66,6 @@ export default function Login() {
              <img className="img-size-logIn" src="LogInimage.png" alt="Bildbeschreibung" />
         </Col>
       </Row>
-    </Container>
+
   );
 }
