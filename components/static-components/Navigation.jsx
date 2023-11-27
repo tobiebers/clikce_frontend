@@ -23,12 +23,12 @@ function Navigation() {
         </Nav>
         <Nav className="ml-auto flex-nowrap d-lg-none">
           <Button className="btn1 button-medium" variant="outline-primary" onClick={() => handleNavigation('/login')}>Login</Button>
-          <Button className="btn2 button-medium" variant="outline-secondary" onClick={() => handleNavigation('/Register')}>Register</Button>
+          <Button className="btn2 button-medium" variant="outline-secondary" onClick={() => handleNavigation('/register')}>Register</Button>
         </Nav>
       </Navbar.Collapse>
       <Nav className="ml-auto flex-nowrap d-none d-lg-flex">
         <Button className="btn1 button-medium" variant="outline-primary" onClick={() => handleNavigation('/login')}>Login</Button>
-        <Button className="btn2 button-medium" variant="outline-secondary" onClick={() => handleNavigation('/Register')}>Register</Button>
+        <Button className="btn2 button-medium" variant="outline-secondary" onClick={() => handleNavigation('/register')}>Register</Button>
       </Nav>
     </Navbar>
   );
