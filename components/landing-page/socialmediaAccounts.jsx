@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-export default function SocialmediaAccounts() {
+export default function SocialMediaAccounts() {
   return (
     <Container className="text-center">
       <h1>Verbinde deine Social Media Accounts</h1>

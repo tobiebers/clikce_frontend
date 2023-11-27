@@ -1,0 +1,28 @@
+.containerCustom {
+  margin-top: 100px;
+}
+
+.rowCustom {
+  height: 600px;
+  background-color: #D6EBEA;
+}
+
+.colForm {
+  text-align: center;
+}
+
+.formWrapper {
+  width: 80%;
+}
+
+.colCustom {
+  background-color: #4B8E94;
+}
+
+.imgCustom {
+  background-image: url('/ContactForm.png');
+  background-size: cover;
+  background-position: center;
+}
+
+

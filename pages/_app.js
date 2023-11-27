@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect } from 'react';
-import Layout from "@/components/staticComponents/Layout";
+import Layout from "@/components/static-components/Layout";
 import '/styles/navigation.css'
 import '/styles/functionInfo.css'
 import 'styles/globals.css'
-import 'styles/socialmediaAccounts.css'
+import '@/styles/socialMediaAccounts.css'
 import 'styles/heroSection.css'
 
 import 'styles/login.css'
-import 'styles/kontakt.css'
+import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
 
 
