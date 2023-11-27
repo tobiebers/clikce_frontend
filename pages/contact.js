@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ContactPage from "@/components/Contact/ContactPage";
+import ContactPage from "@/components/contact/ContactPage";
 export default function contact() {
 
   return (

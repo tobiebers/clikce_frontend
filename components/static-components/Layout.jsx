@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Navigation from "@/components/staticComponents/Navigation";
-import Footer from "@/components/staticComponents/Footer";
+import Navigation from "@/components/static-components/Navigation";
+import Footer from "@/components/static-components/Footer";
 
 export default function Layout({children}) {
   return (
