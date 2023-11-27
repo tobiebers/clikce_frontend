@@ -11,7 +11,7 @@ export default function SettingProfilRightColumn() {
             <p className="transparent-text abstand-links">Sprache:</p>
             <p className="transparent-text abstand-links">Passwort:</p>
             <p className="transparent-text abstand-links">Ziele:</p>
-            <p className="transparent-text abstand-links abstand-zuZiele">Kurze Beschreibung:</p>
+            <p className="transparent-text abstand-links abstand-zuZiele">Kurze  Beschreibung:</p>
         </div>
   );
 }
