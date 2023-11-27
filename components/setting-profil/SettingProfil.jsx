@@ -35,31 +35,6 @@ export default function SettingProfil() {
   };
 
 
-
-  const formRef1 = useRef();
-  const formRef2 = useRef();
-
-  const [formData, setFormData] = useState({
-    topic1: '', // Add other form fields as needed
-    topic2: '',
-  });
-
-  const handleBrancheChange = (selectedValue) => {
-    setSelectedBranche(selectedValue);
-  };
-
-  const handleSpracheChange = (selectedValue) => {
-    setSelectedSprache(selectedValue);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     // Your form handling logic here
