@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function HeroSection() {
+export default function AccessAccount() {
   return (
       <Container>
         <Row className="background-color-white m-2 rounded-45">
