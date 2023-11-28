@@ -106,7 +106,7 @@ export default function SettingProfil() {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-              <Button className="btn1 float-end" type="submit" onClick={handleSettingprofil}>
+              <Button className="btn2 button-small float-end" type="submit" onClick={handleSettingprofil}>
                 Speichern
               </Button>
                 </div>
