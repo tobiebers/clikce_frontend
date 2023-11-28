@@ -30,6 +30,17 @@ body {
   height: 120px;  /* oder die gewünschte Höhe */
 }
 
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+
 
 /* ------------------Schriftgrößen-------------------- */
 .text-xs {
