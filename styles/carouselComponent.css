@@ -1,0 +1,25 @@
+/* CarouselComponent.css */
+.carousel-item {
+  height: 500px; /* Gewünschte Höhe des Carousel-Elements */
+  background-size: cover; /* Sorgt dafür, dass das Bild den gesamten Container bedeckt */
+  background-position: center; /* Zentriert das Bild */
+}
+
+.carousel-caption {
+  color: black; /* Schriftfarbe */
+  padding: 10px; /* Abstand */
+}
+
+.carousel-item-1 {
+  background-image: url('/PlaceHolder.jpg');
+}
+
+.carousel-item-2 {
+  background-image: url('/PlaceHolder.jpg');
+}
+
+.carousel-item-3 {
+  background-image: url('/PlaceHolder.jpg');
+}
+
+/* Weitere .carousel-item-N Klassen für zusätzliche Bilder */

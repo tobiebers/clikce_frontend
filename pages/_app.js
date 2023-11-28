@@ -6,7 +6,7 @@ import '/styles/functionInfo.css'
 import 'styles/globals.css'
 import '@/styles/socialMediaAccounts.css'
 import 'styles/heroSection.css'
-
+import 'styles/carouselComponent.css'
 import 'styles/login.css'
 import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
