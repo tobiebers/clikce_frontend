@@ -31,13 +31,12 @@ export default function SettingProfil() {
     });
 
     const data = await response.json();
-    console.log(data); // Zeigt die Antwort des Servers
+    console.log(data);
   };
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Your form handling logic here
   };
   return (
         <div>
@@ -51,7 +50,7 @@ export default function SettingProfil() {
                   onChange={(e) => setFirstname(e.target.value)}
                 />
               </div>
-              <div className="input-container abstand-dazwischen">
+              <div className="mt-3">
                 <input
                   type="text"
                   className="white-inputeinstellungProfil input-text"
@@ -59,7 +58,7 @@ export default function SettingProfil() {
                   onChange={(e) => setLastname(e.target.value)}
                 />
               </div>
-              <Form.Group className="abstand-dazwischen2" controlId="formTopic1">
+              <Form.Group className="mt-3" controlId="formTopic1">
                 <Form.Select
                   className="white-input-dropdown dropdown-text"
                   name="topic1"
@@ -71,7 +70,7 @@ export default function SettingProfil() {
                   <option value="customerService">Customer Service</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="abstand-dazwischen2" controlId="formTopic2">
+              <Form.Group className="mt-3" controlId="formTopic2">
                 <Form.Select
                   className="white-input-dropdown dropdown-text"
                   name="topic2"
@@ -83,29 +82,31 @@ export default function SettingProfil() {
                   <option value="Englisch">Englisch</option>
                 </Form.Select>
               </Form.Group>
-              <div className="input-container abstand-dazwischen">
+              <div className="mt-3">
                 <input
                   type="password"
-                  className="white-inputeinstellungProfil input-text abstand-dazwischen"
+                  className="white-inputeinstellungProfil input-text"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+              <div className="mt-3">
               <textarea
-                type="Beschreibung"
-                className="white-inputZiele input-text abstand-dazwischen2"
+                type="text"
+                className="white-inputZiele input-text"
                 value={goals}
                 onChange={(e) => setGoals(e.target.value)}
               />
-              <div className="input-container abstand-dazwischen">
+              </div>
+              <div className="mt-3">
                 <textarea
-                  type="Beschreibung"
-                  className="white-inputZiele input-text abstand-dazwischen"
+                  type="text"
+                  className="white-inputZiele input-text"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-              <Button className="btn5" type="submit" onClick={handleSettingprofil}>
+              <Button className="btn1 float-end" type="submit" onClick={handleSettingprofil}>
                 Speichern
               </Button>
                 </div>

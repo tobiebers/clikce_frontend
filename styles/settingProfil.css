@@ -8,14 +8,10 @@
 }
 
 .abstand-oben {
-    margin-top: 52px;
+    margin-top: 90px;
 }
 
 .abstand-dazwischen {
-    margin-top: 15px
-}
-
-.abstand-dazwischen2 {
     margin-top: 15px
 }
 
@@ -63,7 +59,7 @@
   border: none;
   border-radius: 10px;
   padding: 5px;
-  height: 20px;
+  height: 22px;
   margin-left: 40px; /* Gleicher Abstand wie das "or"-Bild zum linken Rand */
 }
 
