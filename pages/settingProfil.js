@@ -6,11 +6,11 @@ import SettingProfilRightColumn from "@/components/setting-profil/SettingProfilR
 export default function SettingProfil() {
   return (
     <div>
-      <Row className="min-vh-80 align-items-center">
-        <Col md={5} className="d-flex justify-content-center">
+      <Row>
+        <Col md={5} className="background-color-secondary">
           <SettingProfilLeftColumn />
         </Col>
-        <Col md={7}>
+        <Col md={7} className="background-color-primary">
           <SettingProfilRightColumn />
         </Col>
       </Row>
