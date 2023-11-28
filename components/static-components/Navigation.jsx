@@ -18,8 +18,8 @@ function Navigation() {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav className="mx-lg-auto">
           <Nav.Link className="mx-5" onClick={() => handleNavigation('/app/post')}>Funktionen</Nav.Link>
-          <Nav.Link className="mx-5" onClick={() => handleNavigation('/page2')}>Preise</Nav.Link>
-          <Nav.Link className="mx-5" onClick={() => handleNavigation('/page3')}>Kontakt</Nav.Link>
+          <Nav.Link className="mx-5" onClick={() => handleNavigation('/pricing')}>Preise</Nav.Link>
+          <Nav.Link className="mx-5" onClick={() => handleNavigation('/contact')}>Kontakt</Nav.Link>
         </Nav>
         <Nav className="ml-auto flex-nowrap d-lg-none">
           <Button className="btn1 button-medium" variant="outline-primary" onClick={() => handleNavigation('/login')}>Login</Button>
