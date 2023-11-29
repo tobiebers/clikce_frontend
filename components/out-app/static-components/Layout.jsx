@@ -1,8 +1,33 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Navigation from "@/components/out-app/static-components/Navigation";
 import Footer from "@/components/out-app/static-components/Footer";
+import VerticalNavigation from "@/components/in-app/static/VerticalNavigation";
+import { useEffect, useState } from 'react';
 
 export default function Layout({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Event-Handler für benutzerdefiniertes Login-Event
+    const handleLoginEvent = (e) => {
+      setIsLoggedIn(e.detail);
+    };
+
+    // EventListener hinzufügen, der auf das Login-Event hört
+    window.addEventListener('user-login', handleLoginEvent);
+
+    // Überprüfen Sie den Anmeldestatus beim Laden der Komponente
+    setIsLoggedIn(sessionStorage.getItem('isLoggedIn') === 'true');
+
+    // EventListener bereinigen, wenn die Komponente unmountet
+    return () => {
+      window.removeEventListener('user-login', handleLoginEvent);
+    };
+  }, []);
+
+  // Entscheiden Sie basierend auf dem Anmeldestatus, welche Navigation angezeigt wird
+  const navigationComponent = isLoggedIn ? <VerticalNavigation /> : <Navigation />;
+
   return (
     <>
       <Head>
@@ -12,7 +37,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/logo.png" />
       </Head>
       <div className="body-wrapper">
-        <Navigation />
+        {navigationComponent}
         <div className="main-content container">
           {children}
         </div>

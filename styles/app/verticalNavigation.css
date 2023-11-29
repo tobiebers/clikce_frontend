@@ -1,0 +1,33 @@
+.navigation-container {
+  width: 200px; /* or your preferred width */
+  height: 100vh;
+  background-color: #f0f4f8; /* Example background color */
+}
+
+.logo {
+  /* Your logo styles */
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+}
+
+.navigation-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-menu button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.navigation-menu button:hover {
+  background-color: #e0e0e0;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '/firebaseConfig'; // Pfad zur Firebase-Konfigurationsdatei anpassen
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -12,14 +13,16 @@ export default function LoginForm() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      sessionStorage.setItem('isLoggedIn', 'true');
+      // Ein benutzerdefiniertes Event auslösen, um den Login-Zustand global bekannt zu machen
+      window.dispatchEvent(new CustomEvent('user-login', { detail: true }));
       setModalMessage('Login erfolgreich! Weiterleitung...');
       setShowModal(true);
       setTimeout(() => {
-        router.push('/');
+        router.push('/app/dashboard');
       }, 2000); // Weiterleitung nach 2 Sekunden
     } catch (error) {
       setModalMessage(`Fehler beim Login: ${error.message}`);
@@ -28,6 +31,8 @@ export default function LoginForm() {
   };
 
   const handleCloseModal = () => setShowModal(false);
+
+
 
   return (
     <Container className="text-center">
