@@ -7,7 +7,7 @@ export default function Pricing() {
       <Row className="mt-5">
         <Col className="text-center">
           <h2>Bereit zum loszulegen? Erkunden Sie Ihre Chancen bei uns</h2>
-          <p>Sichern Sie sich unseren 14-tägigen unbegrenzten kostenlosen Test. Eine gültige Kreditkarte und Vertragsbindung sind erforderlich.</p>
+          <p>Sichern Sie sich unseren 14-tägigen unbegrenzten kostenlosen Test.</p>
         </Col>
       </Row>
 
@@ -20,7 +20,7 @@ export default function Pricing() {
                 <h2 className="mb-0 mt-4 text-xl">€0</h2>
                 <p className="mb-0 ms-1 text-s">/mo</p>
               </div>
-              <Card.Text className="text-xs text-center mt-5">
+              <Card.Text className="text-js text-center mt-5">
                 Nutzen Sie die grundlegenden Funktionen unseres Services völlig kostenlos. Perfekt für Einsteiger und kleine Projekte.
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
@@ -38,7 +38,7 @@ export default function Pricing() {
                 <h2 className="mb-0 mt-4 text-xl">€20</h2>
                 <p className="mb-0 ms-1 text-s">/mo</p>
               </div>
-              <Card.Text className="text-xs text-center mt-5">
+              <Card.Text className="text-js text-center mt-5">
                  Steigern Sie Ihre Reichweite mit erweiterten Funktionen. Ideal für Influencer und wachsende Online-Präsenzen.
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
@@ -56,7 +56,7 @@ export default function Pricing() {
                 <h2 className="mb-0 mt-4 text-xl">€40</h2>
                 <p className="mb-0 ms-1 text-s">/mo</p>
               </div>
-              <Card.Text className="text-xs text-center mt-5">
+              <Card.Text className="text-js text-center mt-5">
                 Optimieren Sie Ihr Management mit erweiterten Tools. Perfekt für Manager und Teams, die effizient arbeiten möchten.
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>
@@ -74,7 +74,7 @@ export default function Pricing() {
                 <h2 className="mb-0 mt-4 text-xl">€60</h2>
                 <p className="mb-0 ms-1 text-s">/mo</p>
               </div>
-              <Card.Text className="text-xs text-center mt-5">
+              <Card.Text className="text-js text-center mt-5">
                 Steigern Sie Ihren Online-Shop mit leistungsstarken E-Commerce-Funktionen. Ideal für wachsende Online-Geschäfte.
               </Card.Text>
               <Button variant="danger" className="mt-2" style={{ backgroundColor: '#008080', color: 'black', borderColor: '#008080' }}>

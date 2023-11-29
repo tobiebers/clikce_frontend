@@ -46,6 +46,9 @@ body {
 .text-xs {
     font-size: 10px;
 }
+.text-js {
+    font-size: 12px;
+}
 .text-s {
     font-size: 14px;
 }
