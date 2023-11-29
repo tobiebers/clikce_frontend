@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Col, Row} from "react-bootstrap";
-import SettingProfilLeftColumn from "@/components/setting-profil/SettingProfilLeftColumn";
-import SettingProfilRightColumn from "@/components/setting-profil/SettingProfilRightColumn";
+import SettingProfilLeftColumn from "@/components/out-app/setting-profil/SettingProfilLeftColumn";
+import SettingProfilRightColumn from "@/components/out-app/setting-profil/SettingProfilRightColumn";
 
 export default function SettingProfil() {
   return (

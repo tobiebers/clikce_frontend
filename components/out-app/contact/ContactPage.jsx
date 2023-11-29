@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
-import { SERVER_URL } from '../../config.js';
+import { SERVER_URL } from '../../../config.js';
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState('');

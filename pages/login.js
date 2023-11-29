@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginRightColumn from "@/components/login-page/LoginRightColumn";
-import LoginForm from "@/components/login-page/LoginForm";
+import LoginRightColumn from "@/components/out-app/login-page/LoginRightColumn";
+import LoginForm from "@/components/out-app/login-page/LoginForm";
 import {Col, Row} from "react-bootstrap";
 
 

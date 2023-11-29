@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect } from 'react';
-import Layout from "@/components/static-components/Layout";
+import Layout from "@/components/out-app/static-components/Layout";
 import '/styles/navigation.css'
 import '/styles/functionInfo.css'
 import 'styles/globals.css'

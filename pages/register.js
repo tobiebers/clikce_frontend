@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import RegisterRightCol from "@/components/register/RegisterRightCol";
-import RegisterLeftCol from "@/components/register/RegisterLeftCol";
-import RegisterForm from "@/components/register/RegisterForm";
+import RegisterRightCol from "@/components/out-app/register/RegisterRightCol";
+import RegisterLeftCol from "@/components/out-app/register/RegisterLeftCol";
+import RegisterForm from "@/components/out-app/register/RegisterForm";
 import {Col, Row} from "react-bootstrap";
 
 export default function register() {

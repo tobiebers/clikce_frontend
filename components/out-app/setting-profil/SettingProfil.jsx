@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { SERVER_URL } from '../../config.js';
+import { SERVER_URL } from '../../../config.js';
 
 export default function SettingProfil() {
   const [firstname, setFirstname] = useState('');
