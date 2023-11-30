@@ -9,16 +9,14 @@ const VerticalNavigation = () => {
 
   return (
     <div className="navigation-container">
-      <div className="logo">CLIKEE</div>
+      <div className="logo">CLIKCE</div>
       <nav className="navigation-menu">
-        <button onClick={() => navigate('/dashboard')}>Dashboard</button>
-        <button onClick={() => navigate('/analytics')}>Analytics</button>
-        <button onClick={() => navigate('/account-management')}>Acc Management</button>
-        <button onClick={() => navigate('/ad-manager')}>Ad Manager</button>
-        <button onClick={() => navigate('/calendar')}>Calendar</button>
-        <button onClick={() => navigate('/messages')}>Messages</button>
-        <button onClick={() => navigate('/functions')}>Functions</button>
-        <button onClick={() => navigate('/settings')}>Settings</button>
+        <button onClick={() => navigate('app/dashboard')}>Dashboard</button>
+        <button onClick={() => navigate('app/analytics')}>Analytics</button>
+        <button onClick={() => navigate('app/accountManagement')}>Acc Management</button>
+        <button onClick={() => navigate('app/calendar')}>Calendar</button>
+        <button onClick={() => navigate('app/functions')}>Functions</button>
+        <button onClick={() => navigate('app/settings')}>Settings</button>
       </nav>
     </div>
   );
