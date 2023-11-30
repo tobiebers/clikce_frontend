@@ -1,0 +1,46 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.questionnaire-container {
+  animation: fadeIn 1s ease-in-out 0.5s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.input-field {
+  margin: 20px 0 10px;
+  padding: 10px 15px;
+  width: 90%; /* Erhöhte Breite */
+  max-width: 500px; /* Erhöhte maximale Breite */
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Neuer Wrapper für die Button-Gruppe */
+.button-group-wrapper {
+  display: flex;
+  justify-content: center; /* Zentriert den button-group Container */
+  width: 100%;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Verteilt die Buttons in der Gruppe */
+  align-items: center; /* Zentriert die Buttons vertikal */
+  width: 90%; /* Breite der Button-Gruppe */
+  max-width: 500px; /* Maximale Breite der Button-Gruppe */
+}
+
+
+
+
+
+

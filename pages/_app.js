@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState, useEffect } from 'react';
 import DefaultLayout from "@/components/out-app/static-components/DefaultLayout";
-import LoggedInLayout from "@/components/out-app/static-components/LoggedInLayout";
+import LoggedInLayout from "@/components/in-app/static/LoggedInLayout";
 import '/styles/navigation.css'
 import '/styles/home-page/functionInfo.css'
 import 'styles/globals.css'
@@ -12,6 +12,7 @@ import 'styles/login.css'
 import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
 import '@/styles/app/verticalNavigation.css'
+import '@/styles/app/questions.css'
 
 
 
