@@ -19,12 +19,12 @@ const VerticalNavigation = () => {
     <div className="navigation-container">
       <div className="logo">CLIKCE</div>
       <nav className="navigation-menu">
-        <button onClick={() => navigate('app/dashboard')}>Dashboard</button>
-        <button onClick={() => navigate('app/analytics')}>Analytics</button>
-        <button onClick={() => navigate('app/accountManagement')}>Acc Management</button>
-        <button onClick={() => navigate('app/calendar')}>Calendar</button>
-        <button onClick={() => navigate('app/functions')}>Functions</button>
-        <button onClick={() => navigate('app/profileSettings')}>Settings</button>
+        <button onClick={() => navigate('/app/dashboard')}>Dashboard</button>
+        <button onClick={() => navigate('/app/analytics')}>Analytics</button>
+        <button onClick={() => navigate('/app/accountManagement')}>Acc Management</button>
+        <button onClick={() => navigate('/app/calendar')}>Calendar</button>
+        <button onClick={() => navigate('/app/functions')}>Functions</button>
+        <button onClick={() => navigate('/app/profileSettings')}>Settings</button>
         {/* Logout Button hinzufügen */}
         <button onClick={handleLogout}>Logout</button>
       </nav>

@@ -13,17 +13,16 @@
   text-align: center;
 }
 
-.input-field {
+.input-field, .custom-select {
   margin: 20px 0 10px;
   padding: 10px 15px;
   width: 90%; /* Erhöhte Breite */
-  max-width: 500px; /* Erhöhte maximale Breite */
+  min-width: 40vw; /* Erhöhte maximale Breite */
   font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Neuer Wrapper für die Button-Gruppe */
 .button-group-wrapper {
   display: flex;
   justify-content: center; /* Zentriert den button-group Container */
@@ -35,12 +34,10 @@
   display: flex;
   justify-content: space-between; /* Verteilt die Buttons in der Gruppe */
   align-items: center; /* Zentriert die Buttons vertikal */
-  width: 85%; /* Breite der Button-Gruppe */
+  min-width: 100%; /* Breite der Button-Gruppe */
   max-width: 500px; /* Maximale Breite der Button-Gruppe */
 }
 
-
-
-
-
-
+.button-group button {
+  flex-basis: 30%; /* Button-Breite anpassen */
+}

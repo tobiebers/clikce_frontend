@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 
-
 const Questionnaire = () => {
   const router = useRouter();
 
   const questions = {
     0: "Guten Tag, wie dürfen wir Sie nennen?",
-    1: "Welche Hobbys hast du?",
-    2: "Was ist deine Lieblingsfarbe?"
+    1: "In welcher Branche arbeitest du?",
+    2: "In welcher Sprache möchtest du deine Beiträge?",
+    3: "Worauf legst du deinen Hauptfokus deiner Beiträge?",
+    4: "Gib uns bitte ein paar Infos über dein Unternehmen?"
   };
+
+  // Sprachoptionen und Fokusoptionen
+  const languageOptions = ["Deutsch", "Englisch", "Spanisch"];
+  const focusOptions = ["Technologie", "Marketing", "Finanzen", "Kunst"];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -57,39 +62,76 @@ const Questionnaire = () => {
     }
   };
 
+  const renderInputField = () => {
+    if (currentQuestionIndex === 2) {
+      return (
+        <select
+          className="custom-select"
+          value={answers[currentQuestionIndex] || ''}
+          onChange={handleInputChange}
+        >
+          <option value="">Bitte auswählen</option>
+          {languageOptions.map((option, index) => (
+            <option key={index} value={option}>{option}</option>
+          ))}
+        </select>
+      );
+    } else if (currentQuestionIndex === 3) {
+      return (
+        <select
+          className="custom-select"
+          value={answers[currentQuestionIndex] || ''}
+          onChange={handleInputChange}
+        >
+          <option value="">Bitte auswählen</option>
+          {focusOptions.map((option, index) => (
+            <option key={index} value={option}>{option}</option>
+          ))}
+        </select>
+      );
+    } else {
+      return (
+        <input
+          className="input-field"
+          type="text"
+          value={answers[currentQuestionIndex] || ''}
+          onChange={handleInputChange}
+        />
+      );
+    }
+  };
 
   return (
-      <div className="questionnaire-container" key={currentQuestionIndex}>
-        <Modal show={showModal} onHide={() => setShowModal(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Achtung</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Bitte beantworten Sie die Frage.</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => setShowModal(false)}>OK</Button>
-          </Modal.Footer>
-        </Modal>
+    <div className="questionnaire-container" key={currentQuestionIndex}>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Achtung</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Bitte beantworten Sie die Frage.</Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setShowModal(false)}>OK</Button>
+        </Modal.Footer>
+      </Modal>
 
-        {showCompletionScreen ? (
-            <div>
-              <p>Bereit zum Starten?</p>
-              <Button variant="success" onClick={handleSubmit}>Fertig stellen</Button>
+      {showCompletionScreen ? (
+        <div className="completion-screen">
+          <p>Bereit zum Starten?</p>
+          <Button onClick={handleSubmit}>Fertig stellen</Button>
+        </div>
+      ) : (
+        <div>
+          <p>{questions[currentQuestionIndex]}</p>
+          {renderInputField()}
+          <div>
+            <div className="button-group">
+              <Button onClick={handleNextOrSkip}>Überspringen</Button>
+              <Button onClick={handleNextOrSkip}>Nächste</Button>
             </div>
-        ) : (
-            <div className="vw-100">
-              <p>{questions[currentQuestionIndex]}</p>
-              <input className="input-field" type="text" value={answers[currentQuestionIndex] || ''}
-                     onChange={handleInputChange}/>
-              <div className="button-group-wrapper">
-                <div className="button-group">
-                  <Button variant="secondary" onClick={handleNextOrSkip}>Überspringen</Button>
-                  <Button variant="primary" onClick={handleNextOrSkip}>Nächste</Button>
-                </div>
-              </div>
-            </div>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
-}
+};
 
 export default Questionnaire;
