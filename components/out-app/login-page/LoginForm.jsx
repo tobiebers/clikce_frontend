@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '/firebaseConfig'; // Pfad zur Firebase-Konfigurationsdatei anpassen
+import { useAuth } from "@/components/out-app/static-components/AuthContext";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -10,37 +11,35 @@ export default function LoginForm() {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const router = useRouter();
+  const { login } = useAuth(); // Verwendung der login Funktion aus AuthContext
 
   const handleLogin = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    sessionStorage.setItem('isLoggedIn', 'true');
-    // Ein benutzerdefiniertes Event auslösen, um den Login-Zustand global bekannt zu machen
-    window.dispatchEvent(new CustomEvent('user-login', { detail: true }));
-    setModalMessage('Login erfolgreich! Weiterleitung...');
-    setShowModal(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      login(); // AuthContext login Funktion aufrufen
+      setModalMessage('Login erfolgreich! Weiterleitung...');
+      setShowModal(true);
 
-    // Überprüfen, ob der Fragebogen abgeschlossen wurde
-    const isQuestionnaireCompleted = localStorage.getItem('questionnaireCompleted') === 'true';
+      // Überprüfen, ob der Fragebogen abgeschlossen wurde
+      const isQuestionnaireCompleted = localStorage.getItem('questionnaireCompleted') === 'true';
 
-    setTimeout(() => {
-      // Weiterleitung basierend auf dem Status des Fragebogens
-      if (isQuestionnaireCompleted) {
-        router.push('/app/dashboard');
-      } else {
-        router.push('/app/questions');
-      }
-    }, 2000); // Weiterleitung nach 2 Sekunden
-  } catch (error) {
-    setModalMessage(`Fehler beim Login: ${error.message}`);
-    setShowModal(true);
-  }
-};
+      setTimeout(() => {
+        // Weiterleitung basierend auf dem Status des Fragebogens
+        if (isQuestionnaireCompleted) {
+          router.push('/app/dashboard');
+        } else {
+          router.push('/app/questions');
+        }
+      }, );
+    } catch (error) {
+      setModalMessage(`Fehler beim Login: ${error.message}`);
+      setShowModal(true);
+    }
+  };
 
-const handleCloseModal = () => setShowModal(false);
-
+  const handleCloseModal = () => setShowModal(false);
 
 
 
