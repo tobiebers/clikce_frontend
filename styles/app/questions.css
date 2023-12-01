@@ -35,7 +35,7 @@
   display: flex;
   justify-content: space-between; /* Verteilt die Buttons in der Gruppe */
   align-items: center; /* Zentriert die Buttons vertikal */
-  width: 90%; /* Breite der Button-Gruppe */
+  width: 85%; /* Breite der Button-Gruppe */
   max-width: 500px; /* Maximale Breite der Button-Gruppe */
 }
 
