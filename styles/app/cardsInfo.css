@@ -1,0 +1,14 @@
+.card-img-centered {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto; /* Zentriert das Bild und fügt oben und unten einen Abstand von 10px hinzu */
+  margin-left: 15%; /* Fügt einen Abstand auf der linken Seite hinzu */
+}
+
+@media (max-width: 768px) {
+  .card-img-centered {
+    /* Reduziere den linken Abstand auf 5% bei Bildschirmen kleiner als 768px */
+    margin-left: 0%;
+  }
+}

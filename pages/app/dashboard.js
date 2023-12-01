@@ -1,8 +1,9 @@
+import CardsInfo from "@/components/in-app/dashboard/CardsInfo";
 export default function Dashboard() {
 
   return (
     <div>
-       hallo
+       <CardsInfo/>
     </div>
   );
 }
