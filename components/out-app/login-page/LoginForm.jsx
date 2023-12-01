@@ -23,7 +23,7 @@ export default function LoginForm() {
       setShowModal(true);
 
       // Überprüfen, ob der Fragebogen abgeschlossen wurde
-      const isQuestionnaireCompleted = localStorage.getItem('questionnaireCompleted') === 'true';
+      const isQuestionnaireCompleted = sessionStorage.getItem('questionnaireCompleted') === 'true';
 
       setTimeout(() => {
         // Weiterleitung basierend auf dem Status des Fragebogens
