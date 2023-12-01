@@ -1,26 +1,59 @@
 .containerCustom {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .rowCustom {
-  height: 600px;
   background-color: #D6EBEA;
-}
-
-.colForm {
-  text-align: center;
-}
-
-.formWrapper {
-  width: 80%;
-}
-
-.colCustom {
-  background-color: #4B8E94;
+  position: relative;
 }
 
 .imgCustom {
   background-image: url('/ContactForm2.png');
   background-size: cover;
   background-position: center;
+  height: 830px;
+}
+
+.formRowCustom {
+  margin-top: 225px;
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  transform: translateY(-50%);
+}
+
+.colForm {
+  text-align: left;
+}
+
+.formWrapper {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 0px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form-group-margin {
+  margin-top: 15px;
+}
+
+.button-margin {
+  margin-top: 15px;
+}
+
+.validation-message {
+  color: red;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Stil für ungültige Formulareingaben */
+.is-invalid .form-control {
+  border-color: red;
+}
+
+/* Spezifische Stile für die Formular-Labels (falls benötigt) */
+.form-label {
+  font-size: 0.85rem;
 }

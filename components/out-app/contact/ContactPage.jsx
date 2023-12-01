@@ -1,134 +1,147 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert} from 'react-bootstrap';
 import { SERVER_URL } from '../../../config.js';
 
 export default function ContactPage() {
+  // States for form fields
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [address, setAddress] = useState('');
   const [country, setCountry] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [messageText, setMessageText] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
 
+  // States for validation of form fields
+  const [firstNameValid, setFirstNameValid] = useState(true);
+  const [lastNameValid, setLastNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [messageTextValid, setMessageTextValid] = useState(true);
+
+  // Function to check form fields
+  const validateForm = () => {
+    let isValid = true;
+    setFirstNameValid(!!firstName);
+    setLastNameValid(!!lastName);
+    setEmailValid(email.includes('@'));
+    setMessageTextValid(!!messageText);
+
+    if (!firstName || !lastName || !email.includes('@') || !messageText) {
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
+  // Handler for form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    if (!email.includes('@')) {
-      setMessage('Please enter a valid email address.');
+    if (!validateForm()) {
       return;
     }
 
+    // Sending form data to backend
     const response = await fetch(`${SERVER_URL}/contact`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        address,
-        country,
-        password,
-      }),
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({firstName, lastName, email, country, messageText}),
     });
 
     const data = await response.json();
     if (response.ok) {
-      setMessage('Data successfully sent to backend. Response: ' + JSON.stringify(data));
+      setResponseMessage('Ihre Nachricht wurde erfolgreich gesendet.');
     } else {
-      setMessage('Error sending data to backend: ' + JSON.stringify(data));
+      setResponseMessage('Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
     }
+  }
+
+  // Function to display validation messages
+  const renderValidationMessage = (isValid, message) => {
+    return !isValid ? <div className="validation-message">{message}</div> : null;
   };
 
-return (
-  <Container>
-    <Row className="rowCustom">
-      <Col md={5} className="colForm">
-        <div className="formWrapper">
-          <Form onSubmit={handleFormSubmit}>
-            <Form.Group controlId="firstName">
-              <Form.Label>First Name:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-            </Form.Group>
+  // List of countries for dropdown menu
+  const countries = ["Deutschland", "Österreich", "Schweiz", "Frankreich", "Italien", "Spanien"];
 
-            <Form.Group controlId="lastName">
-              <Form.Label>Last Name:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </Form.Group>
+  return (
+    <Container className="containerCustom">
+      <Row className="rowCustom">
+        <Col md={12} className="imgCustom">
+          {/* Space for background image */}
+        </Col>
+      </Row>
+      <Row className="formRowCustom">
+        <Col md={{ span: 6, offset: 3 }} className="colForm">
+          <div className="formWrapper">
+            <Form onSubmit={handleFormSubmit}>
+              {/* First Name */}
+              {renderValidationMessage(firstNameValid, 'Bitte geben Sie Ihren Vornamen ein.')}
+              <Form.Group controlId="firstName" className="form-group-margin">
+                <Form.Control
+                  type="text"
+                  placeholder="Vorname"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  isInvalid={!firstNameValid}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="email">
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
+              {/* Last Name */}
+              {renderValidationMessage(lastNameValid, 'Bitte geben Sie Ihren Namen ein.')}
+              <Form.Group controlId="lastName" className="form-group-margin">
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  isInvalid={!lastNameValid}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="phoneNumber">
-              <Form.Label>Phone Number:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Phone Number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
-            </Form.Group>
+              {/* Email */}
+              {renderValidationMessage(emailValid, 'Bitte geben Sie eine gültige E-Mail-Adresse ein.')}
+              <Form.Group controlId="email" className="form-group-margin">
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  isInvalid={!emailValid}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="address">
-              <Form.Label>Address:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </Form.Group>
+              {/* Country */}
+              <Form.Group controlId="country" className="form-group-margin">
+                <Form.Control as="select" value={country} onChange={(e) => setCountry(e.target.value)}>
+                  <option value="">Land auswählen</option>
+                  {countries.map((country, index) => (
+                    <option key={index} value={country}>{country}</option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="country">
-              <Form.Label>Country:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Country"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              />
-            </Form.Group>
+              {/* Message */}
+              {renderValidationMessage(messageTextValid, 'Bitte geben Sie eine Nachricht ein.')}
+              <Form.Group controlId="messageText" className="form-group-margin">
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Nachricht"
+                  value={messageText}
+                  onChange={(e) => setMessageText(e.target.value)}
+                  isInvalid={!messageTextValid}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="password">
-              <Form.Label>Password:</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Send
-            </Button>
-          </Form>
-        </div>
-      </Col>
-      <Col md={7} className="imgCustom">
-      </Col>
-    </Row>
-  </Container>
+              {/* Submit Button */}
+              {responseMessage && <Alert variant={response.ok ? "success" : "danger"}>{responseMessage}</Alert>}
+              <Button variant="primary" type="submit" className="button-margin">
+                Senden
+              </Button>
+            </Form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }

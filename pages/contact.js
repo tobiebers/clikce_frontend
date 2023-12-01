@@ -4,7 +4,7 @@ export default function contact() {
 
   return (
     <div>
-    <ContactPage/>
+      <ContactPage/>
     </div>
   );
 }
