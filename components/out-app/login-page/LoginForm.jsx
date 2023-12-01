@@ -32,7 +32,7 @@ export default function LoginForm() {
         } else {
           router.push('/app/questions');
         }
-      }, 2000); // Weiterleitung nach 2 Sekunden
+      }, );
     } catch (error) {
       setModalMessage(`Fehler beim Login: ${error.message}`);
       setShowModal(true);
