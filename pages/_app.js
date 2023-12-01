@@ -13,6 +13,7 @@ import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
 import '@/styles/app/verticalNavigation.css'
 import '@/styles/app/questions.css'
+import '@/styles/app/cardsInfo.css'
 
 
 
