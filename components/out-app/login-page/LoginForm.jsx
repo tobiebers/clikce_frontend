@@ -12,25 +12,35 @@ export default function LoginForm() {
   const router = useRouter();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      sessionStorage.setItem('isLoggedIn', 'true');
-      // Ein benutzerdefiniertes Event auslösen, um den Login-Zustand global bekannt zu machen
-      window.dispatchEvent(new CustomEvent('user-login', { detail: true }));
-      setModalMessage('Login erfolgreich! Weiterleitung...');
-      setShowModal(true);
-      setTimeout(() => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    sessionStorage.setItem('isLoggedIn', 'true');
+    // Ein benutzerdefiniertes Event auslösen, um den Login-Zustand global bekannt zu machen
+    window.dispatchEvent(new CustomEvent('user-login', { detail: true }));
+    setModalMessage('Login erfolgreich! Weiterleitung...');
+    setShowModal(true);
+
+    // Überprüfen, ob der Fragebogen abgeschlossen wurde
+    const isQuestionnaireCompleted = localStorage.getItem('questionnaireCompleted') === 'true';
+
+    setTimeout(() => {
+      // Weiterleitung basierend auf dem Status des Fragebogens
+      if (isQuestionnaireCompleted) {
         router.push('/app/dashboard');
-      }, 2000); // Weiterleitung nach 2 Sekunden
-    } catch (error) {
-      setModalMessage(`Fehler beim Login: ${error.message}`);
-      setShowModal(true);
-    }
-  };
+      } else {
+        router.push('/app/questions');
+      }
+    }, 2000); // Weiterleitung nach 2 Sekunden
+  } catch (error) {
+    setModalMessage(`Fehler beim Login: ${error.message}`);
+    setShowModal(true);
+  }
+};
 
-  const handleCloseModal = () => setShowModal(false);
+const handleCloseModal = () => setShowModal(false);
+
 
 
 

@@ -44,6 +44,9 @@ const Questionnaire = () => {
       });
 
       if (response.ok) {
+        // Speichern im LocalStorage, dass der Fragebogen abgeschlossen wurde
+        sessionStorage.setItem('questionnaireCompleted', 'true');
+
         // Navigieren zur /app/dashboard Seite, wenn die Antwort erfolgreich ist
         router.push('/app/dashboard');
       } else {
@@ -53,6 +56,7 @@ const Questionnaire = () => {
       console.error('Fehler:', error);
     }
   };
+
 
   return (
       <div className="questionnaire-container" key={currentQuestionIndex}>
@@ -68,7 +72,7 @@ const Questionnaire = () => {
 
         {showCompletionScreen ? (
             <div>
-              <p>Bereit zum Starten</p>
+              <p>Bereit zum Starten?</p>
               <Button variant="success" onClick={handleSubmit}>Fertig stellen</Button>
             </div>
         ) : (
