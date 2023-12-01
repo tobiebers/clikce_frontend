@@ -4,9 +4,13 @@
     flex-direction: row !important;
   }
 }
-
 .navbar-logo {
   height: 90px;  /* Sie können die Höhe nach Bedarf anpassen */
+  margin-left: 15px;
+}
+
+.mx-5 {
+  font-size: 20px;
 }
 
 /* Diese Regel verhindert, dass die Buttons umgebrochen werden */
@@ -17,4 +21,10 @@
 .nav-link {
   margin-left: 1rem;  /* Abstand zwischen den Links */
   margin-right: 1rem; /* Abstand zwischen den Links */
+}
+.justify-content-between  {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: #e0e0e0;
+  box-shadow:  24px 24px 52px #868686;
 }
