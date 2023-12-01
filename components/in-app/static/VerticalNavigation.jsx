@@ -1,10 +1,18 @@
 import { useRouter } from 'next/router';
+import React from 'react';
+import { useAuth } from "@/components/out-app/static-components/AuthContext";
 
 const VerticalNavigation = () => {
   const router = useRouter();
+  const { logout } = useAuth(); // Verwendung der logout Funktion aus AuthContext
 
   const navigate = (path) => {
     router.push(path);
+  };
+
+  const handleLogout = () => {
+    logout(); // AuthContext logout Funktion aufrufen
+    router.push('/'); // Sofortige Weiterleitung zur Startseite
   };
 
   return (
@@ -17,6 +25,8 @@ const VerticalNavigation = () => {
         <button onClick={() => navigate('app/calendar')}>Calendar</button>
         <button onClick={() => navigate('app/functions')}>Functions</button>
         <button onClick={() => navigate('app/settings')}>Settings</button>
+        {/* Logout Button hinzufügen */}
+        <button onClick={handleLogout}>Logout</button>
       </nav>
     </div>
   );

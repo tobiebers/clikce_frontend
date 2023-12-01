@@ -13,36 +13,27 @@ import '@/styles/contact.css'
 import '@/styles/settingProfil.css'
 import '@/styles/app/verticalNavigation.css'
 import '@/styles/app/questions.css'
+import {AuthProvider} from "@/components/out-app/static-components/AuthContext";
+
+import { useAuth } from "@/components/out-app/static-components/AuthContext";
+
 
 
 
 export default function App({ Component, pageProps }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  return (
+    <AuthProvider>
+      <LayoutWrapper>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+    </AuthProvider>
+  );
+}
 
-  useEffect(() => {
-    // Event-Handler für benutzerdefiniertes Login-Event
-    const handleLoginEvent = () => {
-      setIsLoggedIn(sessionStorage.getItem('isLoggedIn') === 'true');
-    };
-
-    // EventListener hinzufügen, der auf das Login-Event hört
-    window.addEventListener('user-login', handleLoginEvent);
-
-    // Überprüfen Sie den Anmeldestatus beim Laden der Komponente
-    setIsLoggedIn(sessionStorage.getItem('isLoggedIn') === 'true');
-
-    // EventListener bereinigen, wenn die Komponente unmountet
-    return () => {
-      window.removeEventListener('user-login', handleLoginEvent);
-    };
-  }, []);
-
-  // Entscheiden Sie, welches DefaultLayout verwendet wird
+// Eine Komponente, die das Layout basierend auf dem Authentifizierungsstatus umschaltet
+function LayoutWrapper({ children }) {
+  const { isLoggedIn } = useAuth(); // Den Authentifizierungsstatus aus dem Context verwenden
   const Layout = isLoggedIn ? LoggedInLayout : DefaultLayout;
 
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  return <Layout>{children}</Layout>;
 }
