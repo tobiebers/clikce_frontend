@@ -1,0 +1,23 @@
+.card-function-card{
+    border-radius: 30px;
+    max-width: 250px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.button-color{
+    background-color: #FFB3B8;
+    border-color: #FFB3B8;
+}
+.card-title-bold {
+  font-weight: bold;
+}
+
+.button-style {
+  width: 150px; /* Passe die Breite nach Bedarf an */
+  height: 40px; /* Passe die Höhe nach Bedarf an */
+  border-radius: 20px; /* Passe den Radius nach Bedarf an */
+}
+
+
+
