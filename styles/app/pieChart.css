@@ -1,0 +1,17 @@
+/* Füge diese Styles zu deinem Stylesheet hinzu oder erstelle ein neues Stylesheet dafür */
+
+/* Stile für das gesamte Tortendiagramm-Container */
+.text-center {
+  margin: 20px;
+}
+
+/* Stile für die Labels unter dem Tortendiagramm */
+.mt-3 {
+  margin-top: 15px;
+}
+
+/* Stile für den transparenten Button */
+.mt-3 .btn-light {
+  background-color: transparent;
+  border: none;
+}
