@@ -25,7 +25,6 @@ const VerticalNavigation = () => {
         <button onClick={() => navigate('/app/calendar')}>Calendar</button>
         <button onClick={() => navigate('/app/functions')}>Functions</button>
         <button onClick={() => navigate('/app/profileSettings')}>Settings</button>
-        {/* Logout Button hinzufügen */}
         <button onClick={handleLogout}>Logout</button>
       </nav>
     </div>

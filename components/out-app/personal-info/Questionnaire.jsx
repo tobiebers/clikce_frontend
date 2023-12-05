@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import CompletionScreen from "@/components/out-app/personal-info/CompletionScreen";
 
 const Questionnaire = () => {
   const router = useRouter();
@@ -21,6 +22,8 @@ const Questionnaire = () => {
   const [answers, setAnswers] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [showCompletionScreen, setShowCompletionScreen] = useState(false);
+  const [showIntroScreen, setShowIntroScreen] = useState(true);
+
 
   const handleNextOrSkip = () => {
     const isLastQuestion = currentQuestionIndex === Object.keys(questions).length - 1;
@@ -53,7 +56,7 @@ const Questionnaire = () => {
         sessionStorage.setItem('questionnaireCompleted', 'true');
 
         // Navigieren zur /app/dashboard Seite, wenn die Antwort erfolgreich ist
-        router.push('/app/dashboard');
+        router.push('/app/connectAccounts');
       } else {
         console.error('Fehler beim Senden der Antworten');
       }
@@ -101,37 +104,38 @@ const Questionnaire = () => {
     }
   };
 
-  return (
-    <div className="questionnaire-container" key={currentQuestionIndex}>
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Achtung</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Bitte beantworten Sie die Frage.</Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => setShowModal(false)}>OK</Button>
-        </Modal.Footer>
-      </Modal>
+return (
+  <div className="questionnaire-container" key={currentQuestionIndex}>
+    <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal.Header closeButton>
+        <Modal.Title>Achtung</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>Bitte beantworten Sie die Frage.</Modal.Body>
+      <Modal.Footer>
+        <Button onClick={() => setShowModal(false)}>OK</Button>
+      </Modal.Footer>
+    </Modal>
 
-      {showCompletionScreen ? (
-        <div className="completion-screen">
-          <p>Bereit zum Starten?</p>
-          <Button onClick={handleSubmit}>Fertig stellen</Button>
+    {showIntroScreen ? (
+      <div className="intro-screen">
+        <p>Nur noch ein paar Fragen, bevor wir loslegen können. Du kannst diese überspringen und später bearbeiten.</p>
+        <Button onClick={() => setShowIntroScreen(false)}>Fragen starten</Button>
+      </div>
+    ) : showCompletionScreen ? (
+      <CompletionScreen onSubmit={handleSubmit} />
+    ) : (
+      <div>
+        <p>{questions[currentQuestionIndex]}</p>
+        {renderInputField()}
+        <div className="button-group">
+          <Button onClick={handleNextOrSkip}>Überspringen</Button>
+          <Button onClick={handleNextOrSkip}>Nächste</Button>
         </div>
-      ) : (
-        <div>
-          <p>{questions[currentQuestionIndex]}</p>
-          {renderInputField()}
-          <div>
-            <div className="button-group">
-              <Button onClick={handleNextOrSkip}>Überspringen</Button>
-              <Button onClick={handleNextOrSkip}>Nächste</Button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
+
 };
 
 export default Questionnaire;

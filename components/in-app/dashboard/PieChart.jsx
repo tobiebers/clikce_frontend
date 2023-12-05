@@ -1,58 +1,36 @@
 import React from 'react';
-import { Doughnut, Chart } from 'react-chartjs-2';
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
+const DoughnutChart = () => {
+  const data = [
+    { name: 'Gruppe A', value: 30 },
+    { name: 'Gruppe B', value: 20 },
+    { name: 'Gruppe C', value: 25 },
+    { name: 'Gruppe D', value: 25 },
+  ];
 
-import { Button } from 'react-bootstrap';
-import {ArcElement} from "chart.js";
-
-Chart.register(ArcElement);
-
-
-export default function PieChart() {
-  // Daten für das Tortendiagramm
-  const data = {
-    labels: ['Instagram', 'Facebook', 'TikTok', 'YouTube'],
-    datasets: [
-      {
-        data: [30, 20, 25, 25], // Beispielzahlen, ersetze sie durch deine echten Daten
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'], // Farben für jedes Segment
-      },
-    ],
-  };
-
-  // Optionen für das Tortendiagramm
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-      display: false,
-    },
-    tooltips: {
-      callbacks: {
-        label: function (tooltipItem, data) {
-          const dataset = data.datasets[tooltipItem.datasetIndex];
-          const total = dataset.data.reduce((acc, value) => acc + value, 0);
-          const currentValue = dataset.data[tooltipItem.index];
-          const percentage = ((currentValue / total) * 100).toFixed(2);
-          return `${currentValue} Follower (${percentage}%)`;
-        },
-      },
-    },
-  };
+  const COLORS = ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'];
 
   return (
-    <div className="text-center">
-      <Doughnut data={data} options={options} height={200} />
-      <div className="mt-3">
-        {data.labels.map((label, index) => (
-          <span key={index} className="mx-2">
-            {label}
-          </span>
+    <PieChart width={400} height={400}>
+      <Pie
+        data={data}
+        cx={200}
+        cy={200}
+        innerRadius={60}
+        outerRadius={80}
+        fill="#8884d8"
+        paddingAngle={5}
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
-      </div>
-      <Button variant="3" className="mt-3" style={{ backgroundColor: 'transparent', border: 'none' }}>
-        3.
-      </Button>
-    </div>
+      </Pie>
+      <Tooltip />
+      <Legend />
+    </PieChart>
   );
-}
+};
+
+export default DoughnutChart;
