@@ -9,27 +9,28 @@ const DoughnutChart = () => {
   }, []);
 
   const data = [
-    { name: 'Gruppe A', value: 30 },
-    { name: 'Gruppe B', value: 20 },
-    { name: 'Gruppe C', value: 25 },
-    { name: 'Gruppe D', value: 25 },
+    { name: 'Instagram', value: 30 },
+    { name: 'Facebook', value: 20 },
+    { name: 'TikTok', value: 20 },
+    { name: 'YouTube', value: 20 },
   ];
 
-  const COLORS = ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'];
+  const COLORS = ['#7E57C2', '#92E3CA', '#FF81AE', '#9EE392'];
 
   return (
     <div>
       {isClient && (
-        <PieChart width={400} height={400}>
+        <PieChart width={400} height={330}>
           <Pie
             data={data}
             cx={200}
-            cy={200}
-            innerRadius={60}
+            cy={165} // Adjust the cy value to vertically center the chart
+            innerRadius={60} // Set innerRadius to 0
             outerRadius={80}
             fill="#8884d8"
             paddingAngle={5}
             dataKey="value"
+            cornerRadius={10}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
