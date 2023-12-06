@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert} from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { SERVER_URL } from '../../../config.js';
 
 export default function ContactPage() {
-  // States for form fields
+  // States für die Formularfelder
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -11,13 +11,16 @@ export default function ContactPage() {
   const [messageText, setMessageText] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
-  // States for validation of form fields
+  // States für die Validierung der Formularfelder
   const [firstNameValid, setFirstNameValid] = useState(true);
   const [lastNameValid, setLastNameValid] = useState(true);
   const [emailValid, setEmailValid] = useState(true);
   const [messageTextValid, setMessageTextValid] = useState(true);
 
-  // Function to check form fields
+  // State für die Anzeige des Modals
+  const [modalShow, setModalShow] = useState(false);
+
+  // Funktion zur Überprüfung der Formularfelder
   const validateForm = () => {
     let isValid = true;
     setFirstNameValid(!!firstName);
@@ -32,7 +35,7 @@ export default function ContactPage() {
     return isValid;
   };
 
-  // Handler for form submission
+  // Handler für das Absenden des Formulars
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -40,41 +43,42 @@ export default function ContactPage() {
       return;
     }
 
-    // Sending form data to backend
-    const response = await fetch(`${SERVER_URL}/contact`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({firstName, lastName, email, country, messageText}),
-    });
+    try {
+      const response = await fetch(`${SERVER_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, country, messageText }),
+      });
 
-    const data = await response.json();
-    if (response.ok) {
-      setResponseMessage('Ihre Nachricht wurde erfolgreich gesendet.');
-    } else {
-      setResponseMessage('Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
+      const data = await response.json();
+      setResponseMessage(response.ok ? data.message : 'Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.');
+      setModalShow(true);
+    } catch (error) {
+      setResponseMessage('Fehler beim Senden Ihrer Nachricht. Bitte überprüfen Sie Ihre Netzwerkverbindung.');
+      setModalShow(true);
     }
-  }
+  };
 
-  // Function to display validation messages
+  // Funktion zur Anzeige von Validierungsnachrichten
   const renderValidationMessage = (isValid, message) => {
     return !isValid ? <div className="validation-message">{message}</div> : null;
   };
 
-  // List of countries for dropdown menu
+  // Liste der Länder für das Dropdown-Menü
   const countries = ["Deutschland", "Österreich", "Schweiz", "Frankreich", "Italien", "Spanien"];
 
   return (
     <Container className="containerCustom">
       <Row className="rowCustom">
         <Col md={12} className="imgCustom">
-          {/* Space for background image */}
+          {/* Platz für Hintergrundbild */}
         </Col>
       </Row>
       <Row className="formRowCustom">
         <Col md={{ span: 6, offset: 3 }} className="colForm">
           <div className="formWrapper">
             <Form onSubmit={handleFormSubmit}>
-              {/* First Name */}
+              {/* Vorname */}
               {renderValidationMessage(firstNameValid, 'Bitte geben Sie Ihren Vornamen ein.')}
               <Form.Group controlId="firstName" className="form-group-margin">
                 <Form.Control
@@ -86,7 +90,7 @@ export default function ContactPage() {
                 />
               </Form.Group>
 
-              {/* Last Name */}
+              {/* Nachname */}
               {renderValidationMessage(lastNameValid, 'Bitte geben Sie Ihren Namen ein.')}
               <Form.Group controlId="lastName" className="form-group-margin">
                 <Form.Control
@@ -98,7 +102,7 @@ export default function ContactPage() {
                 />
               </Form.Group>
 
-              {/* Email */}
+              {/* E-Mail */}
               {renderValidationMessage(emailValid, 'Bitte geben Sie eine gültige E-Mail-Adresse ein.')}
               <Form.Group controlId="email" className="form-group-margin">
                 <Form.Control
@@ -110,7 +114,7 @@ export default function ContactPage() {
                 />
               </Form.Group>
 
-              {/* Country */}
+              {/* Land */}
               <Form.Group controlId="country" className="form-group-margin">
                 <Form.Control as="select" value={country} onChange={(e) => setCountry(e.target.value)}>
                   <option value="">Land auswählen</option>
@@ -120,7 +124,7 @@ export default function ContactPage() {
                 </Form.Control>
               </Form.Group>
 
-              {/* Message */}
+              {/* Nachricht */}
               {renderValidationMessage(messageTextValid, 'Bitte geben Sie eine Nachricht ein.')}
               <Form.Group controlId="messageText" className="form-group-margin">
                 <Form.Control
@@ -133,8 +137,6 @@ export default function ContactPage() {
                 />
               </Form.Group>
 
-              {/* Submit Button */}
-              {responseMessage && <Alert variant={response.ok ? "success" : "danger"}>{responseMessage}</Alert>}
               <Button variant="primary" type="submit" className="button-margin">
                 Senden
               </Button>
@@ -142,6 +144,26 @@ export default function ContactPage() {
           </div>
         </Col>
       </Row>
+
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Nachrichtenstatus
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>{responseMessage}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setModalShow(false)}>Schließen</Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }
