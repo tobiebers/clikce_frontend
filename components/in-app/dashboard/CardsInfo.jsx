@@ -32,7 +32,7 @@ export default function CardsInfo() {
           <Card className="background-color-secondary">
             <Row>
               <Col md={4}>
-                <Card.Img src="/Cards-Info-Herz.png" alt="Bild 3" className="card-img-centered img-responsive"/>
+                <Card.Img src="/Cards-Info-Herz.png" alt="Bild 3" className="card-img-centered img-responsive my-1 mx-1"/>
               </Col>
               <Col md={8}>
                 <Card.Body>
@@ -49,7 +49,7 @@ export default function CardsInfo() {
           <Card className="background-color-secondary">
             <Row>
               <Col md={4}>
-                <Card.Img src="/Cards-Info-Follower.png" alt="Bild 2" className="card-img-centered"/>
+                <Card.Img src="/Cards-Info-Follower.png" alt="Bild 2" className="card-img-centered my-1 mx-1"/>
               </Col>
               <Col md={8}>
                 <Card.Body>
@@ -66,7 +66,7 @@ export default function CardsInfo() {
           <Card className="background-color-secondary">
             <Row>
               <Col md={4}>
-                <Card.Img src="/Cards-Info-Leads.png" alt="Bild 3" className="card-img-centered"/>
+                <Card.Img src="/Cards-Info-Leads.png" alt="Bild 3" className="card-img-centered mx-1 my-1"/>
               </Col>
               <Col md={8}>
                 <Card.Body>
@@ -83,7 +83,7 @@ export default function CardsInfo() {
           <Card className="background-color-secondary">
             <Row>
               <Col md={4}>
-                <Card.Img src="/Cards-Info-Referrals.png" alt="Bild 4" className="card-img-centered"/>
+                <Card.Img src="/Cards-Info-Referrals.png" alt="Bild 4" className="card-img-centered mx-1 my-1"/>
               </Col>
               <Col md={8}>
                 <Card.Body>
