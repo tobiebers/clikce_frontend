@@ -45,7 +45,7 @@ export default function Chart() {
           </linearGradient>
         </defs>
 
-        <Area type="monotone" dataKey="visitors" stroke="none" fill="url(#colorGradient)" />
+        <Area type="monotone" dataKey="visitors" stroke="none" fill="url(#colorGradient)" isAnimationActive={true} />
 
         <Label value="Visitors" position="insideTopLeft" angle={-90} dx={-20} dy={-20} />
       </AreaChart>
