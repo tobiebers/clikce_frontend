@@ -6,8 +6,8 @@ export default function Dashboard() {
   return (
     <div>
        <CardsInfo/>
-        <PieChart/>
         <Chart/>
+        <PieChart/>
     </div>
   );
 }
