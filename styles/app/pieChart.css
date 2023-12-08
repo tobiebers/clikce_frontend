@@ -15,3 +15,15 @@
   background-color: transparent;
   border: none;
 }
+
+.follower-text{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #0a0909;
+}
+
+.borderChart {
+  border-radius: 15px;
+
+}
