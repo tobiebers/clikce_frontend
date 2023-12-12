@@ -16,6 +16,7 @@ import '@/styles/app/questions.css'
 import '@/styles/app/cardFunctions.css'
 import '@/styles/app/pieChart.css'
 import '@/styles/app/chart.css'
+import '@/styles/app/performingAccounts.css'
 
 import {AuthProvider} from "@/components/out-app/static-components/AuthContext";
 import { useAuth } from "@/components/out-app/static-components/AuthContext";
