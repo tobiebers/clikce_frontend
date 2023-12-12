@@ -26,12 +26,12 @@ export default function Chart() {
   }, []);
 
   return (
-    <div className="chart-container">
+    <div>
       <AreaChart
         width={600}
         height={300}
         data={data}
-        className="background-color-secondary chart-abstand mt-3"
+        className="background-color-secondary chart-abstand mt-3 mb-3"
       >
         <XAxis dataKey="time" />
         <YAxis ticks={[0, 20, 40, 60, 80, 100]} />

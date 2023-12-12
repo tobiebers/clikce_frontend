@@ -2,6 +2,7 @@ import CardsInfo from "@/components/in-app/dashboard/CardsInfo";
 import Chart from "@/components/in-app/dashboard/Chart"
 import PieChart1 from "@/components/in-app/dashboard/PieChart1";
 import PerformingAccounts from "@/components/in-app/dashboard/PerformingAccounts";
+import RecentInteractions from "@/components/in-app/dashboard/RecentInteractions";
 
 import {Pie} from "recharts";
 export default function Dashboard() {
@@ -12,6 +13,7 @@ export default function Dashboard() {
         <Chart/>
         <PieChart1/>
         <PerformingAccounts/>
+        <RecentInteractions/>
     </div>
   );
 }
