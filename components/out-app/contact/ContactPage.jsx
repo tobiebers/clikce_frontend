@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
-import { SERVER_URL } from '../../../config.js';
+import { SERVER_URL } from '@/config';
 
 export default function ContactPage() {
   // States für die Formularfelder
@@ -144,7 +144,6 @@ export default function ContactPage() {
           </div>
         </Col>
       </Row>
-
       <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}

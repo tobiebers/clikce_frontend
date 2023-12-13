@@ -16,6 +16,8 @@ import '@/styles/app/questions.css'
 import '@/styles/app/cardFunctions.css'
 import '@/styles/app/pieChart.css'
 import '@/styles/app/chart.css'
+import '@/styles/analytics/analyticsheadline.css'
+import '@/styles/analytics/buttongroup.css'
 import '@/styles/app/performingAccounts.css'
 import '@/styles/app/recentInteraction.css'
 

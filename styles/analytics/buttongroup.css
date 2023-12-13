@@ -1,0 +1,124 @@
+.controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px; /* Abstand zwischen den Komponenten */
+}
+
+.toggle-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-switch-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #4B8E94;
+  border-radius: 20px;
+  background: #4B8E94;
+  font-weight: bold;
+  color: #D6EBEA;
+  cursor: pointer;
+}
+
+.toggle-switch-container::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  border-radius: 20px;
+  background: #FFB3B8;
+  transition: all 0.3s;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-container::before {
+  left: 50%;
+}
+
+.toggle-switch-container div {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-container div:first-child {
+  color: #D6EBEA;
+  transition: color 0.3s;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-container div:last-child {
+  color: #343434;
+  transition: color 0.3s;
+}
+
+.toggle-switch-checkbox + .toggle-switch-container div:first-child {
+  color: #343434;
+  transition: color 0.3s;
+}
+
+.toggle-switch-checkbox + .toggle-switch-container div:last-child {
+  color: white;
+  transition: color 0.3s;
+}
+
+.custom-dropdown-wrapper {
+    position: relative; /* Ermöglicht absolute Positionierung des Dropdown-Menüs */
+}
+
+.custom-dropdown-nav {
+    width: 180px;
+    background: #d9d9d9;
+    border-radius: 6px;
+}
+
+.custom-dropdown-toggle {
+    padding: 18px;
+    background: #4B8E94;
+    color: #D6EBEA;
+    font-size: 0.72em;
+    cursor: pointer;
+    display: block;
+    border-radius: 6px 6px 6px 6px;
+}
+
+.custom-dropdown-toggle::after {
+    float: right;
+    right: 10%;
+    content: "+";
+    font-size: 1em;
+}
+
+.custom-dropdown-slide {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    transition: height 0.4s ease;
+    list-style: none;
+    padding: 0;
+    border-radius: 6px 6px 6px 6px;
+}
+
+.custom-dropdown-slide li {
+    padding: 18px;
+    border-top: 1px solid #4B8E94;
+    color: #4B8E94;
+    background-color: #D6EBEA;
+}
+
+
+.custom-dropdown-slide li a {
+    text-decoration: none;
+    color: #2d2f31;
+    font-size: 0.9em;
+}
