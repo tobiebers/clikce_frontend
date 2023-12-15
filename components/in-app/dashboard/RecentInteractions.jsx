@@ -11,7 +11,7 @@ export default function RecentInteractions() {
     account: "",
     accountGroup: "",
     interaction: "",
-    total: "Some Total Value", // Hier den festen Wert für Total setzen
+    total: "0", // Hier den festen Wert für Total setzen
   });
 
 useEffect(() => {
@@ -53,7 +53,7 @@ useEffect(() => {
           <tr>
             <td>
               <DropdownButton
-                className="p-0 m-0"
+                className=""
                 variant=""
                 id="dropdown-account"
                 title="Account"
@@ -68,7 +68,7 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className="p-0 m-0"
+                className=""
                 variant=""
                 id="dropdown-account-group"
                 title="Account Group"
@@ -83,7 +83,7 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className="p-0 m-0"
+                className=""
                 variant=""
                 id="dropdown-interaction"
                 title="Interaction"
@@ -97,13 +97,9 @@ useEffect(() => {
               </DropdownButton>
             </td>
             <td>
-              <DropdownButton
-              title="Total"
-              className="p-0 m-0"
-              variant=""
-                >
-                  {/* Dropdown-Optionen hier einfügen, falls benötigt */}
-              </DropdownButton>
+              <Button variant="" className="p-0 m-0">
+                Total
+              </Button>
             </td>
           </tr>
         </thead>
