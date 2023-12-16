@@ -20,6 +20,8 @@ import '@/styles/analytics/analyticsheadline.css'
 import '@/styles/analytics/buttongroup.css'
 import '@/styles/app/performingAccounts.css'
 import '@/styles/app/recentInteraction.css'
+import '@/styles/post-modal/postModal.css'
+
 
 import {AuthProvider} from "@/components/out-app/static-components/AuthContext";
 import { useAuth } from "@/components/out-app/static-components/AuthContext";

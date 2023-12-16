@@ -1,71 +1,90 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Modal, Button, Form, Card } from 'react-bootstrap';
 
 const InstagramAuth = () => {
-    const [username, setUsername] = useState(''); // Zustand für den Benutzernamen
+    const [showModal, setShowModal] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [usernames, setUsernames] = useState([]);
 
-    // Funktion zum Verbinden mit Instagram
-    const connectInstagram = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/connect-instagram');
-            if (response.ok) {
-                const data = await response.json();
-                window.location.href = data.authUrl; // Umleitung zur Instagram-Authentifizierungsseite
-            } else {
-                console.error('Fehler beim Verbinden mit Instagram');
-            }
-        } catch (error) {
-            console.error('Fehler:', error);
+    const connectInstagram = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);
+
+    const fetchUsernames = async () => {
+        const response = await fetch('http://localhost:5000/instagram-profile-name');
+        if (response.ok) {
+            const data = await response.json();
+            setUsernames(data.usernames);
         }
     };
 
-    // Funktion zum Senden des Authentifizierungscodes an das Backend
-    const sendCodeToBackend = async (code) => {
-        try {
-            const response = await fetch('http://localhost:5000/convert-code', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ code: code }),
-            });
-            if (!response.ok) {
-                console.error('Fehler beim Senden des Codes');
-            }
-        } catch (error) {
-            console.error('Fehler:', error);
+    const handleConfirm = async () => {
+        const response = await fetch('http://localhost:5000/instagram-profile-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+            console.log('Daten erfolgreich gesendet');
+            await fetchUsernames(); // Aktualisiert die Benutzernamenliste nur nach erfolgreichem POST
+            handleCloseModal(); // Schließt das Modal
+        } else {
+            console.log('Fehler beim Senden der Daten');
         }
     };
-
-    // Funktion zum Abrufen des Benutzernamens
-    const fetchUsername = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/instagram-profile-name');
-            if (response.ok) {
-                const data = await response.json();
-                setUsername(data.username); // Setzen des Benutzernamens
-            } else {
-                console.error('Fehler beim Abrufen des Benutzernamens');
-            }
-        } catch (error) {
-            console.error('Fehler:', error);
-        }
-    };
-
-    // useEffect-Hook wird aufgerufen, sobald der Benutzer zurückgeleitet wird
-    useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-
-        if (code) {
-            sendCodeToBackend(code);
-            fetchUsername(); // Benutzernamen abrufen
-        }
-    }, []);
 
     return (
         <div>
-            <button onClick={connectInstagram}>Verbinden mit Instagram</button>
-            <p>Benutzername: {username}</p> {/* Anzeigen des Benutzernamens */}
+            <Button onClick={connectInstagram}>Verbinden mit Instagram</Button>
+
+            <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Instagram-Verbindung</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Benutzername</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Benutzername eingeben"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Passwort</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Passwort eingeben"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                        Schließen
+                    </Button>
+                    <Button variant="primary" onClick={handleConfirm}>
+                        Bestätigen
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <div>
+                {usernames.map((username, index) => (
+                    <Card key={index} className="mb-2">
+                        <Card.Body>
+                            <Card.Title>{username}</Card.Title>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </div>
         </div>
     );
 };

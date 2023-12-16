@@ -7,10 +7,10 @@ export default function LoggedInLayout({ children }) {
   return (
     <Container fluid>
       <Row>
-        <Col xs={12} md={3}>
+        <Col xs={12} md={2}> {/* Reduzieren Sie die Breite auf mittleren Bildschirmen */}
           <VerticalNavigation />
         </Col>
-        <Col xs={12} md={9}>
+        <Col xs={12} md={10}> {/* Erhöhen Sie die Breite der Hauptspalte */}
           <div className="main-content">
             {children}
           </div>
