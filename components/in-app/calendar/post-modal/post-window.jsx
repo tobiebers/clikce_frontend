@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {Button, Modal, Row, Col, Form, Card} from 'react-bootstrap';
 import UsernameSelector from "@/components/in-app/calendar/post-modal/UsernameSelector";
 import CaptionCreator from "@/components/in-app/calendar/post-modal/CaptionCreator";
+import SchedulePost from "@/components/in-app/calendar/post-modal/SchedulePost";
+import ImagePreview from "@/components/in-app/calendar/post-modal/ImagePreview";
+import DragDropArea from "@/components/in-app/calendar/post-modal/DragDropArea";
 
 export default function PostWindow() {
     const [showModal, setShowModal] = useState(false);
@@ -10,10 +13,19 @@ export default function PostWindow() {
     const [usernames, setUsernames] = useState([]);
     const [selectedUsernames, setSelectedUsernames] = useState([]);
     const [draggedFile, setDraggedFile] = useState(null);
+    const [isScheduled, setIsScheduled] = useState(false);
+    const [scheduledDate, setScheduledDate] = useState('');
+    const [scheduledTime, setScheduledTime] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
 
 const removeUsername = (usernameToRemove) => {
     setSelectedUsernames(selectedUsernames.filter(account => account.username !== usernameToRemove.username || account.platform !== usernameToRemove.platform));
 };
+
+const handleCaptionChange = (newCaption) => {
+        setCaption(newCaption);
+    };
 
 
 
@@ -30,24 +42,30 @@ const removeUsername = (usernameToRemove) => {
 
 
 
-    const handleCreateCaption = async () => {
-    const response = await fetch('http://localhost:5000/create-caption', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ caption }),
-    });
+     const handleCreateCaption = async () => {
+        setIsLoading(true);
+        try {
+            const response = await fetch('http://localhost:5000/create-caption', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ caption }),
+            });
 
-    if (response.ok) {
-        const data = await response.json();
-        const generatedCaption = data.caption || '';
-        const generatedHashtags = data.hashtags ? data.hashtags.join(' ') : '';
-        setCaption(generatedCaption + ' ' + generatedHashtags);
-    } else {
-        console.log('Fehler beim Empfangen der Caption');
-    }
-};
+            if (response.ok) {
+                const data = await response.json();
+                const generatedCaption = data.caption || '';
+                const generatedHashtags = data.hashtags ? data.hashtags.join(' ') : '';
+                setCaption(generatedCaption + ' ' + generatedHashtags);
+            } else {
+                console.log('Fehler beim Empfangen der Caption');
+            }
+        } catch (error) {
+            console.error('Fehler:', error);
+        }
+        setIsLoading(false);
+    };
+
+
 
 
 
@@ -77,37 +95,54 @@ const removeUsername = (usernameToRemove) => {
 };
 
 
-  const handleSavePost = async () => {
-    // Überprüfen, ob eine Datei ausgewählt wurde
-    if (draggedFile) {
-        // Erstellen eines FormData-Objekts für den Datei-Upload
-        const formData = new FormData();
-        formData.append('file', draggedFile); // Die ausgewählte Datei
-        formData.append('caption', caption); // Die eingegebene Caption
-        formData.append('accounts', JSON.stringify(selectedUsernames)); // Die ausgewählten Benutzernamen
-
-        try {
-            // Senden der FormData an Ihr Backend
-            const response = await fetch('http://localhost:5000/instagram-post-picture', {
-                method: 'POST',
-                body: formData,
-            });
-
-            // Überprüfen, ob die Anfrage erfolgreich war
-            if (response.ok) {
-                const responseData = await response.json();
-                console.log('Post erfolgreich gesendet:', responseData);
-                // Hier können Sie weitere Aktionen durchführen, z.B. das Modal schließen
-            } else {
-                console.error('Fehler beim Senden des Posts');
-            }
-        } catch (error) {
-            console.error('Fehler beim Senden des Posts:', error);
-        }
-    } else {
+ const handleSavePost = async () => {
+    if (!draggedFile) {
         console.log('Keine Datei ausgewählt');
+        alert('Bitte wählen Sie eine Datei aus.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', draggedFile);
+    formData.append('caption', caption);
+    formData.append('accounts', JSON.stringify(selectedUsernames.map(account => account.username)));
+
+    let url = 'http://localhost:5000/instagram-post-picture';
+
+    if (isScheduled) {
+        if (!scheduledDate || !scheduledTime) {
+            console.log('Datum oder Uhrzeit nicht angegeben');
+            alert('Bitte geben Sie sowohl Datum als auch Uhrzeit für den geplanten Post an.');
+            return;
+        }
+
+        formData.append('date', scheduledDate);
+        formData.append('time', scheduledTime);
+        url = 'http://localhost:5000/plan-post'; // URL für geplanten Post
+    }
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            const responseData = await response.json();
+            console.log('Post erfolgreich gesendet:', responseData);
+            alert('Post wurde erfolgreich gesendet.');
+            handleCloseModal(); // Modal schließen und Zustände zurücksetzen
+        } else {
+            console.error('Fehler beim Senden des Posts');
+            alert('Fehler beim Senden des Posts.');
+        }
+    } catch (error) {
+        console.error('Netzwerkfehler:', error);
+        alert('Netzwerkfehler beim Senden des Posts.');
     }
 };
+
+
 
 
 
@@ -129,7 +164,7 @@ const handleDrop = (event) => {
 
   return (
         <div>
-            <Button onClick={() => setShowModal(true)}>Create Post</Button>
+            <Button className="button-create-post" onClick={() => setShowModal(true)}>Create Post</Button>
 
                 <Modal
                     show={showModal}
@@ -141,51 +176,49 @@ const handleDrop = (event) => {
                 >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Create a New Post
+                        Erstelle neuen Post
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Row>
                             <Col md={6}>
+
+                                <SchedulePost
+                                    isScheduled={isScheduled}
+                                    setIsScheduled={setIsScheduled}
+                                    scheduledDate={scheduledDate}
+                                    setScheduledDate={setScheduledDate}
+                                    scheduledTime={scheduledTime}
+                                    setScheduledTime={setScheduledTime}
+                                  />
+
+
                                 <UsernameSelector
                                     usernames={usernames}
                                     selectedUsernames={selectedUsernames}
                                     onUsernameSelect={handleUsernameSelect}
                                     onRemoveUsername={removeUsername}
                                 />
-                                <CaptionCreator
-                                    caption={caption}
-                                    onCaptionChange={(e) => setCaption(e.target.value)}
-                                    onCreateCaption={handleCreateCaption}
-                                />
+                                                   <CaptionCreator
+                    caption={caption}
+                    onCaptionChange={handleCaptionChange}
+                    onCreateCaption={handleCreateCaption}
+                    isLoading={isLoading}
+                />
 
-                         <div
-                                    onDragOver={handleDragOver}
-                                    onDrop={handleDrop}
-                                    className="dragDropArea"
-                                >
-                                    Drag and drop a file here
-                                </div>
+                                <DragDropArea onDragOver={handleDragOver} onDrop={handleDrop} />
                             </Col>
+
+
                             <Col md={6}>
-                                {/* Rechte Spalte - Bildvorschau */}
-                                {imagePreviewUrl && (
-                                    <div>
-                                        <h5>Bildvorschau:</h5>
-                                        <img src={imagePreviewUrl} alt="Vorschau" style={{ width: '100%', height: 'auto' }} />
-                                    </div>
-                                )}
+                               <ImagePreview imagePreviewUrl={imagePreviewUrl} />
                             </Col>
                         </Row>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseModal}>
-                        Close
-                    </Button>
-
-                    <Button variant="primary" onClick={handleSavePost}>
+                    <Button className="safe-post-button " onClick={handleSavePost}>
                         Save Post
                     </Button>
                 </Modal.Footer>

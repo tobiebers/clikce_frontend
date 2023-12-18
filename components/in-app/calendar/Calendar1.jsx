@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import {Modal, ListGroup, Row, Col, Button} from 'react-bootstrap'; // Zusätzliche Importe für Modal und ListGroup
+import de from 'date-fns/locale/de';
 
 function Calendar1() {
     const [date, setDate] = useState(new Date());
@@ -35,28 +36,22 @@ function Calendar1() {
         setShowModal(true);
     };
 
-    const renderTileContent = ({ date, view }) => {
+     const renderTileClass = ({ date, view }) => {
         if (view === 'month') {
-            const dayPosts = plannedPosts.filter(post => new Date(post.date).toDateString() === date.toDateString());
-            return (
-                <div>
-                    {dayPosts.map((post, index) => (
-                        <div key={index} style={{ color: 'blue', fontSize: '0.75em' }}>
-                            x
-                        </div>
-                    ))}
-                </div>
-            );
+            const dayHasPost = plannedPosts.some(post => new Date(post.date).toDateString() === date.toDateString());
+            return dayHasPost ? 'event-day' : null;
         }
     };
+
 
     return (
         <div>
             <Calendar
                 onChange={onChange}
                 value={date}
-                tileContent={renderTileContent}
-                onClickDay={handleDayClick} // Event-Handler für Klick auf ein Datum hinzufügen
+                tileClassName={renderTileClass}
+                onClickDay={handleDayClick}
+                locale={de} // Setzen der Lokalisierung auf Deutsch
             />
 
             {/* Modal für die Anzeige der geplanten Posts */}
