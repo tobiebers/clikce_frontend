@@ -5,6 +5,7 @@ import CaptionCreator from "@/components/in-app/calendar/post-modal/CaptionCreat
 import SchedulePost from "@/components/in-app/calendar/post-modal/SchedulePost";
 import ImagePreview from "@/components/in-app/calendar/post-modal/ImagePreview";
 import DragDropArea from "@/components/in-app/calendar/post-modal/DragDropArea";
+import HashtagSetSelector from "@/components/in-app/calendar/post-modal/HashtagSetViewer";
 
 export default function PostWindow() {
     const [showModal, setShowModal] = useState(false);
@@ -26,6 +27,11 @@ const removeUsername = (usernameToRemove) => {
 const handleCaptionChange = (newCaption) => {
         setCaption(newCaption);
     };
+
+    const handleSetSelected = (set) => {
+            setCaption(caption + ' ' + set.hashtags.join(' '));  // Füge die ausgewählten Hashtags zur Caption hinzu
+        };
+
 
 
 
@@ -200,12 +206,14 @@ const handleDrop = (event) => {
                                     onUsernameSelect={handleUsernameSelect}
                                     onRemoveUsername={removeUsername}
                                 />
+
                                                    <CaptionCreator
                     caption={caption}
                     onCaptionChange={handleCaptionChange}
                     onCreateCaption={handleCreateCaption}
                     isLoading={isLoading}
                 />
+                                <HashtagSetSelector onSetSelected={handleSetSelected} />
 
                                 <DragDropArea onDragOver={handleDragOver} onDrop={handleDrop} />
                             </Col>

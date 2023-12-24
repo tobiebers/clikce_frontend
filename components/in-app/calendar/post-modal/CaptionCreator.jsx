@@ -16,7 +16,7 @@ function CaptionCreator({ caption, onCaptionChange, onCreateCaption, isLoading }
                     className="captionCreatorTextarea"
                 />
             </Form.Group>
-            <Button className="create-caption-button" onClick={onCreateCaption} disabled={isLoading}>
+            <Button className="create-caption-button " onClick={onCreateCaption} disabled={isLoading}>
                 {isLoading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" className="custom-spinner" /> : 'Erstelle Ki Caption'}
             </Button>
         </>

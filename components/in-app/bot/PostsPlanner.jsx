@@ -78,7 +78,7 @@ function PostPlannerModal() {
         <div>
             <Button onClick={() => setShowModal(true)} className="button-create-post">Plan Posts</Button>
 
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered className="postModal" size="xl">
                 <Modal.Header closeButton>
                     <Modal.Title>Plan Posts</Modal.Title>
                 </Modal.Header>
@@ -113,11 +113,11 @@ function PostPlannerModal() {
                             <Form.Control type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
                         </Form.Group>
 
-                        <Button onClick={handleSubmit}>Speichern</Button>
+
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>Schließen</Button>
+                    <Button onClick={handleSubmit} className="safe-post-button">Speichern</Button>
                 </Modal.Footer>
             </Modal>
         </div>

@@ -2,6 +2,9 @@ import AccountCard from "@/components/in-app/account/account-management/AccountC
 import PostWindow from "@/components/in-app/calendar/post-modal/post-window";
 import Calendar1 from "@/components/in-app/calendar/Calendar1";
 import PostPlannerModal from "@/components/in-app/bot/PostsPlanner";
+import CreateBot from "@/components/in-app/calendar/post-modal/CreateBot";
+import HashtagSetCreator from "@/components/in-app/calendar/post-modal/HashtagSetCreator";
+import HashtagSetSelector from "@/components/in-app/calendar/post-modal/HashtagSetViewer";
 import {Col, Row} from "react-bootstrap";
 
 export default function Calendar() {
@@ -15,6 +18,9 @@ export default function Calendar() {
 
           <PostWindow/>
           <PostPlannerModal/>
+          <CreateBot/>
+          <HashtagSetCreator/>
+
         </Col>
         <Col md={10}>
           <Calendar1/>
