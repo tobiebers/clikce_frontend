@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 export default function CardsInfo() {
-  const [section1Text, setSection1Text] = useState("");
-  const [section2Text, setSection2Text] = useState("");
-  const [section3Text, setSection3Text] = useState("");
-  const [section4Text, setSection4Text] = useState("");
+  const [likesText, setLikesText] = useState("");
+  const [followerText, setFollowerText] = useState("");
+  const [kommentarText, setKommentarText] = useState("");
+  const [followingText, setFollowingText] = useState("");
 
   useEffect(() => {
     const fetchSection1Text = async () => {
       try {
         const response = await fetch('http://localhost:5000/fetch-card-info');
         const data = await response.json();
-        setSection1Text(data.section1Text);
-        setSection2Text(data.section2Text);
-        setSection3Text(data.section3Text);
-        setSection4Text(data.section4Text);
+        setLikesText(data.likesText);
+        setFollowerText(data.followerText);
+        setKommentarText(data.kommentarText);
+        setFollowingText(data.followingText);
       } catch (error) {
         console.error('Fehler beim Abrufen der Daten vom Backend:', error);
       }
@@ -36,7 +36,7 @@ export default function CardsInfo() {
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Text>{section1Text}</Card.Text>
+                  <Card.Text>{likesText}</Card.Text>
                   <Card.Text>Likes</Card.Text>
                 </Card.Body>
               </Col>
@@ -53,7 +53,7 @@ export default function CardsInfo() {
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Text>{section2Text}</Card.Text>
+                  <Card.Text>{followerText}</Card.Text>
                   <Card.Text>Follower</Card.Text>
                 </Card.Body>
               </Col>
@@ -70,8 +70,8 @@ export default function CardsInfo() {
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Text>{section3Text}</Card.Text>
-                  <Card.Text>New Leads</Card.Text>
+                  <Card.Text>{kommentarText}</Card.Text>
+                  <Card.Text>Kommentare</Card.Text>
                 </Card.Body>
               </Col>
             </Row>
@@ -87,8 +87,8 @@ export default function CardsInfo() {
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Text>{section4Text}</Card.Text>
-                  <Card.Text>Referrals</Card.Text>
+                  <Card.Text>{followingText}</Card.Text>
+                  <Card.Text>Following</Card.Text>
                 </Card.Body>
               </Col>
             </Row>
