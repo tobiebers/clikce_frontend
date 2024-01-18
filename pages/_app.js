@@ -21,6 +21,7 @@ import '@/styles/analytics/buttongroup.css'
 import '@/styles/app/performingAccounts.css'
 import '@/styles/app/recentInteraction.css'
 import '@/styles/post-modal/postModal.css'
+import '@/styles/app/dashboard.css'
 
 
 import {AuthProvider} from "@/components/out-app/static-components/AuthContext";

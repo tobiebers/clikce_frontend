@@ -1,0 +1,29 @@
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten mit gleicher Breite */
+  grid-template-rows: auto 1fr 1fr; /* Drei Zeilen, die erste für 'visitors', die anderen für die Karten */
+  grid-gap: 20px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1; /* Erstreckt sich über alle Spalten */
+}
+
+.visitors {
+  grid-column: 1 / -1; /* Besetzt beide Spalten */
+  grid-row: 1; /* Erste Zeile */
+}
+
+.chart {
+  display: none; /* Verstecke das Diagramm, falls nicht mehr benötigt */
+}
+
+.recentInteractions {
+  grid-column: 2 / 3; /* Zweite Spalte */
+  grid-row: 3 / 4; /* Dritte Zeile */
+}
+
+.performingAccounts {
+  grid-column: 1 / 2; /* Erste Spalte */
+  grid-row: 3 / 4; /* Dritte Zeile */
+}

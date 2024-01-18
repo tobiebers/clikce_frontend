@@ -29,7 +29,7 @@ export default function Chart() {
   return (
     <div className="chart-container">
       <AreaChart
-        width={600}
+        width={900}
         height={300}
         data={data}
         className="background-color-secondary chart-abstand"

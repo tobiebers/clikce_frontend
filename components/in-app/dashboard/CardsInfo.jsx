@@ -31,10 +31,10 @@ export default function CardsInfo() {
         <Col>
           <Card className="background-color-secondary">
             <Row>
-              <Col md={4}>
+              <Col md={3}>
                 <Card.Img src="/Cards-Info-Herz.png" alt="Bild 3" className="card-img-centered img-responsive my-1 mx-1"/>
               </Col>
-              <Col md={8}>
+              <Col md={9}>
                 <Card.Body>
                   <Card.Text>{likesText}</Card.Text>
                   <Card.Text>Likes</Card.Text>
@@ -48,10 +48,10 @@ export default function CardsInfo() {
         <Col>
           <Card className="background-color-secondary">
             <Row>
-              <Col md={4}>
+              <Col md={3}>
                 <Card.Img src="/Cards-Info-Follower.png" alt="Bild 2" className="card-img-centered my-1 mx-1"/>
               </Col>
-              <Col md={8}>
+              <Col md={9}>
                 <Card.Body>
                   <Card.Text>{followerText}</Card.Text>
                   <Card.Text>Follower</Card.Text>
@@ -65,10 +65,10 @@ export default function CardsInfo() {
         <Col>
           <Card className="background-color-secondary">
             <Row>
-              <Col md={4}>
+              <Col md={3}>
                 <Card.Img src="/Cards-Info-Leads.png" alt="Bild 3" className="card-img-centered mx-1 my-1"/>
               </Col>
-              <Col md={8}>
+              <Col md={9}>
                 <Card.Body>
                   <Card.Text>{kommentarText}</Card.Text>
                   <Card.Text>Kommentare</Card.Text>
@@ -82,10 +82,10 @@ export default function CardsInfo() {
         <Col>
           <Card className="background-color-secondary">
             <Row>
-              <Col md={4}>
+              <Col md={3}>
                 <Card.Img src="/Cards-Info-Referrals.png" alt="Bild 4" className="card-img-centered mx-1 my-1"/>
               </Col>
-              <Col md={8}>
+              <Col md={9}>
                 <Card.Body>
                   <Card.Text>{followingText}</Card.Text>
                   <Card.Text>Following</Card.Text>
