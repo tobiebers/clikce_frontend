@@ -12,6 +12,7 @@
 .chart {
   grid-column: 1 / -1; /* Erstreckt sich über alle Spalten */
   grid-row: 2; /* Zweite Zeile */
+  z-index: -1;
 }
 
 .recentInteractions {
