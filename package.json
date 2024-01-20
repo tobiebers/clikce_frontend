@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
+    "calendar": "^0.1.1",
     "cdbreact": "^1.5.18",
     "chart.js": "^4.4.1",
     "date-fns": "^3.0.0",
