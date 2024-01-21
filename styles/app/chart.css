@@ -11,36 +11,19 @@
 
 /* ... Ihre anderen Stile ... */
 
-
-
-
-
-.dashboardGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr 1fr;
-  grid-gap: 20px;
+.custom-dropdown-toggle {
+  background-color: #0eafaa; /* Grüne Hintergrundfarbe */
+  color: white; /* Weiße Textfarbe */
+  border: none; /* Kein Rand */
 }
 
-.fullWidth {
-  grid-column: 1 / -1;
+.custom-dropdown-toggle:hover {
+  background-color: #0eafaa; /* Dunklerer Grünton beim Hover */
 }
 
-.chart {
-  grid-column: 1 / 2;
-}
 
-.pieChart {
-  grid-column: 2 / 3;
-}
 
-.recentInteractions {
-  grid-column: 1 / 2;
-  grid-row: 3;
-}
 
-.performingAccounts {
-  grid-column: 2 / 3;
-  grid-row: 3;
-}
+
+
 

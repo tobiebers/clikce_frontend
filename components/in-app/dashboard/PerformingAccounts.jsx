@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react';
 export default function PerformingAccounts() {
   const [nameText, setnameText] = useState("");
   const [likesText, setlikesText] = useState("");
+  const [profilePicture, setProfilePicture] = useState("PlaceHolder.jpg");
     useEffect(() => {
     const fetchPerformingAccounts = async () => {
       try {
@@ -11,6 +12,7 @@ export default function PerformingAccounts() {
         const data = await response.json();
         setnameText(data.nameText);
         setlikesText(data.likesText);
+        setProfilePicture(data.profilePicture)
       } catch (error) {
         console.error('Fehler beim Abrufen der Daten vom Backend:', error);
       }
@@ -21,7 +23,7 @@ export default function PerformingAccounts() {
   return (
     <div className="top-performing-container">
       <img
-        src="PlaceHolder.jpg"
+        src={profilePicture}
         alt="Performing Account"
         className="image"
       />

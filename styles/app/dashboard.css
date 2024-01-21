@@ -1,0 +1,26 @@
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Zwei Spalten mit gleicher Breite */
+  grid-template-rows: auto auto 1fr; /* Drei Zeilen: die ersten beiden für 'CardsInfo' und 'Chart', die letzte für die anderen Karten */
+  grid-gap: 1%;
+}
+
+.fullWidth {
+  grid-column: 1 / -1; /* Erstreckt sich über alle Spalten */
+}
+
+.chart {
+  grid-column: 1 / -1; /* Erstreckt sich über alle Spalten */
+  grid-row: 2; /* Zweite Zeile */
+  z-index: -1;
+}
+
+.recentInteractions {
+  grid-column: 1 / 2; /* Erste Spalte */
+  grid-row: 3 / 4; /* Dritte Zeile */
+}
+
+.performingAccounts {
+  grid-column: 2 / 3; /* Zweite Spalte */
+  grid-row: 3 / 4; /* Dritte Zeile */
+}
