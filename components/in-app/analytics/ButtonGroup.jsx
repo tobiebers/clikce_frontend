@@ -14,8 +14,8 @@ function ToggleSwitch() {
                 onChange={handleToggle}
             />
             <label htmlFor="toggle-switch" className='toggle-switch-container'>
-                <div>Account</div>
-                <div>Group</div>
+                <div>Instagram</div>
+                <div>TikTok</div>
             </label>
         </div>
     );
