@@ -10,13 +10,13 @@ export default function Dashboard() {
       <div className="fullWidth">
         <CardsInfo />
       </div>
-      <div>
+      <div className="chart">
         <Chart />
       </div>
-      <div>
+      <div className="recentInteractions">
         <RecentInteractions />
       </div>
-      <div>
+      <div className="performingAccounts">
         <PerformingAccounts />
       </div>
     </div>

@@ -11,6 +11,17 @@
 
 /* ... Ihre anderen Stile ... */
 
+.custom-dropdown-toggle {
+  background-color: #0eafaa; /* Grüne Hintergrundfarbe */
+  color: white; /* Weiße Textfarbe */
+  border: none; /* Kein Rand */
+}
+
+.custom-dropdown-toggle:hover {
+  background-color: #0eafaa; /* Dunklerer Grünton beim Hover */
+}
+
+
 
 
 

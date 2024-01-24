@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row, Dropdown, DropdownButton } from "react-bootstrap";
 
 export default function CardsInfo() {
   const [likesText, setLikesText] = useState("");
   const [followerText, setFollowerText] = useState("");
   const [kommentarText, setKommentarText] = useState("");
   const [followingText, setFollowingText] = useState("");
+  const [dropdownAuswahl, setDropdownAuswahl] = useState("Option wählen");
 
   useEffect(() => {
     const fetchSection1Text = async () => {
@@ -23,6 +24,10 @@ export default function CardsInfo() {
 
     fetchSection1Text();
   }, []);
+
+  const handleSelect = (eventKey) => {
+    setDropdownAuswahl(eventKey);
+  };
 
   return (
     <Container>
@@ -92,6 +97,22 @@ export default function CardsInfo() {
                 </Card.Body>
               </Col>
             </Row>
+          </Card>
+        </Col>
+
+        {/* Abschnitt 5: Karte mit Dropdown-Menü */}
+        <Col>
+          <Card className="h-100 background-color-secondary">
+            <Card.Body>
+              <DropdownButton
+                className="btn1"
+
+                // Hier wird das z-Index-Attribut hinzugefügt
+              >
+                <Dropdown.Item>Instagram</Dropdown.Item>
+                <Dropdown.Item>TikTok</Dropdown.Item>
+              </DropdownButton>
+            </Card.Body>
           </Card>
         </Col>
       </Row>
