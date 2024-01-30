@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function ToggleSwitch() {
+function ToggleSwitch({ onToggle }) {
     const [isChecked, setIsChecked] = useState(false);
-    const handleToggle = () => setIsChecked(!isChecked);
+
+    const handleToggle = () => {
+        setIsChecked(!isChecked);
+        if (onToggle) {
+            onToggle();
+        }
+    };
 
     return (
         <div className="toggle-switch-wrapper">
@@ -21,9 +27,26 @@ function ToggleSwitch() {
     );
 }
 
-function CustomDropdownMenu() {
+function CustomDropdownMenu({ platform }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [accounts, setAccounts] = useState([]);
     const toggleDropdown = () => setIsOpen(!isOpen);
+
+    useEffect(() => {
+    const url = platform === 'instagram'
+        ? `http://localhost:5000/instagram-profiles`
+        : `http://localhost:5000/tiktok-profiles`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Abgerufene Daten:", data); // Ausgabe in der Konsole
+            setAccounts(data.accounts);
+        })
+        .catch(error => console.error('Error:', error));
+}, [platform]);
+
+
 
     return (
         <div className="custom-dropdown-wrapper">
@@ -31,10 +54,9 @@ function CustomDropdownMenu() {
                 <span className="custom-dropdown-toggle" onClick={toggleDropdown}>Accounts</span>
                 {isOpen && (
                     <ul className="custom-dropdown-slide">
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
+                        {accounts.map((account, index) => (
+                            <li key={index}><a href="#">{account.username}</a></li>
+                        ))}
                     </ul>
                 )}
             </nav>
@@ -43,10 +65,12 @@ function CustomDropdownMenu() {
 }
 
 export default function CombinedControls() {
+    const [platform, setPlatform] = useState('instagram');
+
     return (
         <div className="controls-container">
-            <ToggleSwitch />
-            <CustomDropdownMenu />
+            <ToggleSwitch onToggle={() => setPlatform(platform === 'instagram' ? 'tiktok' : 'instagram')} />
+            <CustomDropdownMenu platform={platform} />
         </div>
     );
 }
