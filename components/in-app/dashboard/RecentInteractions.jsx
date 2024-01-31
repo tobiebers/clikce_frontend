@@ -7,42 +7,48 @@ export default function RecentInteractions() {
     accountGroup: [],
     interaction: [],
   });
+
   const [selectedValues, setSelectedValues] = useState({
     account: "",
     accountGroup: "",
     interaction: "",
-    total: "0", // Hier den festen Wert für Total setzen
+    total: "0",
   });
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/fetch-recent-interactions');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/fetch-recent-interactions');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.account && Array.isArray(data.account) &&
+            data.account_group && Array.isArray(data.account_group) &&
+            data.interaction && Array.isArray(data.interaction)) {
+          setDropdownOptions({
+            account: data.account,
+            accountGroup: data.account_group,
+            interaction: data.interaction,
+          });
+        } else {
+          console.error("Invalid data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching dropdown options:", error);
       }
-      const data = await response.json();
-      if (data.account && Array.isArray(data.account) &&
-          data.account_group && Array.isArray(data.account_group) &&
-          data.interaction && Array.isArray(data.interaction)) {
-        setDropdownOptions({
-          account: data.account,
-          accountGroup: data.account_group,
-          interaction: data.interaction
-        });
-      } else {
-        console.error("Invalid data format:", data);
-      }
-    } catch (error) {
-      console.error("Error fetching dropdown options:", error);
-    }
-  };
-
-  fetchData();
-}, []);
+    };
+    fetchData();
+  }, []);
 
   const handleDropdownChange = (key, value) => {
     setSelectedValues(prevValues => ({ ...prevValues, [key]: value }));
+  };
+
+  const onTotalClick = () => {
+    console.log("Total clicked:", selectedValues.total);
+    // Hier können Sie die Logik für den Klick auf Total hinzufügen,
+    // z.B. das Öffnen eines Modals oder das Anzeigen einer Benachrichtigung
   };
 
   return (
@@ -53,7 +59,6 @@ useEffect(() => {
           <tr>
             <td>
               <DropdownButton
-                className=""
                 variant=""
                 id="dropdown-account"
                 title="Account"
@@ -68,7 +73,6 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className=""
                 variant=""
                 id="dropdown-account-group"
                 title="Account Group"
@@ -83,7 +87,6 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className=""
                 variant=""
                 id="dropdown-interaction"
                 title="Interaction"
@@ -97,7 +100,11 @@ useEffect(() => {
               </DropdownButton>
             </td>
             <td>
-              <Button variant="" className="p-0 m-0">
+              <Button
+                variant=""
+                className="p-1 m-0, button_umrandung"
+                onClick={onTotalClick}
+              >
                 Total
               </Button>
             </td>
@@ -108,7 +115,15 @@ useEffect(() => {
             <td>{selectedValues.account}</td>
             <td>{selectedValues.accountGroup}</td>
             <td>{selectedValues.interaction}</td>
-            <td>{selectedValues.total}</td>
+            <td>
+              <Button
+                variant=""
+                className="p-0 m-0"
+                onClick={onTotalClick}
+              >
+                {selectedValues.total}
+              </Button>
+            </td>
           </tr>
         </tbody>
       </Table>
