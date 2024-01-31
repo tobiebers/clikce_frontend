@@ -1,27 +1,28 @@
 .controls-container {
     display: flex;
+    flex-direction: column; /* Stapeln Sie die Elemente vertikal statt nebeneinander */
     align-items: center;
     justify-content: left;
     gap: 20px; /* Abstand zwischen den Komponenten */
 }
 
 .toggle-switch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .toggle-switch-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: fit-content;
-  border: 3px solid #4B8E94;
-  border-radius: 20px;
-  background: #4B8E94;
-  font-weight: bold;
-  color: #D6EBEA;
-  cursor: pointer;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    border: 3px solid #4B8E94;
+    border-radius: 20px;
+    background: #4B8E94;
+    font-weight: bold;
+    color: #D6EBEA;
+    cursor: pointer;
 }
 
 .toggle-switch-container::before {
@@ -77,6 +78,7 @@
     width: 180px;
     background: #d9d9d9;
     border-radius: 6px;
+    margin-top: 10px; /* Fügen Sie Abstand nach oben hinzu, wenn nötig */
 }
 
 .custom-dropdown-toggle {

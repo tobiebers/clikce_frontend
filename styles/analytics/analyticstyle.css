@@ -1,0 +1,31 @@
+.analyticsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.moduleWrapper {
+    border-radius: 47px;
+background: #D6EBEA;
+box-shadow: inset 5px 5px 28px #bed1d0,
+            inset -5px -5px 28px #eeffff;
+    margin: 10px; /* Etwas Abstand zwischen den Modulen hinzufügen */
+    padding: 20px; /* Innenabstand hinzufügen */
+}
+
+.leftColumn, .rightColumn {
+    flex-grow: 1;
+    position: relative;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
