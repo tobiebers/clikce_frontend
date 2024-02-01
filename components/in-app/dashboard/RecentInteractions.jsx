@@ -116,7 +116,7 @@ useEffect(() => {
               </DropdownButton>
             </td>
             <td>
-              <Button variant="" className="p-0 m-0" onClick={handleInteractionButton}>
+              <Button variant="" className="p-1 m-0, button_umrandung" onClick={handleInteractionButton}>
                 Total
               </Button>
             </td>
