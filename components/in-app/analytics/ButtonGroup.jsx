@@ -6,7 +6,7 @@ function ToggleSwitch({ onToggle }) {
     const handleToggle = () => {
         setIsChecked(!isChecked);
         if (onToggle) {
-            onToggle(isChecked ? 'tiktok' : 'instagram');
+            onToggle(!isChecked ? 'tiktok' : 'instagram');
         }
     };
 
@@ -28,11 +28,9 @@ function ToggleSwitch({ onToggle }) {
 }
 
 function CustomDropdownMenu({ platform }) {
-    const [isOpen, setIsOpen] = useState(false);
     const [accounts, setAccounts] = useState([]);
 
     useEffect(() => {
-        // Platzhalter-URLs, ersetzen Sie diese durch Ihre tatsächlichen Endpunkte
         const url = platform === 'instagram'
             ? `http://localhost:5000/instagram-profiles`
             : `http://localhost:5000/tiktok-profiles`;
@@ -45,31 +43,40 @@ function CustomDropdownMenu({ platform }) {
             .catch(error => console.error('Error:', error));
     }, [platform]);
 
+    const handleSelectAccount = (account) => {
+        onSelectAccount(account);
+    };
+
     return (
         <div className="custom-dropdown-wrapper">
             <div className="custom-dropdown-nav">
-                <button className="custom-dropdown-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    Accounts
-                </button>
-                {isOpen && (
-                    <ul className="custom-dropdown-slide">
-                        {accounts.map((account, index) => (
-                            <li key={index}><a href="#">{account.username}</a></li>
-                        ))}
-                    </ul>
-                )}
+                <span className="custom-dropdown-toggle">Accounts</span>
+                <ul className="custom-dropdown-slide">
+                    {accounts.slice(0, 3).map((account, index) => (
+                        <li key={index} onClick={() => handleSelectAccount(account)}><a href="#">{account.username}</a></li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
 }
 
-export default function CombinedControls() {
+function CombinedControls() {
     const [platform, setPlatform] = useState('instagram');
+    const [selectedAccount, setSelectedAccount] = useState(null);
+
+    // Funktion, die aufgerufen wird, wenn ein Account ausgewählt wird
+    const handleSelectAccount = (account) => {
+        // Hier würde man normalerweise einen API-Aufruf machen, um die Account-Daten zu holen
+        setSelectedAccount(account);
+    };
 
     return (
         <div className="controls-container">
             <ToggleSwitch onToggle={setPlatform} />
-            <CustomDropdownMenu platform={platform} />
+            <CustomDropdownMenu platform={platform} onSelectAccount={handleSelectAccount} />
+            {selectedAccount && <CardClient account={selectedAccount} />}
         </div>
     );
 }
+

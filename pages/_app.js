@@ -26,6 +26,7 @@ import '@/styles/analytics/currentaccountuser.css'
 import '@/styles/analytics/topperformingpost.css'
 import '@/styles/analytics/igtest.css'
 import '@/styles/analytics/analyticstyle.css'
+import '@/styles/analytics/lists.css'
 
 import {AuthProvider} from "@/components/out-app/static-components/AuthContext";
 import { useAuth } from "@/components/out-app/static-components/AuthContext";

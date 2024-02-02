@@ -1,17 +1,20 @@
+/* Stil für den Container, der die Steuerelemente enthält */
 .controls-container {
     display: flex;
-    flex-direction: column; /* Stapeln Sie die Elemente vertikal statt nebeneinander */
+    flex-direction: column; /* Vertikale Anordnung der Elemente */
     align-items: center;
     justify-content: left;
-    gap: 20px; /* Abstand zwischen den Komponenten */
+    gap: 5px; /* Abstand zwischen den Elementen */
 }
 
+/* Stil für den Wrapper des Toggle-Switch */
 .toggle-switch-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Stil für den Container des Toggle-Switch */
 .toggle-switch-container {
     position: relative;
     display: grid;
@@ -25,62 +28,67 @@
     cursor: pointer;
 }
 
+/* Stil für die Schiebefläche des Toggle-Switch */
 .toggle-switch-container::before {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  left: 0;
-  border-radius: 20px;
-  background: #FFB3B8;
-  transition: all 0.3s;
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    border-radius: 20px;
+    background: #FFB3B8;
+    transition: all 0.3s;
 }
 
+/* Anpassung der Position der Schiebefläche bei aktiviertem Switch */
 .toggle-switch-checkbox:checked + .toggle-switch-container::before {
-  left: 50%;
+    left: 50%;
 }
 
+/* Stil für die Textelemente im Toggle-Switch */
 .toggle-switch-container div {
-  padding: 6px;
-  text-align: center;
-  z-index: 1;
+    padding: 6px;
+    text-align: center;
+    z-index: 1;
 }
 
+/* Ausblenden des tatsächlichen Checkbox-Elements */
 .toggle-switch-checkbox {
-  display: none;
+    display: none;
 }
 
+/* Farbänderungen bei aktiviertem und deaktiviertem Switch */
 .toggle-switch-checkbox:checked + .toggle-switch-container div:first-child {
-  color: #D6EBEA;
-  transition: color 0.3s;
+    color: #D6EBEA;
+    transition: color 0.3s;
 }
-
 .toggle-switch-checkbox:checked + .toggle-switch-container div:last-child {
-  color: #343434;
-  transition: color 0.3s;
+    color: #343434;
+    transition: color 0.3s;
 }
-
 .toggle-switch-checkbox + .toggle-switch-container div:first-child {
-  color: #343434;
-  transition: color 0.3s;
+    color: #343434;
+    transition: color 0.3s;
 }
-
 .toggle-switch-checkbox + .toggle-switch-container div:last-child {
-  color: white;
-  transition: color 0.3s;
+    color: white;
+    transition: color 0.3s;
 }
 
+/* Stil für den Wrapper des Dropdown-Menüs */
 .custom-dropdown-wrapper {
-    position: relative; /* Ermöglicht absolute Positionierung des Dropdown-Menüs */
+    position: relative;
 }
 
+/* Stil für das Dropdown-Menü selbst */
 .custom-dropdown-nav {
     width: 180px;
     background: #d9d9d9;
     border-radius: 6px;
-    margin-top: 10px; /* Fügen Sie Abstand nach oben hinzu, wenn nötig */
+    margin-top: 10px;
 }
 
+/* Stil für den Toggle-Button des Dropdown-Menüs */
 .custom-dropdown-toggle {
     padding: 18px;
     background: #4B8E94;
@@ -88,39 +96,42 @@
     font-size: 0.72em;
     cursor: pointer;
     display: block;
-    border-radius: 6px 6px 6px 6px;
-}
-
-.custom-dropdown-toggle::after {
-    float: right;
-    right: 10%;
-    content: "+";
-    font-size: 1em;
+    border-radius: 6px 6px 0 0;
 }
 
 .custom-dropdown-slide {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    transition: height 0.4s ease;
+    max-height: 175px; /* 1/6 länger als 150px */
+    overflow-y: auto; /* Scrollbar aktivieren, wenn nötig */
     list-style: none;
     padding: 0;
-    border-radius: 6px 6px 6px 6px;
+    border-radius: 0 0 6px 6px;
 }
 
+/* Stil für die Listenelemente im Dropdown-Menü */
 .custom-dropdown-slide li {
     padding: 18px;
     border-top: 1px solid #4B8E94;
-    color: #4B8E94;
     background-color: #D6EBEA;
+    color: #4B8E94;
 }
 
-
+/* Stil für Links in der Liste */
 .custom-dropdown-slide li a {
     text-decoration: none;
     color: #2d2f31;
     font-size: 0.9em;
+}
+
+/* Optional: Stil für die Scrollbar */
+.custom-dropdown-slide::-webkit-scrollbar {
+    width: 10px;
+}
+.custom-dropdown-slide::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.custom-dropdown-slide::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.custom-dropdown-slide::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

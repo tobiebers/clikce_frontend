@@ -1,34 +1,39 @@
 import React from 'react';
-import AnalyticHeadLine from "@/components/in-app/analytics/AnalyticHeadLine";
 import ButtonGroup from "@/components/in-app/analytics/ButtonGroup";
 import LikesLineChart from "@/components/in-app/analytics/LikesLineChart";
+import FollowerGainLineChart from "@/components/in-app/analytics/FollowerGainLineChart";
 import CurrentAccountUsed from "@/components/in-app/analytics/CurrentAccountUsed";
 import FlipCard from "@/components/in-app/analytics/TopPerformingPosts";
-import IGTEST from "@/components/in-app/analytics/IGTEST";
+import Lists from "@/components/in-app/analytics/Lists";
+import { Col, Row, Container } from "react-bootstrap";
 
 export default function Analytics() {
-  return (
-    <div className="analyticsContainer">
-        <AnalyticHeadLine />
-        <div className="content">
-            <div className="moduleWrapper">
-                <ButtonGroup />
-            </div>
-            <div className="moduleWrapper">
-                <LikesLineChart />
-            </div>
-            <div className="rightColumn">
-                <div className="moduleWrapper">
-                    <FlipCard />
-                </div>
-                <div className="moduleWrapper">
-                    <IGTEST />
-                </div>
-            </div>
-        </div>
-        <div className="moduleWrapper">
-            <CurrentAccountUsed />
-        </div>
-    </div>
-  );
+    return (
+        <Container className="my-2 mx-2">
+            <Row className="g-2">
+                <Col md="auto" className="p-3">
+                    <div className="mb-5">
+                        <CurrentAccountUsed/>
+                    </div>
+                    <dic calssName="mt-3">
+                        <ButtonGroup/>
+                    </dic>
+                </Col>
+                <Col md="auto" className="p-3">
+                    <div className="mb-5">
+                        <LikesLineChart/>
+                    </div>
+                    <FollowerGainLineChart/>
+                </Col>
+                <Col md="auto" className="p-3">
+                    <div className="mb-5">
+                        <FlipCard/>
+                    </div>
+                    <div className="mt-5">
+                        <Lists/>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
