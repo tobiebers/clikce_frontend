@@ -45,6 +45,25 @@ useEffect(() => {
     setSelectedValues(prevValues => ({ ...prevValues, [key]: value }));
   };
 
+    const handleInteractionButton = async () => {
+  try {
+    // Senden einer Anfrage an den Flask-Server
+    const response = await fetch('http://localhost:5000/fetch-interaction-button', {
+      method: 'GET', // Oder 'POST', je nachdem, wie Ihre Flask-Route konfiguriert ist
+    });
+
+    if (!response.ok) {
+      throw new Error('Netzwerkantwort war nicht ok');
+    }
+
+    // Hier können Sie zusätzliche Aktionen durchführen, wenn die Anfrage erfolgreich war
+    console.log('Daten erfolgreich aktualisiert');
+
+  } catch (error) {
+    console.error('Fehler beim Aktualisieren der Daten:', error);
+  }
+};
+
   return (
     <div className="background-color-secondary mt-3">
       <p className="text-n text_recentInteractions mb-1">Recent Interactions</p>
@@ -97,7 +116,7 @@ useEffect(() => {
               </DropdownButton>
             </td>
             <td>
-              <Button variant="" className="p-0 m-0">
+              <Button variant="" className="p-1 m-0, button_umrandung" onClick={handleInteractionButton}>
                 Total
               </Button>
             </td>

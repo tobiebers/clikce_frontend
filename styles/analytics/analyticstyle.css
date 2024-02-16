@@ -1,0 +1,39 @@
+.analyticsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px; /* Abstand zwischen den Hauptbereichen */
+}
+
+.leftColumn, .rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen den Modulen */
+}
+
+.accountButtonGroupContainer, .chartsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen den Modulen innerhalb der Container */
+}
+
+.moduleWrapper {
+    border-radius: 47px;
+    background: #D6EBEA;
+    box-shadow: inset 5px 5px 28px #bed1d0, inset -5px -5px 28px #eeffff;
+    margin: 10px;
+    padding: 20px;
+    width: 300px; /* Standardbreite für Module */
+}
+
+.moduleWrapper.large {
+    width: 400px; /* Größere Breite für Diagramme */
+}

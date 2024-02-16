@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Card, Col, Container, Row, Dropdown, DropdownButton } from "react-bootstrap";
+import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
 export default function CardsInfo() {
   const [likesText, setLikesText] = useState("");
   const [followerText, setFollowerText] = useState("");
   const [kommentarText, setKommentarText] = useState("");
   const [followingText, setFollowingText] = useState("");
-  const [dropdownAuswahl, setDropdownAuswahl] = useState("Option wählen");
 
   useEffect(() => {
     const fetchSection1Text = async () => {
@@ -25,9 +24,25 @@ export default function CardsInfo() {
     fetchSection1Text();
   }, []);
 
-  const handleSelect = (eventKey) => {
-    setDropdownAuswahl(eventKey);
-  };
+  const handleRefreshClick = async () => {
+  try {
+    // Senden einer Anfrage an den Flask-Server
+    const response = await fetch('http://localhost:5000/fetch-refresh-data', {
+      method: 'GET', // Oder 'POST', je nachdem, wie Ihre Flask-Route konfiguriert ist
+    });
+
+    if (!response.ok) {
+      throw new Error('Netzwerkantwort war nicht ok');
+    }
+
+    // Hier können Sie zusätzliche Aktionen durchführen, wenn die Anfrage erfolgreich war
+    console.log('Daten erfolgreich aktualisiert');
+
+  } catch (error) {
+    console.error('Fehler beim Aktualisieren der Daten:', error);
+  }
+};
+
 
   return (
     <Container>
@@ -104,14 +119,7 @@ export default function CardsInfo() {
         <Col>
           <Card className="h-100 background-color-secondary">
             <Card.Body>
-              <DropdownButton
-                className="btn1"
-
-                // Hier wird das z-Index-Attribut hinzugefügt
-              >
-                <Dropdown.Item>Instagram</Dropdown.Item>
-                <Dropdown.Item>TikTok</Dropdown.Item>
-              </DropdownButton>
+               <Button className="btn1" onClick={handleRefreshClick}>Refresh</Button>
             </Card.Body>
           </Card>
         </Col>

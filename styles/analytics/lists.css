@@ -1,0 +1,40 @@
+.tabs-container {
+    text-align: center;
+}
+
+.tabs {
+    margin-bottom: 10px;
+}
+
+.tab {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 2px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab.active {
+    background-color: #ddd;
+    color: #000;
+    border-bottom: none;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.content ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.content ul li:last-child {
+    border-bottom: none;
+}

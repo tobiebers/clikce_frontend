@@ -4,28 +4,30 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from "recharts";
 export default function Chart() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/fetch-chart');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        const fetchedData = Object.entries(json).map(([key, value]) => ({
-          time: key,
-          visitors: value
-        }));
-        setData(fetchedData);
-      } catch (error) {
-        console.error("Fehler beim Abrufen der Daten:", error);
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/fetch-chart');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
+      const json = await response.json();
+      const fetchedData = json.map(item => ({
+        time: item.date,
+        Likes: item.total_likes
+      }));
+      setData(fetchedData);
+    } catch (error) {
+      console.error("Fehler beim Abrufen der Daten:", error);
+    }
+  };
 
-    fetchData();
-  }, []);
+  fetchData();
+}, []);
+  const maxLikes = data.reduce((max, item) => item.visitors > max ? item.visitors : max, 0);
 
+  // Bestimmen des maximalen Wertes für die Y-Achse
+  const maxYAxisValue = maxLikes + 10;
   return (
     <div className="chart-container">
       <AreaChart
@@ -34,8 +36,8 @@ export default function Chart() {
         data={data}
         className="background-color-secondary chart-abstand"
       >
-        <XAxis dataKey="time" />
-        <YAxis ticks={[0, 20, 40, 60, 80, 100]} />
+        <XAxis dataKey="time" /> {/* X-Achse soll das Datum anzeigen, daher 'time' */}
+        <YAxis domain={[0, maxYAxisValue]} />
         <Tooltip />
         <Legend verticalAlign="top" align="left" wrapperStyle={{ left: 0, top: 0 }} />
         <defs>
@@ -44,7 +46,7 @@ export default function Chart() {
             <stop offset="100%" stopColor="#e025fa" />
           </linearGradient>
         </defs>
-        <Area type="monotone" dataKey="visitors" stroke="#8884d8" fillOpacity={1} fill="url(#colorGradient)" />
+        <Area type="monotone" dataKey="Likes" stroke="#8884d8" fillOpacity={1} fill="url(#colorGradient)" /> {/* Y-Achse soll die Likes anzeigen, daher 'visitors' */}
       </AreaChart>
     </div>
   );
