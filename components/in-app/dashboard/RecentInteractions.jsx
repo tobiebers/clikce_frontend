@@ -11,53 +11,82 @@ export default function RecentInteractions() {
     account: "",
     accountGroup: "",
     interaction: "",
-    total: "0", // Hier den festen Wert für Total setzen
+    total: "0", // Annahme: 'total' wird durch die Backend-Antwort aktualisiert
   });
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/fetch-recent-interactions');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/fetch-recent-interactions');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.account && Array.isArray(data.account) &&
+            data.account_group && Array.isArray(data.account_group) &&
+            data.interaction && Array.isArray(data.interaction)) {
+          setDropdownOptions({
+            account: data.account,
+            accountGroup: data.account_group,
+            interaction: data.interaction
+          });
+        } else {
+          console.error("Invalid data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching dropdown options:", error);
       }
-      const data = await response.json();
-      if (data.account && Array.isArray(data.account) &&
-          data.account_group && Array.isArray(data.account_group) &&
-          data.interaction && Array.isArray(data.interaction)) {
-        setDropdownOptions({
-          account: data.account,
-          accountGroup: data.account_group,
-          interaction: data.interaction
-        });
-      } else {
-        console.error("Invalid data format:", data);
-      }
-    } catch (error) {
-      console.error("Error fetching dropdown options:", error);
-    }
-  };
+    };
 
-  fetchData();
-}, []);
+    fetchData();
+  }, []);
 
   const handleDropdownChange = (key, value) => {
     setSelectedValues(prevValues => ({ ...prevValues, [key]: value }));
   };
 
+  const handleInteractionButton = async () => {
+  const { account, accountGroup, interaction } = selectedValues;
+
+  try {
+    const response = await fetch(`http://localhost:5000/fetch-interaction-button`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ account, accountGroup, interaction }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('Daten erfolgreich aktualisiert', data);
+
+    // Aktualisiere den State basierend auf der Antwort des Backends
+    setSelectedValues(prevValues => ({
+      ...prevValues,
+      total: data.interaction_count.toString(), // Konvertiere in String, falls notwendig
+    }));
+  } catch (error) {
+    console.error('Fehler beim Aktualisieren der Daten:', error);
+  }
+};
+
+
   return (
     <div className="background-color-secondary mt-3">
       <p className="text-n text_recentInteractions mb-1">Recent Interactions</p>
-      <Table className="background-color-secondary">
+      <Table>
         <thead>
           <tr>
             <td>
               <DropdownButton
-                className=""
-                variant=""
                 id="dropdown-account"
                 title="Account"
                 onSelect={(value) => handleDropdownChange("account", value)}
+                variant
               >
                 {dropdownOptions.account.map((option) => (
                   <Dropdown.Item key={option} eventKey={option}>
@@ -68,11 +97,10 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className=""
-                variant=""
                 id="dropdown-account-group"
-                title="Account Group"
+                title="Account Name"
                 onSelect={(value) => handleDropdownChange("accountGroup", value)}
+                variant
               >
                 {dropdownOptions.accountGroup.map((option) => (
                   <Dropdown.Item key={option} eventKey={option}>
@@ -83,11 +111,10 @@ useEffect(() => {
             </td>
             <td>
               <DropdownButton
-                className=""
-                variant=""
                 id="dropdown-interaction"
                 title="Interaction"
                 onSelect={(value) => handleDropdownChange("interaction", value)}
+                variant
               >
                 {dropdownOptions.interaction.map((option) => (
                   <Dropdown.Item key={option} eventKey={option}>
@@ -97,7 +124,7 @@ useEffect(() => {
               </DropdownButton>
             </td>
             <td>
-              <Button variant="" className="p-0 m-0">
+              <Button className="p-1 m-0 button_umrandung" onClick={handleInteractionButton}>
                 Total
               </Button>
             </td>
