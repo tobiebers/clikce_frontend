@@ -68,14 +68,15 @@ export default function ContactPage() {
   const countries = ["Deutschland", "Österreich", "Schweiz", "Frankreich", "Italien", "Spanien"];
 
   return (
-    <Container className="containerCustom">
-      <Row className="rowCustom">
-        <Col md={12} className="imgCustom">
+    <Container className="mb-4">
+      <p className="text-lx text-center">Kontakt</p>
+      <Row>
+        <Col md={12}>
           {/* Platz für Hintergrundbild */}
         </Col>
       </Row>
       <Row className="formRowCustom">
-        <Col md={{ span: 6, offset: 3 }} className="colForm">
+        <Col>
           <div className="formWrapper">
             <Form onSubmit={handleFormSubmit}>
               {/* Vorname */}
@@ -137,9 +138,12 @@ export default function ContactPage() {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit" className="button-margin">
+              <div className="text-center">
+              <Button className="btn4">
                 Senden
               </Button>
+            </div>
+
             </Form>
           </div>
         </Col>
