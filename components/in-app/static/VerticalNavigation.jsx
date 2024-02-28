@@ -23,7 +23,6 @@ const VerticalNavigation = () => {
         <button onClick={() => navigate('/app/analytics')}>Analytics</button>
         <button onClick={() => navigate('/app/accountManagement')}>Acc Management</button>
         <button onClick={() => navigate('/app/calendar')}>Calendar</button>
-        <button onClick={() => navigate('/app/functions')}>Functions</button>
         <button onClick={() => navigate('/app/profileSettings')}>Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </nav>

@@ -9,27 +9,7 @@ export default function SocialmediaAccounts() {
       <Row className="justify-content-center">
         <Col>
           <div className="social-icon mt-3">
-            <img src="/facebookLogoIcon.png" alt="Icon 1" />
-          </div>
-        </Col>
-        <Col>
-          <div className="social-icon mt-3">
             <img src="/instagramLogoIcon.png" alt="Icon 2" />
-          </div>
-        </Col>
-        <Col>
-          <div className="social-icon mt-3">
-            <img src="/whatsappLogoIcon.png" alt="Icon 3" />
-          </div>
-        </Col>
-        <Col>
-          <div className="social-icon mt-3">
-            <img src="/tiktokLogoIcon.png" alt="Icon 4" />
-          </div>
-        </Col>
-        <Col>
-          <div className="social-icon mt-3">
-            <img src="/youtubeLogoIcon.png" alt="Icon 5" />
           </div>
         </Col>
       </Row>
