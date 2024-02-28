@@ -38,7 +38,11 @@ const InstagramAuth = () => {
 
     return (
         <div>
-            <Button onClick={connectInstagram}>Verbinden mit Instagram</Button>
+            <div className="vh-100 d-flex justify-content-center align-items-center">
+              <Button className="btn2" onClick={connectInstagram} variant="primary">
+                Verbinden mit Instagram
+              </Button>
+            </div>
 
             <Modal show={showModal} onHide={handleCloseModal}>
                 <Modal.Header closeButton>
@@ -70,7 +74,7 @@ const InstagramAuth = () => {
                     <Button variant="secondary" onClick={handleCloseModal}>
                         Schließen
                     </Button>
-                    <Button variant="primary" onClick={handleConfirm}>
+                    <Button className="bt2" onClick={handleConfirm}>
                         Bestätigen
                     </Button>
                 </Modal.Footer>

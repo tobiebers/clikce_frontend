@@ -4,8 +4,8 @@ import { Button } from 'react-bootstrap';
 const CompletionScreen = ({ onSubmit }) => {
   return (
     <div className="completion-screen">
-      <p>Bereit zum Starten?</p>
-      <Button onClick={onSubmit}>Fertig stellen</Button>
+      <p className="text-lx">Bereit zum Starten?</p>
+      <Button className="btn2" onClick={onSubmit}>Fertig stellen</Button>
     </div>
   );
 };
