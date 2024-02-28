@@ -59,7 +59,6 @@ export default function LoginForm() {
       </Modal>
 
       {/* Rest des Login-Formulars */}
-      <img alt="Or" src="or.png" className="img-size-or mx-auto" />
       <Form onSubmit={handleLogin}>
         <div className="text-muted">E-Mail</div>
         <Form.Control
