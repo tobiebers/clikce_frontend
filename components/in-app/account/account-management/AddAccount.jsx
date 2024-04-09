@@ -17,7 +17,7 @@ export default function AddAccount() {
             platform: platform,
         };
 
-        const response = await fetch('http://localhost:5000/instagram-profile-data', {
+        const response = await fetch('http://localhost:5000/instagram-add-profile-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
