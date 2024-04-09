@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {Button, Form, Modal} from "react-bootstrap";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import '../../../firebaseConfig';
+import { useRouter } from "next/router";
 
 
 export default function RegisterForm() {
@@ -10,6 +11,13 @@ export default function RegisterForm() {
     email: '',
     password: '',
   });
+
+  const router = useRouter();
+
+  // Funktion zum Navigieren zu verschiedenen Pfaden
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
 
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -111,7 +119,7 @@ export default function RegisterForm() {
 
       <p className="small-text text-center me-2">
         Haben Sie bereits einen Account?{' '}
-        <span className="login-text" >
+        <span className="login-text "  onClick={() => handleNavigation('/login')}>
           Log In
         </span>
       </p>

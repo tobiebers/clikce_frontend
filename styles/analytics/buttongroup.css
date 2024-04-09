@@ -58,20 +58,10 @@
 }
 
 /* Farbänderungen bei aktiviertem und deaktiviertem Switch */
-.toggle-switch-checkbox:checked + .toggle-switch-container div:first-child {
-    color: #D6EBEA;
-    transition: color 0.3s;
-}
-.toggle-switch-checkbox:checked + .toggle-switch-container div:last-child {
-    color: #343434;
-    transition: color 0.3s;
-}
-.toggle-switch-checkbox + .toggle-switch-container div:first-child {
-    color: #343434;
-    transition: color 0.3s;
-}
+.toggle-switch-checkbox:checked + .toggle-switch-container div:first-child,
+.toggle-switch-checkbox:checked + .toggle-switch-container div:last-child,
+.toggle-switch-checkbox + .toggle-switch-container div:first-child,
 .toggle-switch-checkbox + .toggle-switch-container div:last-child {
-    color: white;
     transition: color 0.3s;
 }
 
@@ -107,18 +97,25 @@
     border-radius: 0 0 6px 6px;
 }
 
-/* Stil für die Listenelemente im Dropdown-Menü */
+/* Stil für die Listenelemente im Dropdown-Menü mit Hover-Effekt */
 .custom-dropdown-slide li {
     padding: 18px;
     border-top: 1px solid #4B8E94;
     background-color: #D6EBEA;
     color: #4B8E94;
+    transition: background-color 0.2s, color 0.2s; /* Weiche Übergänge */
+}
+
+.custom-dropdown-slide li:hover {
+    background-color: #4B8E94; /* Hintergrundfarbe beim Hover */
+    color: #D6EBEA; /* Textfarbe beim Hover */
+    cursor: pointer; /* Cursor-Stil */
 }
 
 /* Stil für Links in der Liste */
 .custom-dropdown-slide li a {
     text-decoration: none;
-    color: #2d2f31;
+    color: inherit; /* Vererbt die Farbe vom Elternelement */
     font-size: 0.9em;
 }
 
@@ -135,3 +132,10 @@
 .custom-dropdown-slide::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.disabled-option {
+    color: #32706f; /* Graue Farbe */
+    pointer-events: none; /* Deaktiviere Mausklicks */
+    cursor: default; /* Standard-Cursor anzeigen */
+}
+

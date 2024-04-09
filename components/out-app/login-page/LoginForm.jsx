@@ -13,6 +13,11 @@ export default function LoginForm() {
   const router = useRouter();
   const { login } = useAuth(); // Verwendung der login Funktion aus AuthContext
 
+
+  // Funktion zum Navigieren zu verschiedenen Pfaden
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -80,7 +85,10 @@ export default function LoginForm() {
         </Button>
 
         <div>
-          Du hast noch keinen Account? <span className="text-primary">New Account</span>
+          Du hast noch keinen Account?{' '}
+          <span className="text-primary" onClick={() => handleNavigation('/register')}>
+               New Account
+          </span>
         </div>
       </Form>
     </Container>
