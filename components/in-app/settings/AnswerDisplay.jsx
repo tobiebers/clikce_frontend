@@ -53,27 +53,32 @@ const AnswersDisplay = () => {
 
 
     return (
+    <div className="container mt-5">
+      <h1>Antworten</h1>
+      {loading ? (
+        <p>Laden...</p>
+      ) : (
         <div>
-            <h1>Antworten</h1>
-            {loading ? (
-                <p>Laden...</p>
-            ) : (
-                <div>
-                    {Object.keys(answers).map(key => (
-                        <div key={key}>
-                            <span>Frage {key}: </span>
-                            <input
-                                type="text"
-                                value={editingAnswers[key]}
-                                onChange={(e) => handleEditChange(key, e.target.value)}
-                            />
-                            <button onClick={() => handleSave(key)}>✔️</button>
-                        </div>
-                    ))}
-                </div>
-            )}
+          {Object.keys(answers).map(key => (
+            <div key={key} className="mb-3">
+              <label htmlFor={`answer-${key}`} className="form-label">
+                Frage {key}:
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id={`answer-${key}`}
+                value={editingAnswers[key]}
+                onChange={(e) => handleEditChange(key, e.target.value)}
+              />
+              <button onClick={() => handleSave(key)} className="btn btn-success mt-2">
+                ✔️
+              </button>
+            </div>
+          ))}
         </div>
-    );
+      )}
+    </div>
+  );
 };
-
 export default AnswersDisplay;

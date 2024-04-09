@@ -30,7 +30,6 @@ export default function Login() {
 
       <Row noGutters style={{ height: '600px', backgroundColor: '#D6EBEA' }}>
         <Col md={5} style={{ textAlign: 'center' }}>
-          <img className="img-size-or mx-auto" src="or.png" />
           <div style={{ width: '80%' }}>
             <div className="transparent-text">E-Mail</div>
             <input

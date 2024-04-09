@@ -119,7 +119,7 @@ return (
     {showIntroScreen ? (
       <div className="intro-screen">
         <p>Nur noch ein paar Fragen, bevor wir loslegen können. Du kannst diese überspringen und später bearbeiten.</p>
-        <Button onClick={() => setShowIntroScreen(false)}>Fragen starten</Button>
+        <Button className="btn1" onClick={() => setShowIntroScreen(false)}>Fragen starten</Button>
       </div>
     ) : showCompletionScreen ? (
       <CompletionScreen onSubmit={handleSubmit} />
@@ -128,8 +128,8 @@ return (
         <p>{questions[currentQuestionIndex]}</p>
         {renderInputField()}
         <div className="button-group">
-          <Button onClick={handleNextOrSkip}>Überspringen</Button>
-          <Button onClick={handleNextOrSkip}>Nächste</Button>
+          <Button className="btn1" onClick={handleNextOrSkip}>Überspringen</Button>
+          <Button className="btn1" onClick={handleNextOrSkip}>Nächste</Button>
         </div>
       </div>
     )}

@@ -118,7 +118,7 @@ export default function CardsInfo() {
         {/* Abschnitt 5: Karte mit Dropdown-Menü */}
         <Col>
           <Card className="h-100 background-color-secondary">
-            <Card.Body>
+            <Card.Body className="btn-centered-large ">
                <Button className="btn1" onClick={handleRefreshClick}>Refresh</Button>
             </Card.Body>
           </Card>
