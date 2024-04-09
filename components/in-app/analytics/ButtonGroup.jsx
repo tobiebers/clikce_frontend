@@ -48,7 +48,7 @@ function CustomDropdownMenu({ platform }) {
         onSelectUsername(username);
 
         // Sendet eine POST-Anfrage, um die Profilinformationen des Benutzers zu speichern
-        fetch(`http://localhost:5000/instagram-profile-data`, {
+        fetch(`http://localhost:5000/save-instagram-profile-data`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
