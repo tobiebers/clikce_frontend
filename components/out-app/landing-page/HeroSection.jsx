@@ -1,8 +1,13 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import {useRouter} from "next/router";
 
 
 export default function HeroSection() {
+  const router = useRouter();
+  const handleNavigation = (path) => {
+  router.push(path);
+};
   return (
       <Container>
         <Row className="background-color-heroSection m-2 mt-5">
@@ -16,7 +21,9 @@ export default function HeroSection() {
                 Entdecken Sie, wie unser umfassendes Social Media Management<br />
                 Ihre Socialmediapräsenz nach vorne bringt!
               </p>
-              <button className="btn2 button-small">Register</button>
+              <button className="btn2 button-small" onClick={() => handleNavigation('/register')}>
+                Register
+              </button>
             </div>
           </Col>
           <Col className="col-centered text-end" md={6}>
