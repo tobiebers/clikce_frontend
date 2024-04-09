@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { useUsername } from 'pages/app/analytics.js';
 
 function ToggleSwitch({ onToggle }) {
     const [isChecked, setIsChecked] = useState(false);
 
-    const handleToggle = () => {
-        setIsChecked(!isChecked);
-        if (onToggle) {
-            onToggle(!isChecked ? 'tiktok' : 'instagram');
-        }
-    };
+    const handleToggle = useCallback(() => {
+        setIsChecked(false);
+        onToggle('instagram');
+    }, [onToggle]);
 
     return (
         <div className="toggle-switch-wrapper">
@@ -18,10 +17,12 @@ function ToggleSwitch({ onToggle }) {
                 className="toggle-switch-checkbox"
                 checked={isChecked}
                 onChange={handleToggle}
+                disabled={true}
             />
-            <label htmlFor="toggle-switch" className='toggle-switch-container'>
+            <label htmlFor="toggle-switch" className="toggle-switch-container">
                 <div>Instagram</div>
-                <div>TikTok</div>
+                {/* Füge eine Klasse hinzu, um TikTok optisch zu deaktivieren */}
+                <div className="disabled-option">TikTok</div>
             </label>
         </div>
     );
@@ -29,12 +30,10 @@ function ToggleSwitch({ onToggle }) {
 
 function CustomDropdownMenu({ platform }) {
     const [accounts, setAccounts] = useState([]);
+    const { onSelectUsername } = useUsername(); // Verwendung des Contexts
 
     useEffect(() => {
-        const url = platform === 'instagram'
-            ? `http://localhost:5000/instagram-profiles`
-            : `http://localhost:5000/tiktok-profiles`;
-
+        const url = `http://localhost:5000/${platform}-profiles`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -43,17 +42,38 @@ function CustomDropdownMenu({ platform }) {
             .catch(error => console.error('Error:', error));
     }, [platform]);
 
-    const handleSelectAccount = (account) => {
-        onSelectAccount(account);
-    };
+    // Diese Funktion wird aufgerufen, wenn ein Account ausgewählt wird
+    const handleSelectAccount = useCallback((username) => {
+        // Setzt den ausgewählten Benutzernamen im Kontext
+        onSelectUsername(username);
+
+        // Sendet eine POST-Anfrage, um die Profilinformationen des Benutzers zu speichern
+        fetch(`http://localhost:5000/instagram-profile-data`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username }),
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log(`Profilinformationen für ${username} gespeichert.`);
+            } else {
+                console.error('Fehler beim Speichern der Profilinformationen');
+            }
+        })
+        .catch(error => {
+            console.error('Fehler:', error);
+        });
+    }, [onSelectUsername]);
 
     return (
         <div className="custom-dropdown-wrapper">
             <div className="custom-dropdown-nav">
                 <span className="custom-dropdown-toggle">Accounts</span>
                 <ul className="custom-dropdown-slide">
-                    {accounts.slice(0, 3).map((account, index) => (
-                        <li key={index} onClick={() => handleSelectAccount(account)}><a href="#">{account.username}</a></li>
+                    {accounts.map((account, index) => (
+                        <li key={index} onClick={() => handleSelectAccount(account.username)}>{account.username}</li>
                     ))}
                 </ul>
             </div>
@@ -63,20 +83,13 @@ function CustomDropdownMenu({ platform }) {
 
 function CombinedControls() {
     const [platform, setPlatform] = useState('instagram');
-    const [selectedAccount, setSelectedAccount] = useState(null);
-
-    // Funktion, die aufgerufen wird, wenn ein Account ausgewählt wird
-    const handleSelectAccount = (account) => {
-        // Hier würde man normalerweise einen API-Aufruf machen, um die Account-Daten zu holen
-        setSelectedAccount(account);
-    };
 
     return (
         <div className="controls-container">
             <ToggleSwitch onToggle={setPlatform} />
-            <CustomDropdownMenu platform={platform} onSelectAccount={handleSelectAccount} />
-            {selectedAccount && <CardClient account={selectedAccount} />}
+            <CustomDropdownMenu platform={platform} />
         </div>
     );
 }
 
+export default CombinedControls;
