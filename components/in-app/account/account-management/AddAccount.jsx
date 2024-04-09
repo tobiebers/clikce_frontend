@@ -35,7 +35,7 @@ export default function AddAccount() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShowModal}>
+            <Button className="btn2 button-small m-2" onClick={handleShowModal}>
                 Account hinzufügen
             </Button>
 

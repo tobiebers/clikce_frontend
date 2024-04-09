@@ -84,7 +84,7 @@ export default function AccountCard() {
     return (
         <div>
             {accounts.map((account, index) => (
-                <Card key={index} style={{ width: '18rem', marginBottom: '1rem' }}>
+                <Card key={index} style={{ width: '18rem', marginBottom: '1rem' }} className="background-color-secondary ">
                     <Card.Body>
                         <Card.Title>{account.username}</Card.Title>
                         <Card.Text>
