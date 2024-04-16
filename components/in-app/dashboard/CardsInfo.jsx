@@ -45,7 +45,7 @@ export default function CardsInfo() {
 
 
   return (
-    <Container>
+
       <Row>
         {/* Abschnitt 1 */}
         <Col>
@@ -124,6 +124,6 @@ export default function CardsInfo() {
           </Card>
         </Col>
       </Row>
-    </Container>
+
   );
 }

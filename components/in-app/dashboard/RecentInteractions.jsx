@@ -76,8 +76,8 @@ export default function RecentInteractions() {
 
 
   return (
-    <div className="background-color-secondary mt-3">
-      <p className="text-n text_recentInteractions mb-1">Recent Interactions</p>
+    <div className="background-color-secondary">
+      <p className="text-n text_recentInteractions">Recent Interactions</p>
       <Table>
         <thead>
           <tr>

@@ -1,43 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
 export default function Chart() {
   const [data, setData] = useState([]);
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0); // Initialwert für die Containerbreite
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/fetch-chart');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/fetch-chart');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const json = await response.json();
+        const fetchedData = json.map(item => ({
+          time: item.date,
+          Likes: item.total_likes
+        }));
+        setData(fetchedData);
+      } catch (error) {
+        console.error("Fehler beim Abrufen der Daten:", error);
       }
-      const json = await response.json();
-      const fetchedData = json.map(item => ({
-        time: item.date,
-        Likes: item.total_likes
-      }));
-      setData(fetchedData);
-    } catch (error) {
-      console.error("Fehler beim Abrufen der Daten:", error);
-    }
-  };
+    };
 
-  fetchData();
-}, []);
-  const maxLikes = data.reduce((max, item) => item.visitors > max ? item.visitors : max, 0);
+    fetchData();
+  }, []);
 
-  // Bestimmen des maximalen Wertes für die Y-Achse
-  const maxYAxisValue = maxLikes + 10;
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth); // Setzt die Breite basierend auf dem aktuellen Container
+      }
+    };
+
+    window.addEventListener('resize', updateWidth);
+    updateWidth(); // Initialen Aufruf zum Setzen der Breite
+
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
   return (
-    <div className="chart-container">
+    <div className="chart-container" ref={containerRef}>
       <AreaChart
-        width={1110}
+        width={containerWidth} // Verwendung der dynamisch festgelegten Breite
         height={300}
         data={data}
-        className="background-color-secondary chart-abstand"
+        className="background-color-secondary"
       >
-        <XAxis dataKey="time" /> {/* X-Achse soll das Datum anzeigen, daher 'time' */}
-        <YAxis domain={[0, maxYAxisValue]} />
+        <XAxis dataKey="time" />
+        <YAxis />
         <Tooltip />
         <Legend verticalAlign="top" align="left" wrapperStyle={{ left: 0, top: 0 }} />
         <defs>
@@ -46,7 +58,7 @@ useEffect(() => {
             <stop offset="100%" stopColor="#e025fa" />
           </linearGradient>
         </defs>
-        <Area type="monotone" dataKey="Likes" stroke="#8884d8" fillOpacity={1} fill="url(#colorGradient)" /> {/* Y-Achse soll die Likes anzeigen, daher 'visitors' */}
+        <Area type="monotone" dataKey="Likes" stroke="#8884d8" fillOpacity={1} fill="url(#colorGradient)" />
       </AreaChart>
     </div>
   );
