@@ -44,7 +44,7 @@ export default function Chart() {
     <div className="chart-container" ref={containerRef}>
       <AreaChart
         width={containerWidth} // Verwendung der dynamisch festgelegten Breite
-        height={300}
+        height={400}
         data={data}
         className="background-color-secondary"
       >
