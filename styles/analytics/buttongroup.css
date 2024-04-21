@@ -2,68 +2,12 @@
 .controls-container {
     display: flex;
     flex-direction: column; /* Vertikale Anordnung der Elemente */
-    align-items: center;
-    justify-content: left;
+    align-items: flex-start; /* Linksbündige Ausrichtung der Elemente */
+    justify-content: flex-start;
     gap: 5px; /* Abstand zwischen den Elementen */
+    width: 100%; /* Nutzt die volle Breite des übergeordneten Elements */
 }
 
-/* Stil für den Wrapper des Toggle-Switch */
-.toggle-switch-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Stil für den Container des Toggle-Switch */
-.toggle-switch-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: fit-content;
-    border: 3px solid #4B8E94;
-    border-radius: 20px;
-    background: #4B8E94;
-    font-weight: bold;
-    color: #D6EBEA;
-    cursor: pointer;
-}
-
-/* Stil für die Schiebefläche des Toggle-Switch */
-.toggle-switch-container::before {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    left: 0;
-    border-radius: 20px;
-    background: #FFB3B8;
-    transition: all 0.3s;
-}
-
-/* Anpassung der Position der Schiebefläche bei aktiviertem Switch */
-.toggle-switch-checkbox:checked + .toggle-switch-container::before {
-    left: 50%;
-}
-
-/* Stil für die Textelemente im Toggle-Switch */
-.toggle-switch-container div {
-    padding: 6px;
-    text-align: center;
-    z-index: 1;
-}
-
-/* Ausblenden des tatsächlichen Checkbox-Elements */
-.toggle-switch-checkbox {
-    display: none;
-}
-
-/* Farbänderungen bei aktiviertem und deaktiviertem Switch */
-.toggle-switch-checkbox:checked + .toggle-switch-container div:first-child,
-.toggle-switch-checkbox:checked + .toggle-switch-container div:last-child,
-.toggle-switch-checkbox + .toggle-switch-container div:first-child,
-.toggle-switch-checkbox + .toggle-switch-container div:last-child {
-    transition: color 0.3s;
-}
 
 /* Stil für den Wrapper des Dropdown-Menüs */
 .custom-dropdown-wrapper {
@@ -132,10 +76,3 @@
 .custom-dropdown-slide::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
-.disabled-option {
-    color: #32706f; /* Graue Farbe */
-    pointer-events: none; /* Deaktiviere Mausklicks */
-    cursor: default; /* Standard-Cursor anzeigen */
-}
-

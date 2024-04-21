@@ -35,7 +35,7 @@ function ChartWithTabs() {
     return (
         <Tabs activeKey={activeTab} onSelect={(k) => setActiveTab(k)} className="mb-3">
             <Tab eventKey="likes" title="Likes">
-                <AreaChart width={730} height={250} data={likesData}
+                <AreaChart width={750} height={400} data={likesData}
                            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>
                         <linearGradient id="colorLikes" x1="0" y1="0" x2="0" y2="1">
@@ -50,7 +50,7 @@ function ChartWithTabs() {
                 </AreaChart>
             </Tab>
             <Tab eventKey="followers" title="Followers">
-                <AreaChart width={730} height={250} data={followersData}
+                <AreaChart width={750} height={400} data={followersData}
                            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>
                         <linearGradient id="colorFollowers" x1="0" y1="0" x2="0" y2="1">
