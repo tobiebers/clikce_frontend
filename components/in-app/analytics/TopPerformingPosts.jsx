@@ -5,11 +5,11 @@ const FlipCard = () => {
     <div className="flip-card">
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <p className="title">FLIP CARD</p>
-          <p>Hover Me</p>
+          <img src="/PlaceHolderFLipCard.png" alt="Top-Post" style={{ width: '80%', height: '80%' }} />
+          <h3 className="title">Top-Post</h3>
         </div>
         <div className="flip-card-back">
-          <p className="title">BACK</p>
+          <h3 className="title">BACK</h3>
           <p>Leave Me</p>
         </div>
       </div>
