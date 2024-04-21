@@ -34,7 +34,7 @@ function ToggleLists() {
                                 <th>Zeit</th>
                                 <th>Konto</th>
                                 <th>Beschreibung</th>
-                                <th>Bild</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -44,7 +44,7 @@ function ToggleLists() {
                                     <td>{post.time}</td>
                                     <td>{post.account}</td>
                                     <td>{post.caption}</td>
-                                    <td><Image src={post.picture} alt="Post" thumbnail /></td>
+
                                 </tr>
                             ))}
                         </tbody>
