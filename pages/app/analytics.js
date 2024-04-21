@@ -7,7 +7,6 @@ import FlipCard from "@/components/in-app/analytics/TopPerformingPosts";
 import Lists from "@/components/in-app/analytics/Lists";
 import { Col, Row, Container } from "react-bootstrap";
 
-// Erstelle den Context nur einmal
 export const UsernameContext = createContext({
   username: '',
   setUsername: () => {},
@@ -46,7 +45,7 @@ export default function Analytics() {
                             <FlipCard />
                         </div>
                         <div className="mt-5">
-                            <Lists />
+                            <Lists/>
                         </div>
                     </Col>
                 </Row>
