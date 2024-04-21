@@ -1,39 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import React, { useEffect, useState, useRef } from "react";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
-function LikesLineChart({ username }) {
-  const [chartData, setChartData] = useState([]);
+export default function Chart() {
+  const [data, setData] = useState([]);
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0); // Initialwert für die Containerbreite
 
   useEffect(() => {
-    // Angenommen, Ihr Backend stellt einen Endpunkt zur Verfügung, der die Likes-Daten zurückgibt
-    // Ersetzen Sie 'http://localhost:5000/likes-data' durch den tatsächlichen Endpunkt
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/likes-data?username=${encodeURIComponent(username)}`);
+        const response = await fetch('http://localhost:5000/likes-data');
         if (!response.ok) {
-          throw new Error('Netzwerkantwort war nicht ok');
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const data = await response.json();
-        setChartData(data); // Nehmen Sie an, dass 'data' bereits im richtigen Format ist
+        const json = await response.json();
+        const fetchedData = json.map(item => ({
+          time: item.date,
+          Likes: item.total_likes
+        }));
+        setData(fetchedData);
       } catch (error) {
-        console.error("Fehler beim Laden der Likes-Daten:", error);
+        console.error("Fehler beim Abrufen der Daten:", error);
       }
     };
 
     fetchData();
-  }, [username]); // Aktualisieren Sie die Daten, wenn sich 'username' ändert
+  }, []);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth); // Setzt die Breite basierend auf dem aktuellen Container
+      }
+    };
+
+    window.addEventListener('resize', updateWidth);
+    updateWidth(); // Initialen Aufruf zum Setzen der Breite
+
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   return (
-    <LineChart width={600} height={300} data={chartData}
-               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="likes" stroke="#8884d8" activeDot={{ r: 8 }} />
-    </LineChart>
+    <div className="chart-container" ref={containerRef}>
+      <AreaChart
+        width={containerWidth} // Verwendung der dynamisch festgelegten Breite
+        height={400}
+        data={data}
+        className="background-color-secondary"
+      >
+        <XAxis dataKey="time" />
+        <YAxis />
+        <Tooltip />
+        <Legend verticalAlign="top" align="left" wrapperStyle={{ left: 0, top: 0 }} />
+        <defs>
+          <linearGradient id="colorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#30D5C8" />
+            <stop offset="100%" stopColor="#e025fa" />
+          </linearGradient>
+        </defs>
+        <Area type="monotone" dataKey="Likes" stroke="#8884d8" fillOpacity={1} fill="url(#colorGradient)" />
+      </AreaChart>
+    </div>
   );
 }
-
-export default LikesLineChart;
