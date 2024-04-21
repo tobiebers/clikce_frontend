@@ -4,20 +4,23 @@ import { useAuth } from "@/components/out-app/static-components/AuthContext";
 
 const VerticalNavigation = () => {
   const router = useRouter();
-  const { logout } = useAuth(); // Verwendung der logout Funktion aus AuthContext
+  const { logout } = useAuth();
 
   const navigate = (path) => {
     router.push(path);
   };
 
   const handleLogout = () => {
-    logout(); // AuthContext logout Funktion aufrufen
-    router.push('/'); // Sofortige Weiterleitung zur Startseite
+    logout();
+    router.push('/'); // Redirect to home page after logout
   };
 
   return (
     <div className="navigation-container">
-      <div className="logo">CLIKCE</div>
+      <div className="logo">
+        <img src="/logo.png" alt="Company Logo" />
+
+      </div>
       <nav className="navigation-menu">
         <button onClick={() => navigate('/app/dashboard')}>Dashboard</button>
         <button onClick={() => navigate('/app/analytics')}>Analytics</button>
