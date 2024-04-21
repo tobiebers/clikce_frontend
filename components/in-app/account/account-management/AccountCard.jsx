@@ -9,7 +9,6 @@ const FacebookLogo = '/facebookLogoIcon.png';
 export default function AccountCard() {
     const [accounts, setAccounts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [followers, setFollowers] = useState({});
 
     useEffect(() => {
         const fetchAccounts = async () => {
@@ -30,24 +29,6 @@ export default function AccountCard() {
 
         fetchAccounts();
     }, []);
-
-    useEffect(() => {
-        const fetchFollowers = async (username) => {
-            try {
-                const response = await fetch(`http://localhost:5000/followers/${username}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setFollowers(prev => ({ ...prev, [username]: data.followers }));
-                }
-            } catch (error) {
-                console.error('Fehler beim Laden der Follower:', error);
-            }
-        };
-
-        accounts.forEach(account => {
-            fetchFollowers(account.username);
-        });
-    }, [accounts]);
 
     const getPlatformLogo = (platform) => {
         switch (platform) {
@@ -84,7 +65,7 @@ export default function AccountCard() {
     return (
         <div>
             {accounts.map((account, index) => (
-                <Card key={index} style={{ width: '18rem', marginBottom: '1rem' }} className="background-color-secondary ">
+                <Card key={index} style={{ width: '18rem', marginBottom: '1rem' }} className="background-color-secondary">
                     <Card.Body>
                         <Card.Title>{account.username}</Card.Title>
                         <Card.Text>
@@ -95,7 +76,6 @@ export default function AccountCard() {
                                     style={{ width: '20px', height: '20px', marginRight: '10px' }}
                                 />
                             }
-                            Follower: {followers[account.username] || 'Laden...'}
                         </Card.Text>
                         <Button variant="danger" onClick={() => deleteAccount(account.username)}>
                             Löschen

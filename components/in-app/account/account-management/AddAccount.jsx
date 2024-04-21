@@ -11,12 +11,13 @@ export default function AddAccount() {
     const handleCloseModal = () => setShowModal(false);
 
     const handleSubmit = async () => {
-        const accountData = {
-            username: accountName,
-            password: password,
-            platform: platform,
-        };
+    const accountData = {
+        username: accountName,
+        password: password,
+        platform: platform,
+    };
 
+    try {
         const response = await fetch('http://localhost:5000/instagram-add-profile-data', {
             method: 'POST',
             headers: {
@@ -29,9 +30,14 @@ export default function AddAccount() {
             console.log('Account-Daten erfolgreich gesendet');
             handleCloseModal(); // Schließt das Modal nach dem Speichern
         } else {
-            console.log('Fehler beim Senden der Account-Daten');
+            const errorResponse = await response.text(); // Erfasse die Fehlerantwort vom Server
+            console.error('Fehler beim Senden der Account-Daten:', errorResponse);
         }
-    };
+    } catch (error) {
+        console.error('Netzwerkfehler:', error);
+    }
+};
+
 
     return (
         <>
