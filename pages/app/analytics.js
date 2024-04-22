@@ -27,20 +27,22 @@ export default function Analytics() {
                 <Row className="g-2">
                     {/* Linke Seite: Account-Informationen */}
                     <Col md={4} className="p-3">
-                        <div className="mb-5">
+                        <div className="background-color-secondary">
                             <CurrentAccountUsed />
                         </div>
-                        <div>
+                        <div className="background-color-secondary">
                             <ButtonGroup />
                         </div>
-                        <div className="mt-5">
+                        <div className="background-color-secondary">
                             <FlipCard />
                         </div>
                     </Col>
                     {/* Rechte Seite: Charts und Logs */}
                     <Col md={8} className="p-3">
-                        <div className="mb-5">
+                        <div className="background-color-secondary">
                             <TabChart />
+                        </div>
+                        <div className="background-color-secondary">
                             <Lists />
                         </div>
                         {/* Hier könnten weitere Logs oder Informationen angezeigt werden */}

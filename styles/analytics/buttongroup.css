@@ -6,17 +6,18 @@
     justify-content: flex-start;
     gap: 5px; /* Abstand zwischen den Elementen */
     width: 100%; /* Nutzt die volle Breite des übergeordneten Elements */
+    padding-bottom: 15px;
 }
-
 
 /* Stil für den Wrapper des Dropdown-Menüs */
 .custom-dropdown-wrapper {
     position: relative;
+    width: 100%; /* Stellt sicher, dass der Wrapper die volle Breite nutzt */
 }
 
 /* Stil für das Dropdown-Menü selbst */
 .custom-dropdown-nav {
-    width: 180px;
+    width: 100%; /* Dropdown-Menü nutzt die volle Breite des Wrappers */
     background: #d9d9d9;
     border-radius: 6px;
     margin-top: 10px;
@@ -31,6 +32,7 @@
     cursor: pointer;
     display: block;
     border-radius: 6px 6px 0 0;
+    width: 100%; /* Stellt sicher, dass der Toggle-Button die volle Breite nutzt */
 }
 
 .custom-dropdown-slide {
@@ -39,6 +41,7 @@
     list-style: none;
     padding: 0;
     border-radius: 0 0 6px 6px;
+    width: 100%; /* Stellt sicher, dass die Slide-Liste die volle Breite nutzt */
 }
 
 /* Stil für die Listenelemente im Dropdown-Menü mit Hover-Effekt */
@@ -48,6 +51,7 @@
     background-color: #D6EBEA;
     color: #4B8E94;
     transition: background-color 0.2s, color 0.2s; /* Weiche Übergänge */
+    width: 100%; /* Stellt sicher, dass Listenelemente die volle Breite nutzen */
 }
 
 .custom-dropdown-slide li:hover {
