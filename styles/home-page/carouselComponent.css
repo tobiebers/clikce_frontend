@@ -1,25 +1,35 @@
 /* CarouselComponent.css */
 .carousel-item {
-  height: 500px; /* Gewünschte Höhe des Carousel-Elements */
-  background-size: cover; /* Sorgt dafür, dass das Bild den gesamten Container bedeckt */
-  background-position: center; /* Zentriert das Bild */
+  box-sizing: border-box; /* Stellt sicher, dass die Breite und Höhe Ränder einschließen */
+  height: 500px; /* Oder verwenden Sie '50vh' für 50% der Viewport-Höhe */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 5px solid #0a0909;
 }
+
 
 .carousel-caption {
   color: black; /* Schriftfarbe */
   padding: 10px; /* Abstand */
 }
 
+
+
+
 .carousel-item-1 {
-  background-image: url('/PlaceHolder.jpg');
+  background-image: url('/landing_chart.png');
+  border: 5px solid #0a0909;
 }
 
 .carousel-item-2 {
-  background-image: url('/PlaceHolder.jpg');
+  background-image: url('/landing_account.png');
+  border: 5px solid #0a0909;
 }
 
 .carousel-item-3 {
-  background-image: url('/PlaceHolder.jpg');
+  background-image: url('/landing_post.png');
+  border: 5px solid #0a0909;
 }
 
 /* Weitere .carousel-item-N Klassen für zusätzliche Bilder */
