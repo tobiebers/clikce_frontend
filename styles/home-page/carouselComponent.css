@@ -1,8 +1,8 @@
 /* CarouselComponent.css */
 .carousel-item {
   box-sizing: border-box; /* Stellt sicher, dass die Breite und Höhe Ränder einschließen */
-  height: 500px; /* Oder verwenden Sie '50vh' für 50% der Viewport-Höhe */
-  background-size: cover;
+  height: 600px; /* Oder verwenden Sie '50vh' für 50% der Viewport-Höhe */
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   border: 5px solid #0a0909;

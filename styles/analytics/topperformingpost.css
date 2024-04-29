@@ -1,6 +1,6 @@
 .flip-card {
   background-color: transparent;
-  height: 200px;
+  height: 400px;
   perspective: 1000px;
   width: 100%;
 
@@ -43,4 +43,5 @@
 .title {
   font-size: 24px;
   margin: 5px 0;
+  text-align: center;
 }
