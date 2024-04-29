@@ -22,11 +22,7 @@ export default function PerformingAccounts() {
   }, []);
   return (
     <div className="top-performing-container">
-      <img
-        src={profilePicture}
-        alt="Performing Account"
-        className="image"
-      />
+        <img src={'/ProfilePicPlaceholder.jpg'} style={{ width: '15%', height: '15%', marginRight: '14px' }}/>
       <div className="content, text-s">
         <h4 className="heading, text-n">Top Performing Accounts</h4>
         <div className="text">
